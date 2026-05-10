@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>automodel — OpenRouter ranked model lists</title>
+  <meta name="description" content="Dev demo for the automodel cron pipeline. Three ranked OpenRouter model lists refreshed every 6h: free, balanced, best." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="page-head">
+    <h1><span class="prompt">$</span> automodel</h1>
+    <p class="tagline">
+      Three ranked OpenRouter model lists, refreshed every 6h by a cron job.
+      This page is the dev demo; the JSON is the contract.
+    </p>
+    <p class="endpoints">
+      <span class="label">endpoints</span>
+      <a class="endpoint" href="./free.json"><code>/free.json</code></a>
+      <a class="endpoint" href="./balanced.json"><code>/balanced.json</code></a>
+      <a class="endpoint" href="./best.json"><code>/best.json</code></a>
+    </p>
+    <p class="meta">
+      <span class="label">last refresh</span>
+      <span id="generated-at" class="value">…</span>
+      <span class="sep">·</span>
+      <span class="label">tracked apps</span>
+      <span id="tracked-apps" class="value">…</span>
+    </p>
+  </header>
+
+  <main>
+    <section class="list" data-kind="free">
+      <h2>free.json <small>— top 10 free models with tool calling</small></h2>
+      <div class="table-wrap"><table><thead><tr>
+        <th>#</th><th>id</th><th>ctx</th>
+        <th>tools</th><th>reason</th>
+        <th>quality</th><th>value</th><th>$/M in</th><th>$/M out</th>
+      </tr></thead><tbody></tbody></table></div>
+    </section>
+
+    <section class="list" data-kind="balanced">
+      <h2>balanced.json <small>— top 5 free + top 5 paid by quality-per-dollar</small></h2>
+      <div class="table-wrap"><table><thead><tr>
+        <th>#</th><th>id</th><th>ctx</th>
+        <th>tools</th><th>reason</th>
+        <th>quality</th><th>value</th><th>$/M in</th><th>$/M out</th>
+      </tr></thead><tbody></tbody></table></div>
+    </section>
+
+    <section class="list" data-kind="best">
+      <h2>best.json <small>— top 10 by raw quality, price-blind</small></h2>
+      <div class="table-wrap"><table><thead><tr>
+        <th>#</th><th>id</th><th>ctx</th>
+        <th>tools</th><th>reason</th>
+        <th>quality</th><th>value</th><th>$/M in</th><th>$/M out</th>
+      </tr></thead><tbody></tbody></table></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <a href="https://github.com/crisberrios/openrouter-hermes-automodel">source on GitHub</a>
+      <span class="sep">·</span>
+      MIT licensed
+      <span class="sep">·</span>
+      page rendered client-side from the JSON files above
+    </p>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

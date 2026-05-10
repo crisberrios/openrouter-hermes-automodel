@@ -39,9 +39,13 @@ import shutil
 import sys
 import urllib.error
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+
+
+def _utcnow_iso() -> str:
+    return datetime.now(timezone.utc).isoformat()
 
 # ----------------------------------------------------------------------------
 # Paths
@@ -261,7 +265,7 @@ def cmd_init(args: argparse.Namespace) -> int:
             sys.stderr.write(f"Unrecognized choice: {choice!r}\n")
             return 2
 
-    cfg: dict[str, Any] = {"mode": mode, "configured_at": datetime.utcnow().isoformat() + "Z"}
+    cfg: dict[str, Any] = {"mode": mode, "configured_at": _utcnow_iso()}
 
     if mode == "url":
         if not base_url:
@@ -299,7 +303,7 @@ def cmd_init(args: argparse.Namespace) -> int:
 # Subcommand: set / apply
 # ----------------------------------------------------------------------------
 def _save_selection(selection: str) -> None:
-    payload = {"selected": selection, "selected_at": datetime.utcnow().isoformat() + "Z"}
+    payload = {"selected": selection, "selected_at": _utcnow_iso()}
     _write_json(SELECTION_PATH, payload)
 
 

@@ -1,0 +1,270 @@
+{
+  "generated_at": "2026-05-10T23:19:26.611688+00:00",
+  "kind": "balanced",
+  "list_size": 10,
+  "tracked_apps": {
+    "hermes-agent": {
+      "rank": 1,
+      "models_used": 351,
+      "total_tokens": 5481397265078
+    },
+    "openclaw": {
+      "rank": 2,
+      "models_used": 380,
+      "total_tokens": 6764825734055
+    }
+  },
+  "summary": "(skipped)",
+  "models": [
+    {
+      "rank": 1,
+      "id": "xiaomi/mimo-v2-pro",
+      "name": "Xiaomi: MiMo-V2-Pro",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1048576,
+      "pricing": {
+        "prompt_usd_per_mtok": 1.0,
+        "completion_usd_per_mtok": 3.0
+      },
+      "signals": {
+        "intelligence_score": 49.2,
+        "agentic_token_volume": 1740320980656,
+        "agentic_rank": 1,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.8018,
+        "value_score": 0.5011
+      },
+      "notes": "",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 2,
+      "id": "deepseek/deepseek-v4-pro",
+      "name": "DeepSeek: DeepSeek V4 Pro",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1048576,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.435,
+        "completion_usd_per_mtok": 0.87
+      },
+      "signals": {
+        "intelligence_score": 51.5,
+        "agentic_token_volume": 185156885214,
+        "agentic_rank": 19,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.683,
+        "value_score": 0.5818
+      },
+      "notes": "",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 3,
+      "id": "minimax/minimax-m2.7",
+      "name": "MiniMax: MiniMax M2.7",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 196608,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.299,
+        "completion_usd_per_mtok": 1.2
+      },
+      "signals": {
+        "intelligence_score": 49.6,
+        "agentic_token_volume": 1285843384786,
+        "agentic_rank": 2,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.6787,
+        "value_score": 0.5473
+      },
+      "notes": "",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 4,
+      "id": "x-ai/grok-4.3",
+      "name": "xAI: Grok 4.3",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1000000,
+      "pricing": {
+        "prompt_usd_per_mtok": 1.25,
+        "completion_usd_per_mtok": 2.5
+      },
+      "signals": {
+        "intelligence_score": 53.2,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.6734,
+        "value_score": 0.4489
+      },
+      "notes": "",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 5,
+      "id": "qwen/qwen3.6-plus",
+      "name": "Qwen: Qwen3.6 Plus",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1000000,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.325,
+        "completion_usd_per_mtok": 1.95
+      },
+      "signals": {
+        "intelligence_score": 50.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.6521,
+        "value_score": 0.4691
+      },
+      "notes": "",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 6,
+      "id": "nvidia/nemotron-3-super-120b-a12b:free",
+      "name": "NVIDIA: Nemotron 3 Super (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 1078455268245,
+        "agentic_rank": 3,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.3379,
+        "value_score": 0.8379
+      },
+      "notes": "",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 7,
+      "id": "openrouter/owl-alpha",
+      "name": "Owl Alpha",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": false,
+      "context_length": 1048756,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 141617901721,
+        "agentic_rank": 24,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.3121,
+        "value_score": 0.8121
+      },
+      "notes": "",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 8,
+      "id": "minimax/minimax-m2.5:free",
+      "name": "MiniMax: MiniMax M2.5 (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 196608,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 483747353916,
+        "agentic_rank": 8,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.28,
+        "value_score": 0.78
+      },
+      "notes": "",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 9,
+      "id": "openai/gpt-oss-120b:free",
+      "name": "OpenAI: gpt-oss-120b (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 131072,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 182991748040,
+        "agentic_rank": 20,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.2474,
+        "value_score": 0.7474
+      },
+      "notes": "",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 10,
+      "id": "inclusionai/ring-2.6-1t:free",
+      "name": "inclusionAI: Ring-2.6-1T (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.245,
+        "value_score": 0.745
+      },
+      "notes": "",
+      "ranking_kind": "balanced"
+    }
+  ]
+}

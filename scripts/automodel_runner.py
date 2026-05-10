@@ -3,8 +3,8 @@
 Automodel runner
 
 Collects signals from OpenRouter (catalog + pricing, intelligence leaderboard,
-weekly token volume) and from a single web-enabled LLM call (recent news +
-community sentiment for agentic LLM use), then ranks models into three
+per-agentic-app model usage) and from a single web-enabled LLM call (recent
+news + community sentiment for agentic LLM use), then ranks models into three
 10-item lists:
 
   - free-models.json       — best free models currently available
@@ -13,6 +13,9 @@ community sentiment for agentic LLM use), then ranks models into three
 
 Lists are written to ~/automodel/output/ and a Telegram notification is sent
 on completion.
+
+The sentiment-enrichment prompt lives alongside this script in
+`sentiment_prompt.md` so it can be edited without touching the code.
 
 Designed to be invoked by a Hermes cron job. Has no Hermes runtime dependency
 beyond the .env file under ~/.hermes/.env.
@@ -41,6 +44,12 @@ OUTPUT_DIR = ROOT / "output"
 CACHE_DIR = ROOT / "cache"
 LOG_DIR = ROOT / "logs"
 ENV_FILE = HOME / ".hermes" / ".env"
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+# Override location of the sentiment prompt with AUTOMODEL_SENTIMENT_PROMPT.
+SENTIMENT_PROMPT_PATH = Path(
+    os.environ.get("AUTOMODEL_SENTIMENT_PROMPT") or (SCRIPT_DIR / "sentiment_prompt.md")
+)
 
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
@@ -132,8 +141,10 @@ class ModelEntry:
 
     # Signals (filled later)
     intelligence_score: float = 0.0
-    weekly_token_volume: int = 0
-    weekly_rank: int = 0
+    # Aggregate usage across tracked agentic apps (TRACKED_APPS) — replaces
+    # the previous global weekly leaderboard signal.
+    agentic_token_volume: int = 0
+    agentic_rank: int = 0
     sentiment_score: float = 0.0   # -1..+1
     sentiment_notes: str = ""
 
@@ -171,7 +182,7 @@ def fetch_catalog() -> dict[str, ModelEntry]:
 
 
 # ----------------------------------------------------------------------------
-# OpenRouter rankings page — extract intelligence + weekly leaderboards
+# OpenRouter Next.js payload helpers
 # ----------------------------------------------------------------------------
 _NEXT_PUSH_RE = re.compile(r'self\.__next_f\.push\(\[1,"(.*?)"\]\)', re.DOTALL)
 
@@ -210,146 +221,154 @@ def _extract_balanced_json_object(text: str, start_idx: int) -> str | None:
     return None
 
 
-def fetch_rankings_signals() -> dict[str, dict]:
-    """Return {model_id_or_heuristic: {intelligence_score, weekly_rank, weekly_tokens}}.
+def _collapse_permaslug(slug: str) -> str:
+    """Strip OpenRouter's dated version suffix (e.g. `-20260421`) so the
+    permaslug collapses to the base model id used in the catalog."""
+    return re.sub(r"-2\d{7,9}.*$", "", slug)
+
+
+# ----------------------------------------------------------------------------
+# OpenRouter rankings page — intelligence leaderboard only
+# ----------------------------------------------------------------------------
+def fetch_intelligence_scores() -> dict[str, float]:
+    """Return {slug: intelligence_score} from openrouter.ai/rankings.
 
     Models in the embedded payload are keyed by `heuristic_openrouter_slug`
-    (e.g. `openai/gpt-5.1`) — which is the slug used in the catalog. We
-    return that as the lookup key.
+    (e.g. `openai/gpt-5.1`) — the same slug the catalog uses.
     """
-    log.info("Fetching openrouter.ai/rankings")
-    html = http_get_text("https://openrouter.ai/rankings")
-    text = _decode_streamed_payload(html)
-    out: dict[str, dict] = {}
-
-    # Intelligence: list of {uid, heuristic_openrouter_slug, score}
-    intel_idx = text.find('"intelligence":[')
-    if intel_idx != -1:
-        arr_start = text.find("[", intel_idx)
-        depth = 0
-        in_str = False
-        esc = False
-        end = -1
-        for i in range(arr_start, len(text)):
-            ch = text[i]
-            if in_str:
-                if esc:
-                    esc = False
-                elif ch == "\\":
-                    esc = True
-                elif ch == '"':
-                    in_str = False
-                continue
-            if ch == '"':
-                in_str = True
-            elif ch == "[":
-                depth += 1
-            elif ch == "]":
-                depth -= 1
-                if depth == 0:
-                    end = i + 1
-                    break
-        if end != -1:
-            try:
-                arr = json.loads(text[arr_start:end])
-                for entry in arr:
-                    slug = entry.get("heuristic_openrouter_slug") or entry.get("openrouter_slug") or entry.get("uid")
-                    score = entry.get("score")
-                    if not slug or score is None:
-                        continue
-                    out.setdefault(slug, {})["intelligence_score"] = float(score)
-            except json.JSONDecodeError as e:
-                log.warning("intelligence parse failed: %s", e)
-        log.info("  intelligence entries: %d", sum(1 for v in out.values() if "intelligence_score" in v))
-
-    # Weekly model leaderboard. Entries look like:
-    #   {"date":"...","model_permaslug":"vendor/model-20260421",
-    #    "variant":"standard","total_completion_tokens":6812937922,
-    #    "total_prompt_tokens":428166543338, ...}
-    # Aggregate the most recent total_prompt_tokens per base slug.
-    by_slug: dict[str, int] = {}
-    for m in re.finditer(
-        r'"model_permaslug":"([a-z0-9._\-]+/[a-z0-9._\-:]+)"[^{}]*?"total_prompt_tokens":(\d+)',
-        text,
-    ):
-        slug = m.group(1)
-        base = re.sub(r"-2\d{7,9}.*$", "", slug)  # collapse versioned slug
-        tokens = int(m.group(2))
-        by_slug[base] = by_slug.get(base, 0) + tokens
-
-    # Rank by aggregate prompt tokens
-    ranked = sorted(by_slug.items(), key=lambda kv: kv[1], reverse=True)
-    for i, (slug, tokens) in enumerate(ranked, start=1):
-        existing = out.setdefault(slug, {})
-        existing.setdefault("weekly_tokens", tokens)
-        existing.setdefault("weekly_rank", i)
-
-    log.info("  weekly leaderboard entries: %d", sum(1 for v in out.values() if "weekly_tokens" in v))
-    return out
-
-
-# ----------------------------------------------------------------------------
-# App rankings — confirm tracked agentic apps are visible & capture rank
-# ----------------------------------------------------------------------------
-def fetch_app_ranks() -> dict[str, int]:
-    """Return {app_slug: rank} for the tracked apps. The /rankings page lists
-    apps sorted by recent token volume — we just confirm presence and rank."""
-    log.info("Fetching app ranks for %s", TRACKED_APPS)
+    log.info("Fetching openrouter.ai/rankings (intelligence)")
     try:
         html = http_get_text("https://openrouter.ai/rankings")
     except Exception as e:
-        log.warning("app-rank fetch failed: %s", e)
+        log.warning("rankings fetch failed: %s", e)
         return {}
     text = _decode_streamed_payload(html)
-    out: dict[str, int] = {}
-    for m in re.finditer(r'"total_tokens":"\d+","total_requests":\d+,"rank":(\d+),"app":\{[^{}]*"slug":"([a-z0-9-]+)"', text):
-        rank = int(m.group(1))
-        slug = m.group(2)
-        if slug in TRACKED_APPS and slug not in out:
-            out[slug] = rank
-    log.info("  app ranks: %s", out)
+    out: dict[str, float] = {}
+
+    intel_idx = text.find('"intelligence":[')
+    if intel_idx == -1:
+        log.info("  intelligence entries: 0")
+        return out
+
+    arr_start = text.find("[", intel_idx)
+    depth = 0
+    in_str = False
+    esc = False
+    end = -1
+    for i in range(arr_start, len(text)):
+        ch = text[i]
+        if in_str:
+            if esc:
+                esc = False
+            elif ch == "\\":
+                esc = True
+            elif ch == '"':
+                in_str = False
+            continue
+        if ch == '"':
+            in_str = True
+        elif ch == "[":
+            depth += 1
+        elif ch == "]":
+            depth -= 1
+            if depth == 0:
+                end = i + 1
+                break
+    if end == -1:
+        log.warning("intelligence array unterminated")
+        return out
+
+    try:
+        arr = json.loads(text[arr_start:end])
+    except json.JSONDecodeError as e:
+        log.warning("intelligence parse failed: %s", e)
+        return out
+
+    for entry in arr:
+        slug = entry.get("heuristic_openrouter_slug") or entry.get("openrouter_slug") or entry.get("uid")
+        score = entry.get("score")
+        if not slug or score is None:
+            continue
+        out[slug] = float(score)
+    log.info("  intelligence entries: %d", len(out))
     return out
+
+
+# ----------------------------------------------------------------------------
+# Per-agentic-app pages — model usage signal & app's own rank
+# ----------------------------------------------------------------------------
+@dataclass
+class AppSignals:
+    slug: str
+    rank: int = 0                       # daily global rank
+    models_used: int = 0                # distinct models the app uses
+    total_tokens: int = 0               # sum across model_tokens
+    model_tokens: dict[str, int] = field(default_factory=dict)  # base_slug -> tokens
+
+
+def fetch_app_signals(app_slug: str) -> AppSignals | None:
+    """Scrape https://openrouter.ai/apps/<slug> for per-model usage within
+    that app. Returns None on fetch failure."""
+    url = f"https://openrouter.ai/apps/{app_slug}"
+    log.info("Fetching %s", url)
+    try:
+        html = http_get_text(url)
+    except Exception as e:
+        log.warning("app fetch failed for %s: %s", app_slug, e)
+        return None
+    text = _decode_streamed_payload(html)
+    sig = AppSignals(slug=app_slug)
+
+    # The app's own daily-global rank is a sibling of the app object, shaped:
+    #   "slug":"hermes-agent"},"totalTokens":N,"rank":1,"modelsUsed":351
+    m = re.search(
+        rf'"slug":"{re.escape(app_slug)}"\}}\s*,\s*"totalTokens":(\d+)\s*,\s*"rank":(\d+)\s*,\s*"modelsUsed":(\d+)',
+        text,
+    )
+    if m:
+        # totalTokens here is the app-level lifetime/30d figure; we still
+        # recompute sig.total_tokens from per-model entries below for
+        # consistency with model_tokens.
+        sig.rank = int(m.group(2))
+        sig.models_used = int(m.group(3))
+
+    # Per-model usage entries on the page:
+    #   {"model_permaslug":"vendor/model-20260421","total_tokens":N}
+    for mm in re.finditer(
+        r'"model_permaslug":"([a-z0-9._\-]+/[a-z0-9._\-:]+)"\s*,\s*"total_tokens":(\d+)',
+        text,
+    ):
+        base = _collapse_permaslug(mm.group(1))
+        tokens = int(mm.group(2))
+        sig.model_tokens[base] = sig.model_tokens.get(base, 0) + tokens
+
+    sig.total_tokens = sum(sig.model_tokens.values())
+    log.info(
+        "  %s: rank=%d models_in_page=%d total_tokens=%d",
+        app_slug, sig.rank, len(sig.model_tokens), sig.total_tokens,
+    )
+    return sig
+
+
+def aggregate_app_usage(app_signals: list[AppSignals]) -> dict[str, int]:
+    """Sum per-model token counts across all tracked apps to produce a single
+    `agentic_token_volume` signal per model base slug."""
+    totals: dict[str, int] = {}
+    for sig in app_signals:
+        for slug, tokens in sig.model_tokens.items():
+            totals[slug] = totals.get(slug, 0) + tokens
+    return totals
 
 
 # ----------------------------------------------------------------------------
 # Sentiment / news enrichment via one OpenRouter web-enabled LLM call
 # ----------------------------------------------------------------------------
-SENTIMENT_PROMPT = """You research large-language-model sentiment for agentic-coding use.
-
-TASK
-Using current (last 30 days) web sources — news, benchmarks, Reddit (/r/LocalLLaMA, /r/singularity, /r/ChatGPT), HackerNews, Twitter/X, and OpenRouter user comments — produce a sentiment+performance snapshot for the top LLMs that people are using for AGENTIC workflows (tool calling, multi-step planning, coding agents). Focus on:
-
-- Recent benchmark results (SWE-bench, Aider, Terminal-Bench, T2-Bench, etc.)
-- Tool-calling reliability and structured output behavior
-- Performance inside open-source coding agents (Claude Code, Hermes Agent, OpenClaw, Cline, Kilo Code)
-
-Pay special attention to models that:
-- Anthropic Claude family (Opus / Sonnet / Haiku — latest)
-- OpenAI GPT-5 family (and Codex variants)
-- Google Gemini 3 family
-- xAI Grok 4 family
-- DeepSeek / Qwen / Kimi / GLM open-weight frontier models
-- Free models on OpenRouter that punch above their weight
-
-OUTPUT
-Return ONLY a JSON object (no markdown, no commentary) matching this schema:
-
-{
-  "models": [
-    {
-      "openrouter_slug": "vendor/model",   // best-guess OpenRouter slug (omit :free suffix)
-      "sentiment_score": -1.0,             // -1 (very negative) to +1 (very positive)
-      "agentic_strengths": ["..."],
-      "agentic_weaknesses": ["..."],
-      "notes": "one or two sentences with the strongest specific evidence",
-      "sources": ["url1", "url2"]
-    }
-  ],
-  "summary": "two-sentence high-level state-of-the-art summary"
-}
-
-Include 15-25 models. Use lowercase slugs. Be honest about weaknesses.
-"""
+def _load_sentiment_prompt() -> str:
+    try:
+        return SENTIMENT_PROMPT_PATH.read_text(encoding="utf-8").strip()
+    except FileNotFoundError:
+        log.error("Sentiment prompt not found at %s", SENTIMENT_PROMPT_PATH)
+        raise
 
 
 def fetch_sentiment() -> dict:
@@ -357,14 +376,15 @@ def fetch_sentiment() -> dict:
         log.warning("OPENROUTER_API_KEY missing — skipping sentiment enrichment")
         return {"models": [], "summary": ""}
 
-    log.info("Calling %s for sentiment+news enrichment", SENTIMENT_MODEL)
+    prompt = _load_sentiment_prompt()
+    log.info("Calling %s for sentiment+news enrichment (prompt: %s)", SENTIMENT_MODEL, SENTIMENT_PROMPT_PATH)
     body = json.dumps({
         "model": SENTIMENT_MODEL,
         "max_tokens": SENTIMENT_MAX_TOKENS,
         "response_format": {"type": "json_object"},
         "messages": [
             {"role": "system", "content": "You are a meticulous AI-research analyst. Output strict JSON only — no prose, no markdown fences, no citations outside the JSON."},
-            {"role": "user", "content": SENTIMENT_PROMPT},
+            {"role": "user", "content": prompt},
         ],
     }).encode("utf-8")
     try:
@@ -455,21 +475,28 @@ def _slug_norm(s: str) -> str:
     return s
 
 
-def merge_signals(catalog: dict[str, ModelEntry], rankings: dict[str, dict], sentiment: dict) -> None:
+def merge_signals(
+    catalog: dict[str, ModelEntry],
+    intelligence: dict[str, float],
+    agentic_usage: dict[str, int],
+    sentiment: dict,
+) -> None:
     # Index catalog by normalized base slug → list of model entries.
     by_norm: dict[str, list[ModelEntry]] = {}
     for model in catalog.values():
         by_norm.setdefault(_slug_norm(model.id), []).append(model)
 
-    # Merge intelligence + weekly signals
-    for slug, sig in rankings.items():
+    # Merge intelligence scores
+    for slug, score in intelligence.items():
         for model in by_norm.get(_slug_norm(slug), []):
-            if "intelligence_score" in sig:
-                model.intelligence_score = max(model.intelligence_score, sig["intelligence_score"])
-            if "weekly_tokens" in sig:
-                model.weekly_token_volume = max(model.weekly_token_volume, sig["weekly_tokens"])
-            if "weekly_rank" in sig:
-                model.weekly_rank = sig["weekly_rank"] if model.weekly_rank == 0 else min(model.weekly_rank, sig["weekly_rank"])
+            model.intelligence_score = max(model.intelligence_score, score)
+
+    # Merge agentic-app usage (token volume across tracked apps)
+    ranked = sorted(agentic_usage.items(), key=lambda kv: kv[1], reverse=True)
+    for i, (slug, tokens) in enumerate(ranked, start=1):
+        for model in by_norm.get(_slug_norm(slug), []):
+            model.agentic_token_volume = max(model.agentic_token_volume, tokens)
+            model.agentic_rank = i if model.agentic_rank == 0 else min(model.agentic_rank, i)
 
     # Merge sentiment
     for entry in sentiment.get("models", []):
@@ -493,7 +520,7 @@ def compute_scores(catalog: dict[str, ModelEntry]) -> None:
     # decent context (so the free list never ends up empty just because the
     # rankings page doesn't list free models).
     def is_candidate(m: ModelEntry) -> bool:
-        if m.intelligence_score > 0 or m.weekly_token_volume > 0 or m.sentiment_score != 0:
+        if m.intelligence_score > 0 or m.agentic_token_volume > 0 or m.sentiment_score != 0:
             return True
         if m.is_free and m.supports_tools and m.context_length >= 8000:
             return True
@@ -502,7 +529,7 @@ def compute_scores(catalog: dict[str, ModelEntry]) -> None:
     candidates = [m for m in catalog.values() if is_candidate(m)]
 
     intel_norm = _normalize([m.intelligence_score for m in candidates])
-    volume_norm = _normalize([float(m.weekly_token_volume or 0) for m in candidates])
+    volume_norm = _normalize([float(m.agentic_token_volume or 0) for m in candidates])
     ctx_norm = _normalize([float(m.context_length or 0) for m in candidates])
     # Sentiment is already -1..+1 → shift to 0..1; neutral (0) becomes 0.5
     sent_norm = [(m.sentiment_score + 1.0) / 2.0 if m.sentiment_score != 0 else 0.5 for m in candidates]
@@ -511,7 +538,7 @@ def compute_scores(catalog: dict[str, ModelEntry]) -> None:
     for i, m in enumerate(candidates):
         tool_bonus = 1.0 if m.supports_tools else 0.0
         reasoning_bonus = 0.5 if m.supports_reasoning else 0.0
-        # Weights: intelligence 0.40, popularity 0.15, sentiment 0.20,
+        # Weights: intelligence 0.40, agentic-app usage 0.15, sentiment 0.20,
         # context 0.10, tool-call 0.10, reasoning 0.05.
         m.quality_score = round(
             0.40 * intel_norm[i]
@@ -550,8 +577,8 @@ def _model_card(m: ModelEntry, ranking_kind: str, rank: int) -> dict:
         },
         "signals": {
             "intelligence_score": m.intelligence_score,
-            "weekly_token_volume": m.weekly_token_volume,
-            "weekly_rank": m.weekly_rank,
+            "agentic_token_volume": m.agentic_token_volume,
+            "agentic_rank": m.agentic_rank,
             "sentiment_score": m.sentiment_score,
         },
         "scores": {
@@ -571,7 +598,7 @@ def build_lists(catalog: dict[str, ModelEntry]) -> dict[str, list[dict]]:
 
     # ---- Free list ----
     free_pool = [m for m in pool if m.is_free]
-    free_pool.sort(key=lambda m: (m.quality_score, m.weekly_token_volume), reverse=True)
+    free_pool.sort(key=lambda m: (m.quality_score, m.agentic_token_volume), reverse=True)
     free_list = [_model_card(m, "free", i + 1) for i, m in enumerate(free_pool[:LIST_SIZE])]
 
     # ---- Balanced list: top 5 free + top 5 paid by value_score ----
@@ -600,7 +627,7 @@ def build_lists(catalog: dict[str, ModelEntry]) -> dict[str, list[dict]]:
     balanced_list = [_model_card(m, "balanced", i + 1) for i, m in enumerate(balanced[:LIST_SIZE])]
 
     # ---- Best list: top quality, no price filter ----
-    best_pool = sorted(pool, key=lambda m: (m.quality_score, m.weekly_token_volume), reverse=True)
+    best_pool = sorted(pool, key=lambda m: (m.quality_score, m.agentic_token_volume), reverse=True)
     best_list = [_model_card(m, "best", i + 1) for i, m in enumerate(best_pool[:LIST_SIZE])]
 
     return {"free": free_list, "balanced": balanced_list, "best": best_list}
@@ -609,8 +636,20 @@ def build_lists(catalog: dict[str, ModelEntry]) -> dict[str, list[dict]]:
 # ----------------------------------------------------------------------------
 # Output + Telegram
 # ----------------------------------------------------------------------------
-def write_outputs(lists: dict[str, list[dict]], sentiment: dict, app_ranks: dict[str, int]) -> dict[str, Path]:
+def write_outputs(
+    lists: dict[str, list[dict]],
+    sentiment: dict,
+    app_signals: list[AppSignals],
+) -> dict[str, Path]:
     now = datetime.now(timezone.utc).isoformat()
+    tracked_apps_payload = {
+        sig.slug: {
+            "rank": sig.rank,
+            "models_used": sig.models_used,
+            "total_tokens": sig.total_tokens,
+        }
+        for sig in app_signals
+    }
     paths: dict[str, Path] = {}
     for kind in ("free", "balanced", "best"):
         path = OUTPUT_DIR / f"{kind}.json"
@@ -618,7 +657,7 @@ def write_outputs(lists: dict[str, list[dict]], sentiment: dict, app_ranks: dict
             "generated_at": now,
             "kind": kind,
             "list_size": len(lists[kind]),
-            "tracked_app_ranks": app_ranks,
+            "tracked_apps": tracked_apps_payload,
             "summary": sentiment.get("summary", ""),
             "models": lists[kind],
         }
@@ -663,23 +702,30 @@ def main() -> int:
         return 1
 
     try:
-        rankings = fetch_rankings_signals()
+        intelligence = fetch_intelligence_scores()
     except Exception as e:
-        log.warning("rankings fetch failed: %s", e)
-        rankings = {}
+        log.warning("intelligence fetch failed: %s", e)
+        intelligence = {}
 
-    try:
-        app_ranks = fetch_app_ranks()
-    except Exception as e:
-        log.warning("app ranks fetch failed: %s", e)
-        app_ranks = {}
+    app_signals: list[AppSignals] = []
+    for app_slug in TRACKED_APPS:
+        try:
+            sig = fetch_app_signals(app_slug)
+        except Exception as e:
+            log.warning("app fetch failed for %s: %s", app_slug, e)
+            continue
+        if sig is not None:
+            app_signals.append(sig)
+
+    agentic_usage = aggregate_app_usage(app_signals)
+    log.info("agentic usage covers %d unique models", len(agentic_usage))
 
     sentiment = fetch_sentiment()
 
-    merge_signals(catalog, rankings, sentiment)
+    merge_signals(catalog, intelligence, agentic_usage, sentiment)
     compute_scores(catalog)
     lists = build_lists(catalog)
-    paths = write_outputs(lists, sentiment, app_ranks)
+    paths = write_outputs(lists, sentiment, app_signals)
 
     duration = time.monotonic() - started
     head = lists["best"][0] if lists["best"] else None
@@ -691,14 +737,55 @@ def main() -> int:
     msg += (
         f"• Best free: `{head_free['id']}`\n" if head_free else ""
     )
-    msg += (
-        f"• Tracked apps: " + ", ".join(f"{slug}=#{rank}" for slug, rank in sorted(app_ranks.items(), key=lambda x: x[1])) + "\n"
-        if app_ranks else ""
-    )
+    if app_signals:
+        ordered = sorted(app_signals, key=lambda s: s.rank or 9999)
+        msg += "• Tracked apps: " + ", ".join(f"{s.slug}=#{s.rank or '?'}" for s in ordered) + "\n"
     msg += "Files: `" + "`, `".join(p.name for p in paths.values()) + "` in `~/automodel/output/`"
+
+    publish_line = _maybe_publish_to_repo()
+    if publish_line:
+        msg += "\n" + publish_line
+
     send_telegram(msg)
     log.info("==== automodel run done in %.1fs ====", duration)
     return 0
+
+
+def _maybe_publish_to_repo() -> str:
+    """Copy fresh JSON into the automodel-repo `site/` dir and push, if configured.
+
+    Gated by `AUTOMODEL_PUBLISH` (default: enabled if AUTOMODEL_REPO_PATH is set,
+    or if the runner is running from inside the repo's scripts/ dir). Failures
+    are logged but never abort the run — Telegram still gets the success line.
+    """
+    enabled = os.environ.get("AUTOMODEL_PUBLISH")
+    if enabled == "0":
+        return ""
+    repo_env = os.environ.get("AUTOMODEL_REPO_PATH")
+    in_repo = (SCRIPT_DIR.parent / ".git").is_dir()
+    default_repo = (HOME / "automodel-repo" / ".git").is_dir()
+    if enabled != "1" and not repo_env and not in_repo and not default_repo:
+        return ""
+
+    try:
+        sys.path.insert(0, str(SCRIPT_DIR))
+        import publish_site  # type: ignore
+    except Exception as e:
+        log.warning("publish: could not import publish_site (%s)", e)
+        return f"• Publish: skipped (import failed: `{e}`)"
+    finally:
+        if sys.path and sys.path[0] == str(SCRIPT_DIR):
+            sys.path.pop(0)
+
+    try:
+        result = publish_site.publish_to_repo()
+    except Exception as e:
+        log.exception("publish: unexpected error")
+        return f"• Publish: error `{e}`"
+
+    icon = "🌐" if result.ok and result.pushed else ("📝" if result.ok else "⚠️")
+    log.info("publish: ok=%s pushed=%s msg=%s", result.ok, result.pushed, result.message)
+    return f"{icon} Publish: {result.message}"
 
 
 if __name__ == "__main__":

@@ -1,0 +1,270 @@
+{
+  "generated_at": "2026-05-10T23:19:26.611688+00:00",
+  "kind": "free",
+  "list_size": 10,
+  "tracked_apps": {
+    "hermes-agent": {
+      "rank": 1,
+      "models_used": 351,
+      "total_tokens": 5481397265078
+    },
+    "openclaw": {
+      "rank": 2,
+      "models_used": 380,
+      "total_tokens": 6764825734055
+    }
+  },
+  "summary": "(skipped)",
+  "models": [
+    {
+      "rank": 1,
+      "id": "nvidia/nemotron-3-super-120b-a12b:free",
+      "name": "NVIDIA: Nemotron 3 Super (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 1078455268245,
+        "agentic_rank": 3,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.3379,
+        "value_score": 0.8379
+      },
+      "notes": "",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 2,
+      "id": "openrouter/owl-alpha",
+      "name": "Owl Alpha",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": false,
+      "context_length": 1048756,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 141617901721,
+        "agentic_rank": 24,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.3121,
+        "value_score": 0.8121
+      },
+      "notes": "",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 3,
+      "id": "minimax/minimax-m2.5:free",
+      "name": "MiniMax: MiniMax M2.5 (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 196608,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 483747353916,
+        "agentic_rank": 8,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.28,
+        "value_score": 0.78
+      },
+      "notes": "",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 4,
+      "id": "openai/gpt-oss-120b:free",
+      "name": "OpenAI: gpt-oss-120b (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 131072,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 182991748040,
+        "agentic_rank": 20,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.2474,
+        "value_score": 0.7474
+      },
+      "notes": "",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 5,
+      "id": "inclusionai/ring-2.6-1t:free",
+      "name": "inclusionAI: Ring-2.6-1T (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.245,
+        "value_score": 0.745
+      },
+      "notes": "",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 6,
+      "id": "google/gemma-4-26b-a4b-it:free",
+      "name": "Google: Gemma 4 26B A4B  (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.245,
+        "value_score": 0.745
+      },
+      "notes": "",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 7,
+      "id": "google/gemma-4-31b-it:free",
+      "name": "Google: Gemma 4 31B (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.245,
+        "value_score": 0.745
+      },
+      "notes": "",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 8,
+      "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "name": "NVIDIA: Nemotron 3 Nano Omni (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 256000,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.2443,
+        "value_score": 0.7443
+      },
+      "notes": "",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 9,
+      "id": "nvidia/nemotron-3-nano-30b-a3b:free",
+      "name": "NVIDIA: Nemotron 3 Nano 30B A3B (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 256000,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.2443,
+        "value_score": 0.7443
+      },
+      "notes": "",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 10,
+      "id": "z-ai/glm-4.5-air:free",
+      "name": "Z.ai: GLM 4.5 Air (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 131072,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 137320171128,
+        "agentic_rank": 25,
+        "sentiment_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.2435,
+        "value_score": 0.7435
+      },
+      "notes": "",
+      "ranking_kind": "free"
+    }
+  ]
+}

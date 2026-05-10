@@ -3,12 +3,24 @@
 A Hermes Agent skill + cron-job runner that keeps three ranked OpenRouter model lists
 fresh and applies any of them to your Hermes `provider_routing` with one slash command.
 
+> **Live demo:** [openrouter-hermes-automodel.netlify.app](https://openrouter-hermes-automodel.netlify.app)
+> — rendered client-side from the same JSON the skill consumes.
+> Direct links: [`/free.json`](https://openrouter-hermes-automodel.netlify.app/free.json) ·
+> [`/balanced.json`](https://openrouter-hermes-automodel.netlify.app/balanced.json) ·
+> [`/best.json`](https://openrouter-hermes-automodel.netlify.app/best.json)
+> *(URL is a placeholder — replace with whatever you set in Netlify.)*
+
 The runner pulls signals from:
 
 - **OpenRouter `/api/v1/models`** — catalog, pricing, tool-call support
-- **`openrouter.ai/rankings`** — Artificial-Analysis-style intelligence scores and weekly token volume
-- **OpenRouter app pages** — confirms the agentic apps you track (defaults to `hermes-agent` + `openclaw`)
-- **One web-enabled LLM call** — current news + Reddit/HN/Twitter sentiment for agentic LLM use
+- **`openrouter.ai/rankings`** — Artificial-Analysis-style intelligence scores
+- **`openrouter.ai/apps/<slug>`** — per-app model usage and the app's own rank
+  for each tracked agentic app (defaults to `hermes-agent` + `openclaw`); the
+  popularity signal is computed from these pages rather than the global "top
+  models" leaderboard
+- **One web-enabled LLM call** — current news + Reddit/HN/Twitter sentiment for
+  agentic LLM use; the prompt lives in [`scripts/sentiment_prompt.md`](scripts/sentiment_prompt.md)
+  so you can tune it without editing the runner
 
 Three JSON outputs:
 
@@ -35,11 +47,21 @@ automodel-repo/
 ├── README.md
 ├── LICENSE
 ├── SKILL.md                  # Skill manifest (point `hermes skills install` here)
+├── netlify.toml              # Netlify publish config (publish = site/)
 ├── automodel/                # Skill files
 │   ├── driver.py
 │   └── data/                 # Per-user state (selection.json + source.json)
-└── scripts/
-    └── automodel_runner.py   # Cron-job runner
+├── scripts/
+│   ├── automodel_runner.py   # Cron-job runner
+│   ├── publish_site.py       # Copies fresh JSON into site/ and pushes
+│   └── sentiment_prompt.md   # Prompt used for the sentiment+news LLM call
+└── site/                     # Netlify publish dir (committed)
+    ├── index.html            # Dev demo, renders the JSON client-side
+    ├── styles.css
+    ├── app.js
+    ├── free.json             # Refreshed by the cron job
+    ├── balanced.json
+    └── best.json
 ```
 
 ## Prerequisites
@@ -139,25 +161,74 @@ network round-trip needed.
 | Env var | Default | Meaning |
 |---------|---------|---------|
 | `AUTOMODEL_SENTIMENT_MODEL` | `openai/gpt-4o-mini:online` | Model used for the news-and-sentiment enrichment call. Any OpenRouter slug; the `:online` suffix activates web search. |
+| `AUTOMODEL_SENTIMENT_PROMPT` | `scripts/sentiment_prompt.md` next to the runner | Path to the markdown prompt sent as the user message in the sentiment call. Override to point at a different file. |
 
 Composite scoring (in `compute_scores()`):
 
-- intelligence 0.40 · weekly volume 0.15 · sentiment 0.20 · context 0.10
+- intelligence 0.40 · agentic-app token volume 0.15 · sentiment 0.20 · context 0.10
 - tool-call bonus 0.10 · reasoning bonus 0.05
 - Free models get a +0.50 boost to `value_score`
 
-## Hosting JSON on your own server
+The agentic-app volume signal is the sum of `total_tokens` for each model across
+all tracked apps' OpenRouter pages (`hermes-agent` + `openclaw` by default).
+Each output file also includes a `tracked_apps` block with each app's daily
+global rank, `models_used`, and total tokens.
 
-If you want others to point their skills at your output, expose
-`~/automodel/output/` over any static HTTP server, e.g.
+## Hosting JSON on Netlify (recommended)
 
-```bash
-cd ~/automodel/output && python3 -m http.server 8000
+`site/` is a self-contained Netlify deploy: a dev-oriented HTML demo that fetches
+`free.json` / `balanced.json` / `best.json` from the same origin and renders them
+as ranked tables. The cron job keeps those JSON files fresh by committing them
+into the repo, which triggers a Netlify rebuild.
+
+**1. Hook the repo up to Netlify (one-time)**
+
+In the Netlify UI, "Add new site → Import from Git", pick this repo, and accept
+the defaults — `netlify.toml` already sets `publish = "site"` with no build
+command. The site URL it gives you (e.g. `your-slug.netlify.app`) is what you
+share with other devs.
+
+**2. Wire the cron job to publish (one-time)**
+
+`scripts/publish_site.py` copies the JSON from `~/automodel/output/` into
+`<repo>/site/`, commits, and pushes. The runner calls it automatically at the
+end of each run if it can find a repo. Resolution order:
+
+1. `$AUTOMODEL_REPO_PATH` if set
+2. the parent of `scripts/automodel_runner.py` if it's inside a git repo
+3. `~/automodel-repo` if it exists and is a git repo
+
+To opt out, set `AUTOMODEL_PUBLISH=0`. To force-enable when none of the above
+apply, set `AUTOMODEL_PUBLISH=1` and `AUTOMODEL_REPO_PATH=/path/to/repo`.
+
+Cron-time prerequisites inside the WSL/Linux environment that runs the job:
+
+- `git config --global user.email` and `user.name` set for the cron user
+- `git push` from `~/automodel-repo` works non-interactively (passphraseless SSH
+  key, a credential helper, or a deploy key with write access)
+
+After each run, the Telegram notification appends one of:
+
+- `🌐 Publish: pushed <sha>` — new commit landed on `main`, Netlify will rebuild
+- `📝 Publish: no changes (site/ already current; copied 3)` — JSON unchanged
+- `⚠️ Publish: …` — copy/commit/push failed; the run itself still succeeded
+
+**3. Pointing the skill at your Netlify URL**
+
+Other developers can install the skill and point it at your deploy:
+
+```
+/automodel init --mode url --url https://your-slug.netlify.app
 ```
 
-Then other developers run `/automodel init --mode url --url http://your-host:8000`.
 The driver also accepts the legacy `<selection>-models.json` naming as a fallback,
 but the cron job writes the short names by default.
+
+### Alternative: serve JSON locally
+
+If you'd rather not use Netlify, expose `~/automodel/output/` over any static
+HTTP server, e.g. `cd ~/automodel/output && python3 -m http.server 8000`, then
+point the skill at `http://your-host:8000`.
 
 ## License
 
