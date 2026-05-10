@@ -1,0 +1,15 @@
+# Per-user runtime state (filled in by `/automodel init` and `/automodel set`)
+automodel/data/selection.json
+automodel/data/source.json
+
+# Skill venv created on install (Hermes does this)
+venv/
+
+# Local config backups never belong in the repo
+*.bak.*
+
+# Editor / OS noise
+.DS_Store
+*.swp
+__pycache__/
+*.pyc
