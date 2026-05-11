@@ -1,129 +1,65 @@
 {
-  "generated_at": "2026-05-11T04:01:52.275765+00:00",
+  "generated_at": "2026-05-11T04:35:11.284559+00:00",
   "kind": "best",
   "list_size": 10,
+  "shortlist_size": 15,
+  "comparative_rerank_applied": true,
+  "comparative_scored_count": 39,
   "tracked_apps": {
     "hermes-agent": {
       "rank": 1,
-      "models_used": 350,
-      "total_tokens": 5418202087262
+      "models_used": 351,
+      "total_tokens": 5422307529521
     },
     "openclaw": {
       "rank": 2,
       "models_used": 380,
-      "total_tokens": 6491761140746
+      "total_tokens": 6496620211712
     }
   },
   "summary": "",
   "models": [
     {
       "rank": 1,
-      "id": "xiaomi/mimo-v2-pro",
-      "name": "Xiaomi: MiMo-V2-Pro",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1048576,
-      "pricing": {
-        "prompt_usd_per_mtok": 1.0,
-        "completion_usd_per_mtok": 3.0
-      },
-      "signals": {
-        "intelligence_score": 49.2,
-        "agentic_token_volume": 1672117274773,
-        "agentic_rank": 1,
-        "sentiment_score": 0.0
-      },
-      "scores": {
-        "quality_score": 0.8018,
-        "value_score": 0.5011
-      },
-      "notes": "",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 2,
-      "id": "openai/gpt-5.4",
-      "name": "OpenAI: GPT-5.4",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1050000,
-      "pricing": {
-        "prompt_usd_per_mtok": 2.5,
-        "completion_usd_per_mtok": 15.0
-      },
-      "signals": {
-        "intelligence_score": 56.8,
-        "agentic_token_volume": 84173345759,
-        "agentic_rank": 28,
-        "sentiment_score": 0.7
-      },
-      "scores": {
-        "quality_score": 0.78,
-        "value_score": 0.195
-      },
-      "notes": "GPT-5.4 is noted for its efficiency in agentic tasks despite a mixed performance on complex codebases, trading off cost for speed.",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 3,
       "id": "openai/gpt-5.5",
       "name": "OpenAI: GPT-5.5",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
       "context_length": 1050000,
+      "release_date": "2026-04-24",
+      "age_days": 16,
       "pricing": {
         "prompt_usd_per_mtok": 5.0,
         "completion_usd_per_mtok": 30.0
       },
       "signals": {
         "intelligence_score": 60.2,
-        "agentic_token_volume": 86268324436,
+        "agentic_token_volume": 86425928250,
         "agentic_rank": 27,
-        "sentiment_score": 0.0
+        "sentiment_score": 0.86,
+        "recency_score": 1.0,
+        "comparative_score": 1.0
       },
       "scores": {
-        "quality_score": 0.7327,
-        "value_score": 0.1047
+        "quality_score": 0.9021,
+        "preliminary_quality_score": 0.8398,
+        "value_score": 0.1289
       },
-      "notes": "",
+      "notes": "Sentiment is very positive for agentic workflows because GPT-5.5 is repeatedly cited as the best generally available model for terminal-heavy automation, with 82.7% on Terminal-Bench 2.0. Practitioner commentary also highlights lower output-token consumption than Claude on identical loops, which materially improves agent economics.",
+      "comparative_rationale": "Leads Terminal-Bench 2.0 at 82.0% and tops BenchLM verified agentic rankings, strongest public evidence for autonomous coding workflows [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2) [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks).",
       "ranking_kind": "best"
     },
     {
-      "rank": 4,
-      "id": "google/gemini-3.1-pro-preview",
-      "name": "Google: Gemini 3.1 Pro Preview",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1048576,
-      "pricing": {
-        "prompt_usd_per_mtok": 2.0,
-        "completion_usd_per_mtok": 12.0
-      },
-      "signals": {
-        "intelligence_score": 57.2,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0
-      },
-      "scores": {
-        "quality_score": 0.7049,
-        "value_score": 0.2073
-      },
-      "notes": "",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 5,
+      "rank": 2,
       "id": "anthropic/claude-opus-4.7",
       "name": "Anthropic: Claude Opus 4.7",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
       "context_length": 1000000,
+      "release_date": "2026-04-16",
+      "age_days": 24,
       "pricing": {
         "prompt_usd_per_mtok": 5.0,
         "completion_usd_per_mtok": 25.0
@@ -132,48 +68,60 @@
         "intelligence_score": 57.3,
         "agentic_token_volume": 0,
         "agentic_rank": 0,
-        "sentiment_score": 0.0
+        "sentiment_score": 0.88,
+        "recency_score": 1.0,
+        "comparative_score": 0.94
       },
       "scores": {
-        "quality_score": 0.7007,
-        "value_score": 0.1168
+        "quality_score": 0.8623,
+        "preliminary_quality_score": 0.8129,
+        "value_score": 0.1437
       },
-      "notes": "",
+      "notes": "Recent discussion is strongly positive for agentic coding: Opus 4.7 was widely cited at 64.3% SWE-bench Pro and 87.6% SWE-bench Verified, with day-one rollout into Claude Code and multiple agent frameworks. Sentiment is tempered by tokenizer inflation, mixed long-context feedback, and some reports that GPT-family models are cheaper per completed loop because Claude emits more output tokens.",
+      "comparative_rationale": "Ranks second on Terminal-Bench 2.0 at 69.4%, with strong overall agentic placement in BenchLM verified rankings [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2) [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks).",
       "ranking_kind": "best"
     },
     {
-      "rank": 6,
-      "id": "deepseek/deepseek-v4-pro",
-      "name": "DeepSeek: DeepSeek V4 Pro",
+      "rank": 3,
+      "id": "openai/gpt-5.4",
+      "name": "OpenAI: GPT-5.4",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
-      "context_length": 1048576,
+      "context_length": 1050000,
+      "release_date": "2026-03-05",
+      "age_days": 66,
       "pricing": {
-        "prompt_usd_per_mtok": 0.435,
-        "completion_usd_per_mtok": 0.87
+        "prompt_usd_per_mtok": 2.5,
+        "completion_usd_per_mtok": 15.0
       },
       "signals": {
-        "intelligence_score": 51.5,
-        "agentic_token_volume": 189468638044,
-        "agentic_rank": 19,
-        "sentiment_score": 0.0
+        "intelligence_score": 56.8,
+        "agentic_token_volume": 84199447290,
+        "agentic_rank": 28,
+        "sentiment_score": 0.75,
+        "recency_score": 0.9192,
+        "comparative_score": 0.91
       },
       "scores": {
-        "quality_score": 0.684,
-        "value_score": 0.5826
+        "quality_score": 0.8436,
+        "preliminary_quality_score": 0.8024,
+        "value_score": 0.2109
       },
       "notes": "",
+      "comparative_rationale": "Older than GPT-5.5 so ranks lower, but FinTrace places GPT-5.4 third among financial tool-use models [awesomeagents.ai](https://awesomeagents.ai/leaderboards/function-calling-benchmarks-leaderboard/).",
       "ranking_kind": "best"
     },
     {
-      "rank": 7,
+      "rank": 4,
       "id": "xiaomi/mimo-v2.5-pro",
       "name": "Xiaomi: MiMo-V2.5-Pro",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
       "context_length": 1048576,
+      "release_date": "2026-04-22",
+      "age_days": 18,
       "pricing": {
         "prompt_usd_per_mtok": 1.0,
         "completion_usd_per_mtok": 3.0
@@ -182,73 +130,29 @@
         "intelligence_score": 53.8,
         "agentic_token_volume": 0,
         "agentic_rank": 0,
-        "sentiment_score": 0.0
+        "sentiment_score": 0.0,
+        "recency_score": 1.0,
+        "comparative_score": 0.96
       },
       "scores": {
-        "quality_score": 0.6823,
-        "value_score": 0.4264
+        "quality_score": 0.8177,
+        "preliminary_quality_score": 0.7226,
+        "value_score": 0.5111
       },
       "notes": "",
+      "comparative_rationale": "Newer MiMo version must outrank v2; public Terminal-Bench 2.0 snapshot places MiMo-V2.5-Pro third at 68.4% [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
       "ranking_kind": "best"
     },
     {
-      "rank": 8,
-      "id": "minimax/minimax-m2.7",
-      "name": "MiniMax: MiniMax M2.7",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 196608,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.299,
-        "completion_usd_per_mtok": 1.2
-      },
-      "signals": {
-        "intelligence_score": 49.6,
-        "agentic_token_volume": 1235969313255,
-        "agentic_rank": 2,
-        "sentiment_score": 0.0
-      },
-      "scores": {
-        "quality_score": 0.6788,
-        "value_score": 0.5474
-      },
-      "notes": "",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 9,
-      "id": "x-ai/grok-4.3",
-      "name": "xAI: Grok 4.3",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1000000,
-      "pricing": {
-        "prompt_usd_per_mtok": 1.25,
-        "completion_usd_per_mtok": 2.5
-      },
-      "signals": {
-        "intelligence_score": 53.2,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0
-      },
-      "scores": {
-        "quality_score": 0.6734,
-        "value_score": 0.4489
-      },
-      "notes": "",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 10,
+      "rank": 5,
       "id": "anthropic/claude-opus-4.6",
       "name": "Anthropic: Claude Opus 4.6",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
       "context_length": 1000000,
+      "release_date": "2026-02-04",
+      "age_days": 95,
       "pricing": {
         "prompt_usd_per_mtok": 5.0,
         "completion_usd_per_mtok": 25.0
@@ -257,13 +161,172 @@
         "intelligence_score": 53.0,
         "agentic_token_volume": 0,
         "agentic_rank": 0,
-        "sentiment_score": 0.0
+        "sentiment_score": 0.0,
+        "recency_score": 0.8588,
+        "comparative_score": 0.86
       },
       "scores": {
-        "quality_score": 0.6721,
-        "value_score": 0.112
+        "quality_score": 0.7621,
+        "preliminary_quality_score": 0.6989,
+        "value_score": 0.127
       },
       "notes": "",
+      "comparative_rationale": "Leads Awesome Agents overall coding leaderboard and tops FinTrace at 0.788, showing strong agentic coding plus tool-use quality [awesomeagents.ai](https://awesomeagents.ai/leaderboards/coding-benchmarks-leaderboard/) [awesomeagents.ai](https://awesomeagents.ai/leaderboards/function-calling-benchmarks-leaderboard/).",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 6,
+      "id": "minimax/minimax-m2.7",
+      "name": "MiniMax: MiniMax M2.7",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 196608,
+      "release_date": "2026-03-18",
+      "age_days": 53,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.299,
+        "completion_usd_per_mtok": 1.2
+      },
+      "signals": {
+        "intelligence_score": 49.6,
+        "agentic_token_volume": 1236756407899,
+        "agentic_rank": 2,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9476,
+        "comparative_score": 0.83
+      },
+      "scores": {
+        "quality_score": 0.7553,
+        "preliminary_quality_score": 0.7026,
+        "value_score": 0.6091
+      },
+      "notes": "",
+      "comparative_rationale": "BenchLM hint places it #2 agentic in this generation, but less direct public coding-benchmark evidence than GPT or Claude leaders [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks).",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 7,
+      "id": "x-ai/grok-4.3",
+      "name": "xAI: Grok 4.3",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1000000,
+      "release_date": "2026-04-30",
+      "age_days": 10,
+      "pricing": {
+        "prompt_usd_per_mtok": 1.25,
+        "completion_usd_per_mtok": 2.5
+      },
+      "signals": {
+        "intelligence_score": 53.2,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 1.0,
+        "comparative_score": 0.79
+      },
+      "scores": {
+        "quality_score": 0.7447,
+        "preliminary_quality_score": 0.7142,
+        "value_score": 0.4965
+      },
+      "notes": "",
+      "comparative_rationale": "Grok family shows mid-pack coding strength, with Grok 4 around 46.5% Terminal-Bench and 61.0% SWE-Bench Verified [awesomeagents.ai](https://awesomeagents.ai/leaderboards/coding-benchmarks-leaderboard/).",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 8,
+      "id": "openai/gpt-5.3-codex",
+      "name": "OpenAI: GPT-5.3-Codex",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 400000,
+      "release_date": "2026-02-24",
+      "age_days": 75,
+      "pricing": {
+        "prompt_usd_per_mtok": 1.75,
+        "completion_usd_per_mtok": 14.0
+      },
+      "signals": {
+        "intelligence_score": 53.6,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9,
+        "comparative_score": 0.89
+      },
+      "scores": {
+        "quality_score": 0.7425,
+        "preliminary_quality_score": 0.6456,
+        "value_score": 0.1954
+      },
+      "notes": "",
+      "comparative_rationale": "Leads SWE-Bench Pro at 56.4%, LiveCodeBench at 71.2%, and posts strong Terminal-Bench 61.5% [awesomeagents.ai](https://awesomeagents.ai/leaderboards/coding-benchmarks-leaderboard/).",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 9,
+      "id": "google/gemini-3.1-pro-preview",
+      "name": "Google: Gemini 3.1 Pro Preview",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1048576,
+      "release_date": "2026-02-19",
+      "age_days": 80,
+      "pricing": {
+        "prompt_usd_per_mtok": 2.0,
+        "completion_usd_per_mtok": 12.0
+      },
+      "signals": {
+        "intelligence_score": 57.2,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 0.8895,
+        "comparative_score": 0.76
+      },
+      "scores": {
+        "quality_score": 0.7412,
+        "preliminary_quality_score": 0.7314,
+        "value_score": 0.218
+      },
+      "notes": "",
+      "comparative_rationale": "Gemini 3 Pro is solid but behind GPT and Claude on coding benchmarks, posting 63.2% SWE-Bench Verified and 50.3% Terminal-Bench [awesomeagents.ai](https://awesomeagents.ai/leaderboards/coding-benchmarks-leaderboard/).",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 10,
+      "id": "xiaomi/mimo-v2-pro",
+      "name": "Xiaomi: MiMo-V2-Pro",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1048576,
+      "release_date": "2026-03-18",
+      "age_days": 53,
+      "pricing": {
+        "prompt_usd_per_mtok": 1.0,
+        "completion_usd_per_mtok": 3.0
+      },
+      "signals": {
+        "intelligence_score": 49.2,
+        "agentic_token_volume": 1672250065806,
+        "agentic_rank": 1,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9476,
+        "comparative_score": 0.6
+      },
+      "scores": {
+        "quality_score": 0.7347,
+        "preliminary_quality_score": 0.8207,
+        "value_score": 0.4592
+      },
+      "notes": "",
+      "comparative_rationale": "Must rank below newer MiMo-V2.5-Pro; family is strong on Terminal-Bench, but explicit newer snapshot is clearly better [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
       "ranking_kind": "best"
     }
   ]

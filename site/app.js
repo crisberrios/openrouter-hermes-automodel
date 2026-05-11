@@ -54,19 +54,18 @@ function renderRow(m) {
   const rel = fmtReleased(m.release_date, m.age_days);
 
   tr.innerHTML = `
-    <td class="num rank">${m.rank}</td>
-    <td class="id">
+    <td class="num rank" data-label="rank">${m.rank}</td>
+    <td class="id" data-label="id">
       <code>${escapeHtml(m.id)}</code>${m.is_free ? '<span class="free-tag">free</span>' : ""}
       <span class="name">${escapeHtml(m.name || "")}</span>
     </td>
-    <td class="num">${fmtCtx(m.context_length)}</td>
-    <td class="released${rel.unknown ? " unknown" : ""}" title="${escapeHtml(rel.title)}">${escapeHtml(rel.text)}</td>
-    <td class="${m.supports_tools ? "flag-yes" : "flag-no"}">${m.supports_tools ? "✓" : "·"}</td>
-    <td class="${m.supports_reasoning ? "flag-yes" : "flag-no"}">${m.supports_reasoning ? "✓" : "·"}</td>
-    <td class="num">${fmtScore(m.scores?.quality_score)}</td>
-    <td class="num">${fmtScore(m.scores?.value_score)}</td>
-    <td class="num ${promptPrice === 0 ? "price-free" : "price"}">${fmtPrice(promptPrice)}</td>
-    <td class="num ${completionPrice === 0 ? "price-free" : "price"}">${fmtPrice(completionPrice)}</td>
+    <td class="num" data-label="ctx">${fmtCtx(m.context_length)}</td>
+    <td class="released${rel.unknown ? " unknown" : ""}" data-label="released" title="${escapeHtml(rel.title)}">${escapeHtml(rel.text)}</td>
+    <td class="${m.supports_reasoning ? "flag-yes" : "flag-no"}" data-label="reason">${m.supports_reasoning ? "✓" : "·"}</td>
+    <td class="num" data-label="quality">${fmtScore(m.scores?.quality_score)}</td>
+    <td class="num" data-label="value">${fmtScore(m.scores?.value_score)}</td>
+    <td class="num ${promptPrice === 0 ? "price-free" : "price"}" data-label="$/M in">${fmtPrice(promptPrice)}</td>
+    <td class="num ${completionPrice === 0 ? "price-free" : "price"}" data-label="$/M out">${fmtPrice(completionPrice)}</td>
   `;
   return tr;
 }

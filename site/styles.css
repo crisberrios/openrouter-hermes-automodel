@@ -125,7 +125,6 @@ section.list h2 small {
 }
 
 .table-wrap {
-  overflow-x: auto;
   border: 1px solid var(--rule);
   border-radius: 6px;
   background: var(--bg-soft);
@@ -134,15 +133,18 @@ section.list h2 small {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 760px;
+  table-layout: auto;
 }
 
 th, td {
   text-align: left;
-  padding: 0.55rem 0.75rem;
+  padding: 0.55rem 0.6rem;
   border-bottom: 1px solid var(--rule);
-  white-space: nowrap;
 }
+
+/* Allow the id cell to wrap; keep numeric cells tight. */
+td.id { white-space: normal; word-break: break-word; }
+td.num, td.released, td.flag-yes, td.flag-no { white-space: nowrap; }
 
 th {
   background: var(--bg-soft);
@@ -254,4 +256,84 @@ footer {
   border-top: 1px solid var(--rule);
   color: var(--fg-soft);
   font-size: 0.85rem;
+}
+
+/* ---------------------------------------------------------------- */
+/* Responsive: switch tables to a card-per-row layout on narrow      */
+/* screens so nothing has to scroll horizontally.                    */
+/* ---------------------------------------------------------------- */
+@media (max-width: 720px) {
+  body { padding: 1rem 0.75rem 3rem; }
+
+  .table-wrap {
+    border: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  table { display: block; }
+  thead { display: none; }
+  tbody { display: block; }
+
+  tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.25rem 0.75rem;
+    background: var(--bg-soft);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 0.6rem 0.75rem;
+    margin-bottom: 0.6rem;
+  }
+  tbody tr:nth-child(odd),
+  tbody tr:nth-child(even) {
+    background: var(--bg-soft);
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+    border: none;
+    padding: 0.1rem 0;
+    white-space: normal;
+  }
+
+  td::before {
+    content: attr(data-label);
+    color: var(--fg-faint);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    flex-shrink: 0;
+  }
+
+  /* rank: card header strip across both columns */
+  td.rank {
+    grid-column: 1 / -1;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.35rem;
+    margin-bottom: 0.15rem;
+    color: var(--accent);
+    font-weight: 600;
+    justify-content: flex-start;
+  }
+  td.rank::before { content: "#"; padding-right: 0.15rem; color: var(--fg-faint); }
+
+  /* id: full width below the rank, no inline label */
+  td.id {
+    grid-column: 1 / -1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+  }
+  td.id::before { display: none; }
+  td.id .name {
+    font-size: 0.78rem;
+    margin-top: 0.05rem;
+  }
+
+  /* Quality column: explainer panel needs a wider, repositioned popup */
+  th.th-quality::after { display: none; } /* hidden — table header is gone here */
 }
