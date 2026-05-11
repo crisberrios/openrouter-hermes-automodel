@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-05-10T23:19:26.611688+00:00",
+  "generated_at": "2026-05-11T04:01:52.275765+00:00",
   "kind": "best",
   "list_size": 10,
   "tracked_apps": {
     "hermes-agent": {
       "rank": 1,
-      "models_used": 351,
-      "total_tokens": 5481397265078
+      "models_used": 350,
+      "total_tokens": 5418202087262
     },
     "openclaw": {
       "rank": 2,
       "models_used": 380,
-      "total_tokens": 6764825734055
+      "total_tokens": 6491761140746
     }
   },
-  "summary": "(skipped)",
+  "summary": "",
   "models": [
     {
       "rank": 1,
@@ -30,7 +30,7 @@
       },
       "signals": {
         "intelligence_score": 49.2,
-        "agentic_token_volume": 1740320980656,
+        "agentic_token_volume": 1672117274773,
         "agentic_rank": 1,
         "sentiment_score": 0.0
       },
@@ -43,31 +43,6 @@
     },
     {
       "rank": 2,
-      "id": "openai/gpt-5.5",
-      "name": "OpenAI: GPT-5.5",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1050000,
-      "pricing": {
-        "prompt_usd_per_mtok": 5.0,
-        "completion_usd_per_mtok": 30.0
-      },
-      "signals": {
-        "intelligence_score": 60.2,
-        "agentic_token_volume": 84662211121,
-        "agentic_rank": 28,
-        "sentiment_score": 0.0
-      },
-      "scores": {
-        "quality_score": 0.7323,
-        "value_score": 0.1046
-      },
-      "notes": "",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 3,
       "id": "openai/gpt-5.4",
       "name": "OpenAI: GPT-5.4",
       "is_free": false,
@@ -80,13 +55,38 @@
       },
       "signals": {
         "intelligence_score": 56.8,
-        "agentic_token_volume": 86942023182,
+        "agentic_token_volume": 84173345759,
+        "agentic_rank": 28,
+        "sentiment_score": 0.7
+      },
+      "scores": {
+        "quality_score": 0.78,
+        "value_score": 0.195
+      },
+      "notes": "GPT-5.4 is noted for its efficiency in agentic tasks despite a mixed performance on complex codebases, trading off cost for speed.",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 3,
+      "id": "openai/gpt-5.5",
+      "name": "OpenAI: GPT-5.5",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1050000,
+      "pricing": {
+        "prompt_usd_per_mtok": 5.0,
+        "completion_usd_per_mtok": 30.0
+      },
+      "signals": {
+        "intelligence_score": 60.2,
+        "agentic_token_volume": 86268324436,
         "agentic_rank": 27,
         "sentiment_score": 0.0
       },
       "scores": {
-        "quality_score": 0.7099,
-        "value_score": 0.1775
+        "quality_score": 0.7327,
+        "value_score": 0.1047
       },
       "notes": "",
       "ranking_kind": "best"
@@ -155,13 +155,13 @@
       },
       "signals": {
         "intelligence_score": 51.5,
-        "agentic_token_volume": 185156885214,
+        "agentic_token_volume": 189468638044,
         "agentic_rank": 19,
         "sentiment_score": 0.0
       },
       "scores": {
-        "quality_score": 0.683,
-        "value_score": 0.5818
+        "quality_score": 0.684,
+        "value_score": 0.5826
       },
       "notes": "",
       "ranking_kind": "best"
@@ -205,13 +205,13 @@
       },
       "signals": {
         "intelligence_score": 49.6,
-        "agentic_token_volume": 1285843384786,
+        "agentic_token_volume": 1235969313255,
         "agentic_rank": 2,
         "sentiment_score": 0.0
       },
       "scores": {
-        "quality_score": 0.6787,
-        "value_score": 0.5473
+        "quality_score": 0.6788,
+        "value_score": 0.5474
       },
       "notes": "",
       "ranking_kind": "best"

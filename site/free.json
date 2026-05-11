@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-05-10T23:19:26.611688+00:00",
+  "generated_at": "2026-05-11T04:01:52.275765+00:00",
   "kind": "free",
   "list_size": 10,
   "tracked_apps": {
     "hermes-agent": {
       "rank": 1,
-      "models_used": 351,
-      "total_tokens": 5481397265078
+      "models_used": 350,
+      "total_tokens": 5418202087262
     },
     "openclaw": {
       "rank": 2,
       "models_used": 380,
-      "total_tokens": 6764825734055
+      "total_tokens": 6491761140746
     }
   },
-  "summary": "(skipped)",
+  "summary": "",
   "models": [
     {
       "rank": 1,
@@ -30,13 +30,13 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1078455268245,
+        "agentic_token_volume": 1040707093451,
         "agentic_rank": 3,
         "sentiment_score": 0.0
       },
       "scores": {
-        "quality_score": 0.3379,
-        "value_score": 0.8379
+        "quality_score": 0.3383,
+        "value_score": 0.8383
       },
       "notes": "",
       "ranking_kind": "free"
@@ -55,13 +55,13 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 141617901721,
+        "agentic_token_volume": 148601088386,
         "agentic_rank": 24,
         "sentiment_score": 0.0
       },
       "scores": {
-        "quality_score": 0.3121,
-        "value_score": 0.8121
+        "quality_score": 0.3132,
+        "value_score": 0.8132
       },
       "notes": "",
       "ranking_kind": "free"
@@ -80,13 +80,13 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 483747353916,
+        "agentic_token_volume": 466693459679,
         "agentic_rank": 8,
         "sentiment_score": 0.0
       },
       "scores": {
-        "quality_score": 0.28,
-        "value_score": 0.78
+        "quality_score": 0.2802,
+        "value_score": 0.7802
       },
       "notes": "",
       "ranking_kind": "free"
@@ -105,13 +105,13 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 182991748040,
+        "agentic_token_volume": 176518509980,
         "agentic_rank": 20,
         "sentiment_score": 0.0
       },
       "scores": {
-        "quality_score": 0.2474,
-        "value_score": 0.7474
+        "quality_score": 0.2475,
+        "value_score": 0.7475
       },
       "notes": "",
       "ranking_kind": "free"
@@ -255,13 +255,13 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 137320171128,
+        "agentic_token_volume": 133544905833,
         "agentic_rank": 25,
         "sentiment_score": 0.0
       },
       "scores": {
-        "quality_score": 0.2435,
-        "value_score": 0.7435
+        "quality_score": 0.2436,
+        "value_score": 0.7436
       },
       "notes": "",
       "ranking_kind": "free"

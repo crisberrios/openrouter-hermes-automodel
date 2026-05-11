@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-05-10T23:19:26.611688+00:00",
+  "generated_at": "2026-05-11T04:01:52.275765+00:00",
   "kind": "balanced",
   "list_size": 10,
   "tracked_apps": {
     "hermes-agent": {
       "rank": 1,
-      "models_used": 351,
-      "total_tokens": 5481397265078
+      "models_used": 350,
+      "total_tokens": 5418202087262
     },
     "openclaw": {
       "rank": 2,
       "models_used": 380,
-      "total_tokens": 6764825734055
+      "total_tokens": 6491761140746
     }
   },
-  "summary": "(skipped)",
+  "summary": "",
   "models": [
     {
       "rank": 1,
@@ -30,7 +30,7 @@
       },
       "signals": {
         "intelligence_score": 49.2,
-        "agentic_token_volume": 1740320980656,
+        "agentic_token_volume": 1672117274773,
         "agentic_rank": 1,
         "sentiment_score": 0.0
       },
@@ -55,13 +55,13 @@
       },
       "signals": {
         "intelligence_score": 51.5,
-        "agentic_token_volume": 185156885214,
+        "agentic_token_volume": 189468638044,
         "agentic_rank": 19,
         "sentiment_score": 0.0
       },
       "scores": {
-        "quality_score": 0.683,
-        "value_score": 0.5818
+        "quality_score": 0.684,
+        "value_score": 0.5826
       },
       "notes": "",
       "ranking_kind": "balanced"
@@ -80,13 +80,13 @@
       },
       "signals": {
         "intelligence_score": 49.6,
-        "agentic_token_volume": 1285843384786,
+        "agentic_token_volume": 1235969313255,
         "agentic_rank": 2,
         "sentiment_score": 0.0
       },
       "scores": {
-        "quality_score": 0.6787,
-        "value_score": 0.5473
+        "quality_score": 0.6788,
+        "value_score": 0.5474
       },
       "notes": "",
       "ranking_kind": "balanced"
@@ -155,13 +155,13 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1078455268245,
+        "agentic_token_volume": 1040707093451,
         "agentic_rank": 3,
         "sentiment_score": 0.0
       },
       "scores": {
-        "quality_score": 0.3379,
-        "value_score": 0.8379
+        "quality_score": 0.3383,
+        "value_score": 0.8383
       },
       "notes": "",
       "ranking_kind": "balanced"
@@ -180,13 +180,13 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 141617901721,
+        "agentic_token_volume": 148601088386,
         "agentic_rank": 24,
         "sentiment_score": 0.0
       },
       "scores": {
-        "quality_score": 0.3121,
-        "value_score": 0.8121
+        "quality_score": 0.3132,
+        "value_score": 0.8132
       },
       "notes": "",
       "ranking_kind": "balanced"
@@ -205,13 +205,13 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 483747353916,
+        "agentic_token_volume": 466693459679,
         "agentic_rank": 8,
         "sentiment_score": 0.0
       },
       "scores": {
-        "quality_score": 0.28,
-        "value_score": 0.78
+        "quality_score": 0.2802,
+        "value_score": 0.7802
       },
       "notes": "",
       "ranking_kind": "balanced"
@@ -230,13 +230,13 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 182991748040,
+        "agentic_token_volume": 176518509980,
         "agentic_rank": 20,
         "sentiment_score": 0.0
       },
       "scores": {
-        "quality_score": 0.2474,
-        "value_score": 0.7474
+        "quality_score": 0.2475,
+        "value_score": 0.7475
       },
       "notes": "",
       "ranking_kind": "balanced"
