@@ -732,16 +732,32 @@ def _recency_score(release_date: datetime | None, now: datetime) -> float:
     return 0.1
 
 
-FREE_VALUE_BOOST = 0.25
+QUALITY_WEIGHT = 2 / 3
+COST_WEIGHT = 1 / 3
+# Applied only when ranking/displaying the balanced list. Keeps the
+# half-free / half-paid mix from being swept by paid models that beat
+# free on the base formula by a slim margin.
+BALANCED_FREE_BOOST = 0.10
 
 
 def _value_score(quality: float, completion_price: float, is_free: bool) -> float:
-    """Quality-per-dollar metric. Free models get a flat boost so they can
-    compete in mixed lists without dominating outright."""
+    """Weighted blend of quality and cost-efficiency. Both components live in
+    [0, 1]; quality counts twice as much as cost. No free-model boost is
+    applied here — that's list-specific and added at finalize time."""
     out_price_per_mtok = completion_price * 1_000_000
     if is_free or out_price_per_mtok <= 0.001:
-        return round(quality + FREE_VALUE_BOOST, 4)
-    return round(quality / (1.0 + (out_price_per_mtok / 5.0)), 4)
+        cost_efficiency = 1.0
+    else:
+        cost_efficiency = 1.0 / (1.0 + out_price_per_mtok / 5.0)
+    return round(QUALITY_WEIGHT * quality + COST_WEIGHT * cost_efficiency, 4)
+
+
+def _value_for_list(m: ModelEntry, ranking_kind: str) -> float:
+    """The value score as it should appear (and sort) in a given list.
+    Balanced gets a +0.10 free-model boost; other lists use the base value."""
+    if ranking_kind == "balanced" and m.is_free:
+        return round(m.value_score + BALANCED_FREE_BOOST, 4)
+    return m.value_score
 
 
 # Composite weights. Stage-1 omits `comparative` (it's filled by stage-2);
@@ -879,11 +895,10 @@ def _model_card(m: ModelEntry, ranking_kind: str, rank: int) -> dict:
         "scores": {
             "quality_score": m.quality_score,
             "preliminary_quality_score": m.preliminary_quality_score,
-            # The free list ranks on capability alone, so value (which is
-            # quality + a flat +0.50 boost for any free model) carries no
-            # extra information. Zero it out for free.json to avoid implying
-            # otherwise.
-            "value_score": 0.0 if ranking_kind == "free" else m.value_score,
+            # Free list ranks on capability alone, so value carries no extra
+            # signal there. Balanced list shows the boosted value (matches
+            # how it sorts). Best list shows the base value.
+            "value_score": 0.0 if ranking_kind == "free" else _value_for_list(m, ranking_kind),
         },
         "notes": m.sentiment_notes,
         "comparative_rationale": m.comparative_rationale,
@@ -954,7 +969,9 @@ def finalize_lists(shortlists: dict[str, list[ModelEntry]]) -> dict[str, list[di
         if kind == "free":
             ordered = sorted(candidates, key=lambda m: (m.quality_score, m.agentic_token_volume), reverse=True)
         else:
-            ordered = sorted(candidates, key=lambda m: (m.value_score, m.quality_score), reverse=True)
+            # Use the list-specific value for sorting so the balanced
+            # +0.10 free boost actually shifts the order.
+            ordered = sorted(candidates, key=lambda m: (_value_for_list(m, kind), m.quality_score), reverse=True)
         out[kind] = [_model_card(m, kind, i + 1) for i, m in enumerate(ordered[:LIST_SIZE])]
     return out
 
