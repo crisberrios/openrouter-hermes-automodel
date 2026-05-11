@@ -42,41 +42,49 @@
 
   <main>
     <section class="list" data-kind="free">
-      <h2>free.json <small>— top 10 free models for agentic work</small></h2>
+      <h2>free.json <small>— top 10 free models for agentic work, ranked on capability alone</small></h2>
       <div class="table-wrap"><table><thead><tr>
         <th>#</th><th>id</th><th>ctx</th><th>released</th>
         <th>reason</th>
-        <th class="th-quality" tabindex="0"
+        <th class="th-explain" tabindex="0"
             data-explain="A composite 0–1 score from several signals: OpenRouter intelligence ranking, agentic-app usage volume, web-sourced sentiment, context length, recency of release, and reasoning support. Stage-2 then blends in a head-to-head benchmark comparison among the top-15 shortlist.">
           quality<span class="info" aria-hidden="true">ⓘ</span>
         </th>
-        <th>value</th><th>$/M in</th><th>$/M out</th>
+        <th>$/M in</th><th>$/M out</th>
       </tr></thead><tbody></tbody></table></div>
     </section>
 
     <section class="list" data-kind="balanced">
-      <h2>balanced.json <small>— half-free / half-paid shortlist, re-ranked by quality</small></h2>
+      <h2>balanced.json <small>— half-free / half-paid shortlist, ranked by value</small></h2>
       <div class="table-wrap"><table><thead><tr>
         <th>#</th><th>id</th><th>ctx</th><th>released</th>
         <th>reason</th>
-        <th class="th-quality" tabindex="0"
+        <th class="th-explain" tabindex="0"
             data-explain="A composite 0–1 score from several signals: OpenRouter intelligence ranking, agentic-app usage volume, web-sourced sentiment, context length, recency of release, and reasoning support. Stage-2 then blends in a head-to-head benchmark comparison among the top-15 shortlist.">
           quality<span class="info" aria-hidden="true">ⓘ</span>
         </th>
-        <th>value</th><th>$/M in</th><th>$/M out</th>
+        <th class="th-explain" tabindex="0"
+            data-explain="Quality-per-dollar. Paid models are scored as quality_score divided by a price-scaled denominator (cheaper → higher). Free models receive a flat +0.25 boost so they can compete with paid models in mixed lists without sweeping the top.">
+          value<span class="info" aria-hidden="true">ⓘ</span>
+        </th>
+        <th>$/M in</th><th>$/M out</th>
       </tr></thead><tbody></tbody></table></div>
     </section>
 
     <section class="list" data-kind="best">
-      <h2>best.json <small>— top 10 by raw quality, price-blind</small></h2>
+      <h2>best.json <small>— top 10 across all models, ranked by value</small></h2>
       <div class="table-wrap"><table><thead><tr>
         <th>#</th><th>id</th><th>ctx</th><th>released</th>
         <th>reason</th>
-        <th class="th-quality" tabindex="0"
+        <th class="th-explain" tabindex="0"
             data-explain="A composite 0–1 score from several signals: OpenRouter intelligence ranking, agentic-app usage volume, web-sourced sentiment, context length, recency of release, and reasoning support. Stage-2 then blends in a head-to-head benchmark comparison among the top-15 shortlist.">
           quality<span class="info" aria-hidden="true">ⓘ</span>
         </th>
-        <th>value</th><th>$/M in</th><th>$/M out</th>
+        <th class="th-explain" tabindex="0"
+            data-explain="Quality-per-dollar. Paid models are scored as quality_score divided by a price-scaled denominator (cheaper → higher). Free models receive a flat +0.25 boost so they can compete with paid models in mixed lists without sweeping the top.">
+          value<span class="info" aria-hidden="true">ⓘ</span>
+        </th>
+        <th>$/M in</th><th>$/M out</th>
       </tr></thead><tbody></tbody></table></div>
     </section>
   </main>

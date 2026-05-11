@@ -47,11 +47,14 @@ function fmtReleased(isoDate, ageDays) {
   return { text: label, title: `${isoDate} (${ageDays}d)`, unknown: false };
 }
 
-function renderRow(m) {
+function renderRow(m, kind) {
   const tr = document.createElement("tr");
   const promptPrice = m.pricing?.prompt_usd_per_mtok;
   const completionPrice = m.pricing?.completion_usd_per_mtok;
   const rel = fmtReleased(m.release_date, m.age_days);
+  const valueCell = kind === "free"
+    ? ""
+    : `<td class="num" data-label="value">${fmtScore(m.scores?.value_score)}</td>`;
 
   tr.innerHTML = `
     <td class="num rank" data-label="rank">${m.rank}</td>
@@ -63,7 +66,7 @@ function renderRow(m) {
     <td class="released${rel.unknown ? " unknown" : ""}" data-label="released" title="${escapeHtml(rel.title)}">${escapeHtml(rel.text)}</td>
     <td class="${m.supports_reasoning ? "flag-yes" : "flag-no"}" data-label="reason">${m.supports_reasoning ? "✓" : "·"}</td>
     <td class="num" data-label="quality">${fmtScore(m.scores?.quality_score)}</td>
-    <td class="num" data-label="value">${fmtScore(m.scores?.value_score)}</td>
+    ${valueCell}
     <td class="num ${promptPrice === 0 ? "price-free" : "price"}" data-label="$/M in">${fmtPrice(promptPrice)}</td>
     <td class="num ${completionPrice === 0 ? "price-free" : "price"}" data-label="$/M out">${fmtPrice(completionPrice)}</td>
   `;
@@ -100,7 +103,7 @@ async function loadOne(kind) {
 
   const tbody = section.querySelector("tbody");
   tbody.innerHTML = "";
-  for (const m of data.models || []) tbody.appendChild(renderRow(m));
+  for (const m of data.models || []) tbody.appendChild(renderRow(m, kind));
   return data;
 }
 
@@ -119,7 +122,7 @@ function renderHeader(first) {
 }
 
 function wireQualityExplainers() {
-  const headers = document.querySelectorAll("th.th-quality");
+  const headers = document.querySelectorAll("th.th-explain");
   headers.forEach(th => {
     th.addEventListener("click", e => {
       // Toggle pinned state. Click anywhere else dismisses.

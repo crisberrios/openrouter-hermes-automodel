@@ -732,10 +732,15 @@ def _recency_score(release_date: datetime | None, now: datetime) -> float:
     return 0.1
 
 
+FREE_VALUE_BOOST = 0.25
+
+
 def _value_score(quality: float, completion_price: float, is_free: bool) -> float:
+    """Quality-per-dollar metric. Free models get a flat boost so they can
+    compete in mixed lists without dominating outright."""
     out_price_per_mtok = completion_price * 1_000_000
     if is_free or out_price_per_mtok <= 0.001:
-        return round(quality + 0.50, 4)  # large boost — free is the value bucket
+        return round(quality + FREE_VALUE_BOOST, 4)
     return round(quality / (1.0 + (out_price_per_mtok / 5.0)), 4)
 
 
@@ -874,7 +879,11 @@ def _model_card(m: ModelEntry, ranking_kind: str, rank: int) -> dict:
         "scores": {
             "quality_score": m.quality_score,
             "preliminary_quality_score": m.preliminary_quality_score,
-            "value_score": m.value_score,
+            # The free list ranks on capability alone, so value (which is
+            # quality + a flat +0.50 boost for any free model) carries no
+            # extra information. Zero it out for free.json to avoid implying
+            # otherwise.
+            "value_score": 0.0 if ranking_kind == "free" else m.value_score,
         },
         "notes": m.sentiment_notes,
         "comparative_rationale": m.comparative_rationale,
@@ -933,15 +942,19 @@ def build_shortlists(catalog: dict[str, ModelEntry]) -> dict[str, list[ModelEntr
 
 def finalize_lists(shortlists: dict[str, list[ModelEntry]]) -> dict[str, list[dict]]:
     """Stage-2: re-sort each shortlist by the final (post-comparative)
-    quality/value scores, then trim to LIST_SIZE.
+    scores, then trim to LIST_SIZE.
 
-    All three lists sort by quality first, with value as tiebreaker. Sorting
-    `balanced` by value would let free models' +0.50 value-boost sweep the
-    top of the list — defeating the half-free / half-paid mix.
+    - `free` ranks on raw capability (quality only) — every entry would
+      get the same +0.25 boost, so value carries no extra signal.
+    - `balanced` and `best` rank on value, which blends quality with cost
+      and is the more useful read for "which should I actually use".
     """
     out: dict[str, list[dict]] = {}
     for kind, candidates in shortlists.items():
-        ordered = sorted(candidates, key=lambda m: (m.quality_score, m.value_score), reverse=True)
+        if kind == "free":
+            ordered = sorted(candidates, key=lambda m: (m.quality_score, m.agentic_token_volume), reverse=True)
+        else:
+            ordered = sorted(candidates, key=lambda m: (m.value_score, m.quality_score), reverse=True)
         out[kind] = [_model_card(m, kind, i + 1) for i, m in enumerate(ordered[:LIST_SIZE])]
     return out
 

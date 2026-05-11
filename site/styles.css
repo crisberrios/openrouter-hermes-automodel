@@ -185,24 +185,24 @@ td.id .name {
 td.released { color: var(--fg-soft); font-variant-numeric: tabular-nums; }
 td.released.unknown { color: var(--fg-faint); }
 
-th.th-quality {
+th.th-explain {
   position: sticky;
   cursor: help;
   user-select: none;
 }
-th.th-quality .info {
+th.th-explain .info {
   display: inline-block;
   margin-left: 0.3rem;
   color: var(--fg-faint);
   font-size: 0.9em;
   transition: color 120ms ease;
 }
-th.th-quality:hover .info,
-th.th-quality:focus .info,
-th.th-quality.pinned .info { color: var(--accent); }
+th.th-explain:hover .info,
+th.th-explain:focus .info,
+th.th-explain.pinned .info { color: var(--accent); }
 
-/* Floating explanation panel attached to a hovered/pinned quality header. */
-th.th-quality::after {
+/* Floating explanation panel attached to a hovered/pinned explainer header. */
+th.th-explain::after {
   content: attr(data-explain);
   position: absolute;
   top: 100%;
@@ -227,9 +227,9 @@ th.th-quality::after {
   pointer-events: none;
   z-index: 5;
 }
-th.th-quality:hover::after,
-th.th-quality:focus::after,
-th.th-quality.pinned::after {
+th.th-explain:hover::after,
+th.th-explain:focus::after,
+th.th-explain.pinned::after {
   opacity: 1;
   visibility: visible;
 }
@@ -334,6 +334,6 @@ footer {
     margin-top: 0.05rem;
   }
 
-  /* Quality column: explainer panel needs a wider, repositioned popup */
-  th.th-quality::after { display: none; } /* hidden — table header is gone here */
+  /* Explainer popups: hidden in card mode since the table header is gone */
+  th.th-explain::after { display: none; }
 }
