@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T16:01:25.647164+00:00",
+  "generated_at": "2026-05-11T22:01:04.132649+00:00",
   "kind": "free",
   "list_size": 10,
   "shortlist_size": 15,
@@ -9,12 +9,12 @@
     "hermes-agent": {
       "rank": 1,
       "models_used": 351,
-      "total_tokens": 5527201918091
+      "total_tokens": 5596192705371
     },
     "openclaw": {
       "rank": 2,
       "models_used": 381,
-      "total_tokens": 6559968485602
+      "total_tokens": 6593899581313
     }
   },
   "summary": "",
@@ -28,26 +28,26 @@
       "supports_reasoning": true,
       "context_length": 262144,
       "release_date": "2026-03-11",
-      "age_days": 60,
+      "age_days": 61,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1057942206196,
+        "agentic_token_volume": 1065656610101,
         "agentic_rank": 3,
         "sentiment_score": 0.0,
-        "recency_score": 0.9322,
-        "comparative_score": 0.44
+        "recency_score": 0.93,
+        "comparative_score": 0.35
       },
       "scores": {
-        "quality_score": 0.4288,
-        "preliminary_quality_score": 0.4054,
+        "quality_score": 0.3945,
+        "preliminary_quality_score": 0.4083,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Large Nemotron should outperform smaller NVIDIA variants, but public agentic coding benchmarks are sparse versus better-documented frontier models.",
+      "comparative_rationale": "NVIDIA Nemotron family is weak on BFCL, with Nano 30B at 41.6%; larger Super likely improves but lacks strong public autonomous coding data [awesomeagents.ai](https://awesomeagents.ai/leaderboards/function-calling-benchmarks-leaderboard/).",
       "ranking_kind": "free"
     },
     {
@@ -66,23 +66,85 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 472083994987,
+        "agentic_token_volume": 474736162521,
         "agentic_rank": 9,
         "sentiment_score": 0.0,
         "recency_score": 0.873,
-        "comparative_score": 0.48
+        "comparative_score": 0.44
       },
       "scores": {
-        "quality_score": 0.4087,
-        "preliminary_quality_score": 0.3473,
+        "quality_score": 0.3945,
+        "preliminary_quality_score": 0.3503,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Older MiniMax than M2.7; likely capable but free tier and weaker public coding-agent evidence justify a mid-pack placement.",
+      "comparative_rationale": "Older MiniMax snapshot benefits from family strength on tau-bench, but recency rule places it below M2.7 with limited direct benchmark confirmation [awesomeagents.ai](https://awesomeagents.ai/leaderboards/function-calling-benchmarks-leaderboard/).",
       "ranking_kind": "free"
     },
     {
       "rank": 3,
+      "id": "openrouter/owl-alpha",
+      "name": "Owl Alpha",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": false,
+      "context_length": 1048756,
+      "release_date": "2026-04-28",
+      "age_days": 13,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 176191198788,
+        "agentic_rank": 21,
+        "sentiment_score": 0.0,
+        "recency_score": 1.0,
+        "comparative_score": 0.24
+      },
+      "scores": {
+        "quality_score": 0.3443,
+        "preliminary_quality_score": 0.3986,
+        "value_score": 0.0
+      },
+      "notes": "",
+      "comparative_rationale": "Vendor hint suggests middling agentic rank, but no strong public BFCL, Terminal-Bench, or SWE-bench results surfaced; conservative low placement.",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 4,
+      "id": "openai/gpt-oss-120b:free",
+      "name": "OpenAI: gpt-oss-120b (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 131072,
+      "release_date": "2025-08-05",
+      "age_days": 279,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 180657072124,
+        "agentic_rank": 20,
+        "sentiment_score": 0.0,
+        "recency_score": 0.5582,
+        "comparative_score": 0.4
+      },
+      "scores": {
+        "quality_score": 0.3385,
+        "preliminary_quality_score": 0.2895,
+        "value_score": 0.0
+      },
+      "notes": "",
+      "comparative_rationale": "Has a real SWE-Bench Pro result at 16.20%, proving some agentic coding competence, but far behind frontier closed models [scaleapi.github.io](https://scaleapi.github.io/SWE-bench_Pro-os/).",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 5,
       "id": "google/gemma-4-31b-it:free",
       "name": "Google: Gemma 4 31B (free)",
       "is_free": true,
@@ -90,7 +152,7 @@
       "supports_reasoning": true,
       "context_length": 262144,
       "release_date": "2026-04-02",
-      "age_days": 38,
+      "age_days": 39,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
@@ -100,20 +162,20 @@
         "agentic_token_volume": 0,
         "agentic_rank": 0,
         "sentiment_score": 0.0,
-        "recency_score": 0.9814,
-        "comparative_score": 0.36
+        "recency_score": 0.9791,
+        "comparative_score": 0.3
       },
       "scores": {
-        "quality_score": 0.3497,
-        "preliminary_quality_score": 0.3281,
+        "quality_score": 0.3271,
+        "preliminary_quality_score": 0.3305,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Gemma 31B should edge the smaller 26B sibling, but limited public autonomous coding benchmarks keep it in the lower-middle tier.",
+      "comparative_rationale": "Gemma family has limited public agentic benchmark coverage in the cited leaderboards; placing low pending Terminal-Bench, BFCL, or SWE-bench evidence.",
       "ranking_kind": "free"
     },
     {
-      "rank": 4,
+      "rank": 6,
       "id": "google/gemma-4-26b-a4b-it:free",
       "name": "Google: Gemma 4 26B A4B  (free)",
       "is_free": true,
@@ -132,174 +194,19 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 0.9814,
-        "comparative_score": 0.33
+        "comparative_score": 0.27
       },
       "scores": {
-        "quality_score": 0.3377,
-        "preliminary_quality_score": 0.3281,
+        "quality_score": 0.3152,
+        "preliminary_quality_score": 0.3307,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Smaller Gemma variant likely trails 31B on planning and code synthesis; public agentic benchmark data remains limited.",
-      "ranking_kind": "free"
-    },
-    {
-      "rank": 5,
-      "id": "openai/gpt-oss-120b:free",
-      "name": "OpenAI: gpt-oss-120b (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 131072,
-      "release_date": "2025-08-05",
-      "age_days": 278,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 179325589489,
-        "agentic_rank": 20,
-        "sentiment_score": 0.0,
-        "recency_score": 0.5595,
-        "comparative_score": 0.4
-      },
-      "scores": {
-        "quality_score": 0.3367,
-        "preliminary_quality_score": 0.2865,
-        "value_score": 0.0
-      },
-      "notes": "",
-      "comparative_rationale": "Open model with credible coding ability, yet agentic benchmark coverage and tool-use stability trail GPT-5.x and Claude families.",
-      "ranking_kind": "free"
-    },
-    {
-      "rank": 6,
-      "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-      "name": "NVIDIA: Nemotron 3 Nano Omni (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 256000,
-      "release_date": "2026-04-28",
-      "age_days": 12,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0,
-        "recency_score": 1.0,
-        "comparative_score": 0.29
-      },
-      "scores": {
-        "quality_score": 0.3226,
-        "preliminary_quality_score": 0.3293,
-        "value_score": 0.0
-      },
-      "notes": "",
-      "comparative_rationale": "Reasoning-tuned newer 30B should outrank plain Nemotron Nano 30B, but benchmarked agentic coding performance is still limited publicly.",
+      "comparative_rationale": "Slightly below Gemma 31B by model size and absent public agentic benchmarks; low confidence placement pending stronger tool-use evaluations.",
       "ranking_kind": "free"
     },
     {
       "rank": 7,
-      "id": "openrouter/owl-alpha",
-      "name": "Owl Alpha",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": false,
-      "context_length": 1048756,
-      "release_date": "2026-04-28",
-      "age_days": 12,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 165349794815,
-        "agentic_rank": 21,
-        "sentiment_score": 0.0,
-        "recency_score": 1.0,
-        "comparative_score": 0.15
-      },
-      "scores": {
-        "quality_score": 0.3078,
-        "preliminary_quality_score": 0.3977,
-        "value_score": 0.0
-      },
-      "notes": "",
-      "comparative_rationale": "No-reasoning and limited public coding-agent results make it hard to justify higher placement despite decent preliminary agentic hint.",
-      "ranking_kind": "free"
-    },
-    {
-      "rank": 8,
-      "id": "arcee-ai/trinity-large-thinking:free",
-      "name": "Arcee AI: Trinity Large Thinking (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 262144,
-      "release_date": "2026-04-01",
-      "age_days": 40,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 118893770092,
-        "agentic_rank": 26,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9769,
-        "comparative_score": 0.23
-      },
-      "scores": {
-        "quality_score": 0.303,
-        "preliminary_quality_score": 0.3369,
-        "value_score": 0.0
-      },
-      "notes": "",
-      "comparative_rationale": "Limited public benchmark coverage; thinking tag may help planning, but there is insufficient evidence of strong coding-agent performance.",
-      "ranking_kind": "free"
-    },
-    {
-      "rank": 9,
-      "id": "nvidia/nemotron-3-nano-30b-a3b:free",
-      "name": "NVIDIA: Nemotron 3 Nano 30B A3B (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 256000,
-      "release_date": "2025-12-14",
-      "age_days": 147,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0,
-        "recency_score": 0.7604,
-        "comparative_score": 0.26
-      },
-      "scores": {
-        "quality_score": 0.2938,
-        "preliminary_quality_score": 0.3054,
-        "value_score": 0.0
-      },
-      "notes": "",
-      "comparative_rationale": "Awesome Agents lists Nemotron 30B around 41.6% BFCL v3, indicating decent structured tool calling but modest overall agentic strength.",
-      "ranking_kind": "free"
-    },
-    {
-      "rank": 10,
       "id": "poolside/laguna-m.1:free",
       "name": "Poolside: Laguna M.1 (free)",
       "is_free": true,
@@ -318,15 +225,108 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.2
+        "comparative_score": 0.21
       },
       "scores": {
-        "quality_score": 0.279,
-        "preliminary_quality_score": 0.3167,
+        "quality_score": 0.2848,
+        "preliminary_quality_score": 0.3197,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Poolside focuses on coding, so M.1 likely beats XS.2, but published benchmark support is scarce and weaker than major labs.",
+      "comparative_rationale": "Poolside family appears at the bottom of BenchLM Terminal-Bench 2.0 snapshots, so M.1 likely remains weak for autonomous terminal coding [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 8,
+      "id": "arcee-ai/trinity-large-thinking:free",
+      "name": "Arcee AI: Trinity Large Thinking (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "release_date": "2026-04-01",
+      "age_days": 40,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 120226633183,
+        "agentic_rank": 26,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9769,
+        "comparative_score": 0.16
+      },
+      "scores": {
+        "quality_score": 0.2767,
+        "preliminary_quality_score": 0.3396,
+        "value_score": 0.0
+      },
+      "notes": "",
+      "comparative_rationale": "No strong public agentic benchmark results among the cited suites; low placement reflects limited evidence for reliable coding-agent workflows.",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 9,
+      "id": "poolside/laguna-xs.2:free",
+      "name": "Poolside: Laguna XS.2 (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 131072,
+      "release_date": "2026-04-28",
+      "age_days": 13,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 1.0,
+        "comparative_score": 0.18
+      },
+      "scores": {
+        "quality_score": 0.2728,
+        "preliminary_quality_score": 0.3197,
+        "value_score": 0.0
+      },
+      "notes": "",
+      "comparative_rationale": "Smaller Poolside model ranks below Laguna M.1 by capability expectation, and Poolside benchmarks trail badly on Terminal-Bench 2.0 [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 10,
+      "id": "inclusionai/ring-2.6-1t:free",
+      "name": "inclusionAI: Ring-2.6-1T (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "release_date": "2026-05-08",
+      "age_days": 3,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 1.0,
+        "comparative_score": 0.14
+      },
+      "scores": {
+        "quality_score": 0.2645,
+        "preliminary_quality_score": 0.3325,
+        "value_score": 0.0
+      },
+      "notes": "",
+      "comparative_rationale": "Very recent release with essentially no public SWE-bench, BFCL, or Terminal-Bench data; ranking low until agentic benchmarks appear.",
       "ranking_kind": "free"
     }
   ]
