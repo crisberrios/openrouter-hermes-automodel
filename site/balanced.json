@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T10:01:05.214529+00:00",
+  "generated_at": "2026-05-11T16:01:25.647164+00:00",
   "kind": "balanced",
   "list_size": 10,
   "shortlist_size": 15,
@@ -9,12 +9,12 @@
     "hermes-agent": {
       "rank": 1,
       "models_used": 351,
-      "total_tokens": 5468717002954
+      "total_tokens": 5527201918091
     },
     "openclaw": {
       "rank": 2,
       "models_used": 381,
-      "total_tokens": 6523477015399
+      "total_tokens": 6559968485602
     }
   },
   "summary": "",
@@ -28,92 +28,30 @@
       "supports_reasoning": true,
       "context_length": 196608,
       "release_date": "2026-03-18",
-      "age_days": 53,
+      "age_days": 54,
       "pricing": {
         "prompt_usd_per_mtok": 0.299,
         "completion_usd_per_mtok": 1.2
       },
       "signals": {
         "intelligence_score": 49.6,
-        "agentic_token_volume": 1243518762988,
+        "agentic_token_volume": 1253733047276,
         "agentic_rank": 2,
         "sentiment_score": 0.0,
-        "recency_score": 0.9476,
-        "comparative_score": 0.91
+        "recency_score": 0.9454,
+        "comparative_score": 0.87
       },
       "scores": {
-        "quality_score": 0.7876,
-        "preliminary_quality_score": 0.7031,
-        "value_score": 0.7939
+        "quality_score": 0.7719,
+        "preliminary_quality_score": 0.7036,
+        "value_score": 0.7834
       },
       "notes": "",
-      "comparative_rationale": "Preliminary shortlist says agentic rank #2, and strong general intelligence suggests top-tier autonomous workflow capability despite thinner public coding data.",
+      "comparative_rationale": "Newer than M2.5 and likely stronger overall; MiniMax family posts competitive tau-bench tool-use scores and solid agentic placement.",
       "ranking_kind": "balanced"
     },
     {
       "rank": 2,
-      "id": "xiaomi/mimo-v2-pro",
-      "name": "Xiaomi: MiMo-V2-Pro",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1048576,
-      "release_date": "2026-03-18",
-      "age_days": 53,
-      "pricing": {
-        "prompt_usd_per_mtok": 1.0,
-        "completion_usd_per_mtok": 3.0
-      },
-      "signals": {
-        "intelligence_score": 49.2,
-        "agentic_token_volume": 1672896355806,
-        "agentic_rank": 1,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9476,
-        "comparative_score": 0.89
-      },
-      "scores": {
-        "quality_score": 0.8507,
-        "preliminary_quality_score": 0.8207,
-        "value_score": 0.7755
-      },
-      "notes": "",
-      "comparative_rationale": "Preliminary shortlist marks it agentic rank #1, but newer MiMo-V2.5-Pro should edge it absent clear regression evidence.",
-      "ranking_kind": "balanced"
-    },
-    {
-      "rank": 3,
-      "id": "nvidia/nemotron-3-super-120b-a12b:free",
-      "name": "NVIDIA: Nemotron 3 Super (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 262144,
-      "release_date": "2026-03-11",
-      "age_days": 60,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 1049378387439,
-        "agentic_rank": 3,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9322,
-        "comparative_score": 0.56
-      },
-      "scores": {
-        "quality_score": 0.4764,
-        "preliminary_quality_score": 0.4047,
-        "value_score": 0.7509
-      },
-      "notes": "",
-      "comparative_rationale": "Shortlist hint says agentic rank #3, so it places surprisingly high despite scarce public head-to-head coding-agent evidence.",
-      "ranking_kind": "balanced"
-    },
-    {
-      "rank": 4,
       "id": "xiaomi/mimo-v2.5-pro",
       "name": "Xiaomi: MiMo-V2.5-Pro",
       "is_free": false,
@@ -140,42 +78,11 @@
         "value_score": 0.7481
       },
       "notes": "",
-      "comparative_rationale": "Newer than MiMo-V2-Pro and BenchLM shows MiMo-V2.5-Pro at 68.4 on Terminal-Bench, supporting higher coding-agent placement [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
+      "comparative_rationale": "Newer MiMo version must outrank v2-pro, and BenchLM shows MiMo-V2.5-Pro third on Terminal-Bench at 68.4%.",
       "ranking_kind": "balanced"
     },
     {
-      "rank": 5,
-      "id": "qwen/qwen3.6-plus",
-      "name": "Qwen: Qwen3.6 Plus",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1000000,
-      "release_date": "2026-04-02",
-      "age_days": 38,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.325,
-        "completion_usd_per_mtok": 1.95
-      },
-      "signals": {
-        "intelligence_score": 50.0,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9814,
-        "comparative_score": 0.86
-      },
-      "scores": {
-        "quality_score": 0.7608,
-        "preliminary_quality_score": 0.6938,
-        "value_score": 0.747
-      },
-      "notes": "",
-      "comparative_rationale": "BenchLM ranks Qwen3.6 Plus first on sourced tool-use/function-calling benchmarks, indicating excellent structured agent reliability [benchlm.ai](https://benchlm.ai/best/tool-use).",
-      "ranking_kind": "balanced"
-    },
-    {
-      "rank": 6,
+      "rank": 3,
       "id": "deepseek/deepseek-v4-pro",
       "name": "DeepSeek: DeepSeek V4 Pro",
       "is_free": false,
@@ -190,23 +97,54 @@
       },
       "signals": {
         "intelligence_score": 51.5,
-        "agentic_token_volume": 194068501172,
+        "agentic_token_volume": 201463974504,
         "agentic_rank": 19,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.62
+        "comparative_score": 0.55
       },
       "scores": {
-        "quality_score": 0.6833,
-        "preliminary_quality_score": 0.7244,
-        "value_score": 0.7395
+        "quality_score": 0.6556,
+        "preliminary_quality_score": 0.7249,
+        "value_score": 0.721
       },
       "notes": "",
-      "comparative_rationale": "BenchLM shows DeepSeek V4 Pro variants around upper-mid agentic ranks with solid terminal and browsing scores [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks) [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
+      "comparative_rationale": "BenchLM shows DeepSeek V4 Pro around 67.9% Terminal-Bench snapshot, solid but behind the best agentic coding models listed.",
       "ranking_kind": "balanced"
     },
     {
-      "rank": 7,
+      "rank": 4,
+      "id": "nvidia/nemotron-3-super-120b-a12b:free",
+      "name": "NVIDIA: Nemotron 3 Super (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "release_date": "2026-03-11",
+      "age_days": 60,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 1057942206196,
+        "agentic_rank": 3,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9322,
+        "comparative_score": 0.44
+      },
+      "scores": {
+        "quality_score": 0.4288,
+        "preliminary_quality_score": 0.4054,
+        "value_score": 0.7192
+      },
+      "notes": "",
+      "comparative_rationale": "Large Nemotron should outperform smaller NVIDIA variants, but public agentic coding benchmarks are sparse versus better-documented frontier models.",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 5,
       "id": "minimax/minimax-m2.5:free",
       "name": "MiniMax: MiniMax M2.5 (free)",
       "is_free": true,
@@ -214,57 +152,119 @@
       "supports_reasoning": true,
       "context_length": 196608,
       "release_date": "2026-02-12",
-      "age_days": 87,
+      "age_days": 88,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 469271963948,
+        "agentic_token_volume": 472083994987,
         "agentic_rank": 9,
         "sentiment_score": 0.0,
-        "recency_score": 0.8751,
-        "comparative_score": 0.53
+        "recency_score": 0.873,
+        "comparative_score": 0.48
       },
       "scores": {
-        "quality_score": 0.4287,
+        "quality_score": 0.4087,
         "preliminary_quality_score": 0.3473,
-        "value_score": 0.7191
+        "value_score": 0.7058
       },
       "notes": "",
-      "comparative_rationale": "Shortlist hint agentic rank #9 supports above-average placement, but newer paid MiniMax M2.7 should outperform it.",
+      "comparative_rationale": "Older MiniMax than M2.7; likely capable but free tier and weaker public coding-agent evidence justify a mid-pack placement.",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 6,
+      "id": "qwen/qwen3.6-plus",
+      "name": "Qwen: Qwen3.6 Plus",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1000000,
+      "release_date": "2026-04-02",
+      "age_days": 39,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.325,
+        "completion_usd_per_mtok": 1.95
+      },
+      "signals": {
+        "intelligence_score": 50.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9791,
+        "comparative_score": 0.65
+      },
+      "scores": {
+        "quality_score": 0.6766,
+        "preliminary_quality_score": 0.6935,
+        "value_score": 0.6909
+      },
+      "notes": "",
+      "comparative_rationale": "Qwen models are consistently strong on BFCL and coding-adjacent benchmarks, but this specific Plus variant lacks top-tier public agentic scores.",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 7,
+      "id": "xiaomi/mimo-v2-pro",
+      "name": "Xiaomi: MiMo-V2-Pro",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1048576,
+      "release_date": "2026-03-18",
+      "age_days": 53,
+      "pricing": {
+        "prompt_usd_per_mtok": 1.0,
+        "completion_usd_per_mtok": 3.0
+      },
+      "signals": {
+        "intelligence_score": 49.2,
+        "agentic_token_volume": 1673733464634,
+        "agentic_rank": 1,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9476,
+        "comparative_score": 0.52
+      },
+      "scores": {
+        "quality_score": 0.7027,
+        "preliminary_quality_score": 0.8207,
+        "value_score": 0.6768
+      },
+      "notes": "",
+      "comparative_rationale": "Older MiMo release must rank below MiMo-V2.5-Pro; family shows strong agentic positioning but newer version clearly supersedes it.",
       "ranking_kind": "balanced"
     },
     {
       "rank": 8,
-      "id": "openrouter/owl-alpha",
-      "name": "Owl Alpha",
-      "is_free": true,
+      "id": "z-ai/glm-5",
+      "name": "Z.ai: GLM 5",
+      "is_free": false,
       "supports_tools": true,
-      "supports_reasoning": false,
-      "context_length": 1048756,
-      "release_date": "2026-04-28",
-      "age_days": 12,
+      "supports_reasoning": true,
+      "context_length": 202752,
+      "release_date": "2026-02-11",
+      "age_days": 88,
       "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
+        "prompt_usd_per_mtok": 0.6,
+        "completion_usd_per_mtok": 1.92
       },
       "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 157923735916,
-        "agentic_rank": 22,
+        "intelligence_score": 49.8,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
         "sentiment_score": 0.0,
-        "recency_score": 1.0,
-        "comparative_score": 0.39
+        "recency_score": 0.873,
+        "comparative_score": 0.72
       },
       "scores": {
-        "quality_score": 0.4035,
-        "preliminary_quality_score": 0.3971,
-        "value_score": 0.7023
+        "quality_score": 0.6479,
+        "preliminary_quality_score": 0.6008,
+        "value_score": 0.6728
       },
       "notes": "",
-      "comparative_rationale": "Preliminary hint agentic rank #22 suggests usable but clearly second-tier agentic performance, especially without explicit reasoning mode.",
+      "comparative_rationale": "GLM family is excellent on BFCL and strong on coding leaderboards, but 5.1 should rank above the older release.",
       "ranking_kind": "balanced"
     },
     {
@@ -287,26 +287,26 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.71
+        "comparative_score": 0.58
       },
       "scores": {
-        "quality_score": 0.7127,
+        "quality_score": 0.6607,
         "preliminary_quality_score": 0.7142,
-        "value_score": 0.6974
+        "value_score": 0.6627
       },
       "notes": "",
-      "comparative_rationale": "High general intelligence and strong recent frontier reputation suggest solid agentic coding, but public benchmark coverage here is limited.",
+      "comparative_rationale": "High general intelligence helps, but public autonomous coding and tool-use benchmark coverage is thinner than OpenAI, Anthropic, or Z.ai.",
       "ranking_kind": "balanced"
     },
     {
       "rank": 10,
-      "id": "google/gemma-4-31b-it:free",
-      "name": "Google: Gemma 4 31B (free)",
+      "id": "google/gemma-4-26b-a4b-it:free",
+      "name": "Google: Gemma 4 26B A4B  (free)",
       "is_free": true,
       "supports_tools": true,
       "supports_reasoning": true,
       "context_length": 262144,
-      "release_date": "2026-04-02",
+      "release_date": "2026-04-03",
       "age_days": 38,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
@@ -318,15 +318,15 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 0.9814,
-        "comparative_score": 0.35
+        "comparative_score": 0.33
       },
       "scores": {
-        "quality_score": 0.3457,
+        "quality_score": 0.3377,
         "preliminary_quality_score": 0.3281,
-        "value_score": 0.6638
+        "value_score": 0.6585
       },
       "notes": "",
-      "comparative_rationale": "Larger Gemma 4 variant should outrank the 26B sibling by family progression, but public agentic benchmark evidence is limited.",
+      "comparative_rationale": "Smaller Gemma variant likely trails 31B on planning and code synthesis; public agentic benchmark data remains limited.",
       "ranking_kind": "balanced"
     }
   ]

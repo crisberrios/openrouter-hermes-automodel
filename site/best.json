@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-11T10:01:05.214529+00:00",
+  "generated_at": "2026-05-11T16:01:25.647164+00:00",
   "kind": "best",
   "list_size": 10,
   "shortlist_size": 15,
@@ -9,12 +9,12 @@
     "hermes-agent": {
       "rank": 1,
       "models_used": 351,
-      "total_tokens": 5468717002954
+      "total_tokens": 5527201918091
     },
     "openclaw": {
       "rank": 2,
       "models_used": 381,
-      "total_tokens": 6523477015399
+      "total_tokens": 6559968485602
     }
   },
   "summary": "",
@@ -28,61 +28,30 @@
       "supports_reasoning": true,
       "context_length": 196608,
       "release_date": "2026-03-18",
-      "age_days": 53,
+      "age_days": 54,
       "pricing": {
         "prompt_usd_per_mtok": 0.299,
         "completion_usd_per_mtok": 1.2
       },
       "signals": {
         "intelligence_score": 49.6,
-        "agentic_token_volume": 1243518762988,
+        "agentic_token_volume": 1253733047276,
         "agentic_rank": 2,
         "sentiment_score": 0.0,
-        "recency_score": 0.9476,
-        "comparative_score": 0.91
+        "recency_score": 0.9454,
+        "comparative_score": 0.87
       },
       "scores": {
-        "quality_score": 0.7876,
-        "preliminary_quality_score": 0.7031,
-        "value_score": 0.7939
+        "quality_score": 0.7719,
+        "preliminary_quality_score": 0.7036,
+        "value_score": 0.7834
       },
       "notes": "",
-      "comparative_rationale": "Preliminary shortlist says agentic rank #2, and strong general intelligence suggests top-tier autonomous workflow capability despite thinner public coding data.",
+      "comparative_rationale": "Newer than M2.5 and likely stronger overall; MiniMax family posts competitive tau-bench tool-use scores and solid agentic placement.",
       "ranking_kind": "best"
     },
     {
       "rank": 2,
-      "id": "xiaomi/mimo-v2-pro",
-      "name": "Xiaomi: MiMo-V2-Pro",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1048576,
-      "release_date": "2026-03-18",
-      "age_days": 53,
-      "pricing": {
-        "prompt_usd_per_mtok": 1.0,
-        "completion_usd_per_mtok": 3.0
-      },
-      "signals": {
-        "intelligence_score": 49.2,
-        "agentic_token_volume": 1672896355806,
-        "agentic_rank": 1,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9476,
-        "comparative_score": 0.89
-      },
-      "scores": {
-        "quality_score": 0.8507,
-        "preliminary_quality_score": 0.8207,
-        "value_score": 0.7755
-      },
-      "notes": "",
-      "comparative_rationale": "Preliminary shortlist marks it agentic rank #1, but newer MiMo-V2.5-Pro should edge it absent clear regression evidence.",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 3,
       "id": "xiaomi/mimo-v2.5-pro",
       "name": "Xiaomi: MiMo-V2.5-Pro",
       "is_free": false,
@@ -109,42 +78,11 @@
         "value_score": 0.7481
       },
       "notes": "",
-      "comparative_rationale": "Newer than MiMo-V2-Pro and BenchLM shows MiMo-V2.5-Pro at 68.4 on Terminal-Bench, supporting higher coding-agent placement [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
+      "comparative_rationale": "Newer MiMo version must outrank v2-pro, and BenchLM shows MiMo-V2.5-Pro third on Terminal-Bench at 68.4%.",
       "ranking_kind": "best"
     },
     {
-      "rank": 4,
-      "id": "qwen/qwen3.6-plus",
-      "name": "Qwen: Qwen3.6 Plus",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1000000,
-      "release_date": "2026-04-02",
-      "age_days": 38,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.325,
-        "completion_usd_per_mtok": 1.95
-      },
-      "signals": {
-        "intelligence_score": 50.0,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9814,
-        "comparative_score": 0.86
-      },
-      "scores": {
-        "quality_score": 0.7608,
-        "preliminary_quality_score": 0.6938,
-        "value_score": 0.747
-      },
-      "notes": "",
-      "comparative_rationale": "BenchLM ranks Qwen3.6 Plus first on sourced tool-use/function-calling benchmarks, indicating excellent structured agent reliability [benchlm.ai](https://benchlm.ai/best/tool-use).",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 5,
+      "rank": 3,
       "id": "deepseek/deepseek-v4-pro",
       "name": "DeepSeek: DeepSeek V4 Pro",
       "is_free": false,
@@ -159,19 +97,81 @@
       },
       "signals": {
         "intelligence_score": 51.5,
-        "agentic_token_volume": 194068501172,
+        "agentic_token_volume": 201463974504,
         "agentic_rank": 19,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.62
+        "comparative_score": 0.55
       },
       "scores": {
-        "quality_score": 0.6833,
-        "preliminary_quality_score": 0.7244,
-        "value_score": 0.7395
+        "quality_score": 0.6556,
+        "preliminary_quality_score": 0.7249,
+        "value_score": 0.721
       },
       "notes": "",
-      "comparative_rationale": "BenchLM shows DeepSeek V4 Pro variants around upper-mid agentic ranks with solid terminal and browsing scores [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks) [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
+      "comparative_rationale": "BenchLM shows DeepSeek V4 Pro around 67.9% Terminal-Bench snapshot, solid but behind the best agentic coding models listed.",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 4,
+      "id": "qwen/qwen3.6-plus",
+      "name": "Qwen: Qwen3.6 Plus",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1000000,
+      "release_date": "2026-04-02",
+      "age_days": 39,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.325,
+        "completion_usd_per_mtok": 1.95
+      },
+      "signals": {
+        "intelligence_score": 50.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9791,
+        "comparative_score": 0.65
+      },
+      "scores": {
+        "quality_score": 0.6766,
+        "preliminary_quality_score": 0.6935,
+        "value_score": 0.6909
+      },
+      "notes": "",
+      "comparative_rationale": "Qwen models are consistently strong on BFCL and coding-adjacent benchmarks, but this specific Plus variant lacks top-tier public agentic scores.",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 5,
+      "id": "xiaomi/mimo-v2-pro",
+      "name": "Xiaomi: MiMo-V2-Pro",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1048576,
+      "release_date": "2026-03-18",
+      "age_days": 53,
+      "pricing": {
+        "prompt_usd_per_mtok": 1.0,
+        "completion_usd_per_mtok": 3.0
+      },
+      "signals": {
+        "intelligence_score": 49.2,
+        "agentic_token_volume": 1673733464634,
+        "agentic_rank": 1,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9476,
+        "comparative_score": 0.52
+      },
+      "scores": {
+        "quality_score": 0.7027,
+        "preliminary_quality_score": 0.8207,
+        "value_score": 0.6768
+      },
+      "notes": "",
+      "comparative_rationale": "Older MiMo release must rank below MiMo-V2.5-Pro; family shows strong agentic positioning but newer version clearly supersedes it.",
       "ranking_kind": "best"
     },
     {
@@ -194,15 +194,15 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.71
+        "comparative_score": 0.58
       },
       "scores": {
-        "quality_score": 0.7127,
+        "quality_score": 0.6607,
         "preliminary_quality_score": 0.7142,
-        "value_score": 0.6974
+        "value_score": 0.6627
       },
       "notes": "",
-      "comparative_rationale": "High general intelligence and strong recent frontier reputation suggest solid agentic coding, but public benchmark coverage here is limited.",
+      "comparative_rationale": "High general intelligence helps, but public autonomous coding and tool-use benchmark coverage is thinner than OpenAI, Anthropic, or Z.ai.",
       "ranking_kind": "best"
     },
     {
@@ -221,54 +221,23 @@
       },
       "signals": {
         "intelligence_score": 51.4,
-        "agentic_token_volume": 313656753974,
+        "agentic_token_volume": 315780536340,
         "agentic_rank": 15,
         "sentiment_score": 0.0,
         "recency_score": 0.993,
-        "comparative_score": 0.68
+        "comparative_score": 0.75
       },
       "scores": {
-        "quality_score": 0.6606,
-        "preliminary_quality_score": 0.6464,
-        "value_score": 0.6365
+        "quality_score": 0.6887,
+        "preliminary_quality_score": 0.6466,
+        "value_score": 0.6552
       },
       "notes": "",
-      "comparative_rationale": "Preliminary shortlist gives agentic rank #15, and GLM family is consistently strong on BFCL/tau-style tool benchmarks in public comparisons [awesomeagents.ai](https://awesomeagents.ai/leaderboards/function-calling-benchmarks-leaderboard/).",
+      "comparative_rationale": "Newer than GLM-5 and Z.ai models lead BFCL-style function calling benchmarks, supporting strong tool-use placement here.",
       "ranking_kind": "best"
     },
     {
       "rank": 8,
-      "id": "moonshotai/kimi-k2.6",
-      "name": "MoonshotAI: Kimi K2.6",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 262144,
-      "release_date": "2026-04-20",
-      "age_days": 20,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.75,
-        "completion_usd_per_mtok": 3.5
-      },
-      "signals": {
-        "intelligence_score": 53.9,
-        "agentic_token_volume": 237224504979,
-        "agentic_rank": 17,
-        "sentiment_score": 0.0,
-        "recency_score": 1.0,
-        "comparative_score": 0.65
-      },
-      "scores": {
-        "quality_score": 0.6574,
-        "preliminary_quality_score": 0.6618,
-        "value_score": 0.6343
-      },
-      "notes": "",
-      "comparative_rationale": "BenchLM places Kimi K2.6 mid-pack agentically, and Kimi family shows respectable BFCL results for tool-heavy tasks [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks) [awesomeagents.ai](https://awesomeagents.ai/leaderboards/function-calling-benchmarks-leaderboard/).",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 9,
       "id": "openai/gpt-5.5",
       "name": "OpenAI: GPT-5.5",
       "is_free": false,
@@ -283,23 +252,23 @@
       },
       "signals": {
         "intelligence_score": 60.2,
-        "agentic_token_volume": 87760353922,
+        "agentic_token_volume": 89975443567,
         "agentic_rank": 27,
-        "sentiment_score": 0.0,
+        "sentiment_score": 0.74,
         "recency_score": 1.0,
         "comparative_score": 1.0
       },
       "scores": {
-        "quality_score": 0.8592,
-        "preliminary_quality_score": 0.7668,
-        "value_score": 0.6204
+        "quality_score": 0.8963,
+        "preliminary_quality_score": 0.8299,
+        "value_score": 0.6452
       },
-      "notes": "",
-      "comparative_rationale": "Leads BenchLM verified agentic rankings and Terminal-Bench snapshot, outperforming GPT-5.4 and most coding-agent peers [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks) [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
+      "notes": "Recent comparison pieces portray GPT-5.5 as excellent for terminal-heavy autonomous workflows and long reasoning, citing 82.7% on Terminal-Bench 2.0 and a leading composite intelligence score. Sentiment is positive but slightly below Opus for code patching because multiple sources still place it behind on SWE-bench Pro and on strict tool-call reliability.",
+      "comparative_rationale": "Leads verified agentic rankings and Terminal-Bench public snapshot at 82.0%, making it strongest here on autonomous coding workflows.",
       "ranking_kind": "best"
     },
     {
-      "rank": 10,
+      "rank": 9,
       "id": "anthropic/claude-opus-4.7",
       "name": "Anthropic: Claude Opus 4.7",
       "is_free": false,
@@ -307,7 +276,7 @@
       "supports_reasoning": true,
       "context_length": 1000000,
       "release_date": "2026-04-16",
-      "age_days": 24,
+      "age_days": 25,
       "pricing": {
         "prompt_usd_per_mtok": 5.0,
         "completion_usd_per_mtok": 25.0
@@ -316,17 +285,48 @@
         "intelligence_score": 57.3,
         "agentic_token_volume": 0,
         "agentic_rank": 0,
-        "sentiment_score": 0.0,
+        "sentiment_score": 0.9,
         "recency_score": 1.0,
         "comparative_score": 0.97
       },
       "scores": {
-        "quality_score": 0.8303,
-        "preliminary_quality_score": 0.7381,
-        "value_score": 0.6091
+        "quality_score": 0.8753,
+        "preliminary_quality_score": 0.8146,
+        "value_score": 0.6391
+      },
+      "notes": "Recent launch coverage and user discussion describe Opus 4.7 as the current favorite for agentic coding, with 64.3% SWE-bench Pro, 87.6% SWE-bench Verified, stronger self-verification, and broad support in Claude Code, Cursor, Copilot, Devin, and Cline. The main negative sentiment is around token inflation from a new tokenizer and mixed long-context benchmark impressions despite strong real-world coding feedback.",
+      "comparative_rationale": "BenchLM places Claude Opus 4.7 Adaptive second on Terminal-Bench 2.0 at 69.4%, with strong multi-turn agent reputation.",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 10,
+      "id": "moonshotai/kimi-k2.6",
+      "name": "MoonshotAI: Kimi K2.6",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "release_date": "2026-04-20",
+      "age_days": 21,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.75,
+        "completion_usd_per_mtok": 3.5
+      },
+      "signals": {
+        "intelligence_score": 53.9,
+        "agentic_token_volume": 240909202585,
+        "agentic_rank": 17,
+        "sentiment_score": 0.0,
+        "recency_score": 1.0,
+        "comparative_score": 0.62
+      },
+      "scores": {
+        "quality_score": 0.6456,
+        "preliminary_quality_score": 0.6621,
+        "value_score": 0.6265
       },
       "notes": "",
-      "comparative_rationale": "Second on BenchLM verified agentic leaderboard with strong BrowseComp and terminal performance, trailing only GPT-5.5 [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks).",
+      "comparative_rationale": "Kimi family shows respectable Terminal-Bench and BFCL competitiveness, yet published agentic coding results remain below top frontier leaders.",
       "ranking_kind": "best"
     }
   ]
