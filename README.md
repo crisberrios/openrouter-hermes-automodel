@@ -160,7 +160,7 @@ network round-trip needed.
 
 | Env var | Default | Meaning |
 |---------|---------|---------|
-| `AUTOMODEL_SENTIMENT_MODEL` | `openai/gpt-4o-mini:online` | Model used for the news-and-sentiment enrichment call. Any OpenRouter slug; the `:online` suffix activates web search. |
+| `AUTOMODEL_SENTIMENT_MODEL` | `openai/gpt-5.4:online` | Model used for the sentiment+news enrichment **and** the stage-2 head-to-head comparison call. Any OpenRouter slug; the `:online` suffix activates web search. |
 | `AUTOMODEL_SENTIMENT_PROMPT` | `scripts/sentiment_prompt.md` next to the runner | Path to the markdown prompt sent as the user message in the sentiment call. Override to point at a different file. |
 
 Composite scoring (in `compute_scores()`):

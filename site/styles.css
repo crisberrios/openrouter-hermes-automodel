@@ -180,6 +180,58 @@ td.id .name {
   white-space: normal;
 }
 
+td.released { color: var(--fg-soft); font-variant-numeric: tabular-nums; }
+td.released.unknown { color: var(--fg-faint); }
+
+th.th-quality {
+  position: sticky;
+  cursor: help;
+  user-select: none;
+}
+th.th-quality .info {
+  display: inline-block;
+  margin-left: 0.3rem;
+  color: var(--fg-faint);
+  font-size: 0.9em;
+  transition: color 120ms ease;
+}
+th.th-quality:hover .info,
+th.th-quality:focus .info,
+th.th-quality.pinned .info { color: var(--accent); }
+
+/* Floating explanation panel attached to a hovered/pinned quality header. */
+th.th-quality::after {
+  content: attr(data-explain);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: min(420px, 60vw);
+  margin-top: 0.4rem;
+  padding: 0.55rem 0.75rem;
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--accent-dim);
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: normal;
+  line-height: 1.45;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 120ms ease;
+  pointer-events: none;
+  z-index: 5;
+}
+th.th-quality:hover::after,
+th.th-quality:focus::after,
+th.th-quality.pinned::after {
+  opacity: 1;
+  visibility: visible;
+}
+
 td.num { text-align: right; font-variant-numeric: tabular-nums; }
 td.rank { color: var(--fg-faint); width: 2.5rem; }
 td.flag-yes { color: var(--accent); }

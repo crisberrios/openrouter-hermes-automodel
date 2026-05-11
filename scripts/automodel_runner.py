@@ -50,20 +50,30 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 SENTIMENT_PROMPT_PATH = Path(
     os.environ.get("AUTOMODEL_SENTIMENT_PROMPT") or (SCRIPT_DIR / "sentiment_prompt.md")
 )
+COMPARATIVE_PROMPT_PATH = Path(
+    os.environ.get("AUTOMODEL_COMPARATIVE_PROMPT") or (SCRIPT_DIR / "comparative_prompt.md")
+)
 
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 
+# Stage-1 produces this many candidates per list; stage-2 (head-to-head
+# benchmark comparison) re-ranks them down to LIST_SIZE for the final output.
 LIST_SIZE = 10
+SHORTLIST_SIZE = 15
 TRACKED_APPS = ["hermes-agent", "openclaw"]
 
 USER_AGENT = "automodel-runner/1.0 (+https://openrouter.ai)"
 HTTP_TIMEOUT = 30
+# Longer ceiling for the two LLM calls. `:online` models route through
+# OpenRouter's web plugin which can push end-to-end latency past 60s on
+# bigger prompts (notably the 32-model comparative re-rank).
+LLM_HTTP_TIMEOUT = 180
 
 # LLM used for the news + sentiment enrichment call. `:online` enables
 # OpenRouter's built-in web plugin so the model can actually search the web.
-SENTIMENT_MODEL = os.environ.get("AUTOMODEL_SENTIMENT_MODEL", "openai/gpt-4o-mini:online")
+SENTIMENT_MODEL = os.environ.get("AUTOMODEL_SENTIMENT_MODEL", "openai/gpt-5.4:online")
 SENTIMENT_MAX_TOKENS = 1500
 
 logging.basicConfig(
@@ -107,12 +117,18 @@ TELEGRAM_HOME_CHANNEL = ENV.get("TELEGRAM_HOME_CHANNEL", "")
 # ----------------------------------------------------------------------------
 # HTTP helpers
 # ----------------------------------------------------------------------------
-def _http(url: str, method: str = "GET", data: bytes | None = None, headers: dict | None = None) -> bytes:
+def _http(
+    url: str,
+    method: str = "GET",
+    data: bytes | None = None,
+    headers: dict | None = None,
+    timeout: int = HTTP_TIMEOUT,
+) -> bytes:
     req = urllib.request.Request(url, method=method, data=data)
     req.add_header("User-Agent", USER_AGENT)
     for k, v in (headers or {}).items():
         req.add_header(k, v)
-    with urllib.request.urlopen(req, timeout=HTTP_TIMEOUT) as resp:
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
         return resp.read()
 
 
@@ -139,6 +155,9 @@ class ModelEntry:
     supports_reasoning: bool = False
     description: str = ""
 
+    # Release metadata (from OpenRouter catalog `created` field)
+    release_date: datetime | None = None
+
     # Signals (filled later)
     intelligence_score: float = 0.0
     # Aggregate usage across tracked agentic apps (TRACKED_APPS) — replaces
@@ -147,10 +166,42 @@ class ModelEntry:
     agentic_rank: int = 0
     sentiment_score: float = 0.0   # -1..+1
     sentiment_notes: str = ""
+    recency_score: float = 0.0     # 0..1, derived from release_date
+    comparative_score: float = 0.0       # 0..1, filled by stage-2 head-to-head call
+    comparative_rationale: str = ""      # short reasoning string from stage-2
 
     # Composite (filled at ranking time)
-    quality_score: float = 0.0
+    preliminary_quality_score: float = 0.0  # stage-1, before comparative re-rank
+    quality_score: float = 0.0              # final, after stage-2 blend (or = preliminary if stage-2 skipped)
     value_score: float = 0.0       # quality per dollar
+
+
+def _parse_release(raw_value: Any) -> datetime | None:
+    """Parse OpenRouter's `created` field. Usually a Unix timestamp (int or
+    float); sometimes an ISO-8601 string. Returns None if unparseable or
+    obviously bogus (before 2020 or in the far future)."""
+    if raw_value is None:
+        return None
+    try:
+        if isinstance(raw_value, (int, float)):
+            dt = datetime.fromtimestamp(float(raw_value), tz=timezone.utc)
+        else:
+            s = str(raw_value).strip()
+            if not s:
+                return None
+            if s.endswith("Z"):
+                s = s[:-1] + "+00:00"
+            dt = datetime.fromisoformat(s)
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+    except (ValueError, OSError, OverflowError):
+        return None
+    # Sanity: OpenRouter launched after 2020, and a future date by more than
+    # a few days is almost certainly a unit-conversion bug upstream.
+    now = datetime.now(timezone.utc)
+    if dt.year < 2020 or dt > now.replace(year=now.year + 1):
+        return None
+    return dt
 
 
 def fetch_catalog() -> dict[str, ModelEntry]:
@@ -176,8 +227,10 @@ def fetch_catalog() -> dict[str, ModelEntry]:
             supports_tools="tools" in params or "tool_choice" in params,
             supports_reasoning="reasoning" in params or "include_reasoning" in params,
             description=(raw.get("description") or "")[:600],
+            release_date=_parse_release(raw.get("created")),
         )
-    log.info("  catalog: %d models", len(models))
+    with_dates = sum(1 for m in models.values() if m.release_date)
+    log.info("  catalog: %d models (%d with release date)", len(models), with_dates)
     return models
 
 
@@ -371,6 +424,150 @@ def _load_sentiment_prompt() -> str:
         raise
 
 
+def _load_comparative_prompt() -> str:
+    try:
+        return COMPARATIVE_PROMPT_PATH.read_text(encoding="utf-8")
+    except FileNotFoundError:
+        log.error("Comparative prompt not found at %s", COMPARATIVE_PROMPT_PATH)
+        raise
+
+
+def fetch_comparative_rankings(candidates: list[ModelEntry]) -> dict[str, dict]:
+    """Stage-2 head-to-head benchmark comparison.
+
+    Sends a shortlist of already-shortlisted models to a web-enabled LLM and
+    asks for relative benchmark-based rankings. Returns
+    `{openrouter_slug: {"score": float, "rationale": str}}`. Empty dict on
+    failure; the caller should fall back to stage-1 scores in that case.
+    """
+    if not OPENROUTER_API_KEY:
+        log.warning("OPENROUTER_API_KEY missing — skipping comparative re-rank")
+        return {}
+    if not candidates:
+        return {}
+
+    prompt = _load_comparative_prompt()
+    lines = []
+    for m in candidates:
+        hints = []
+        if m.intelligence_score > 0:
+            hints.append(f"intelligence={m.intelligence_score:.1f}")
+        if m.agentic_rank:
+            hints.append(f"agentic_rank=#{m.agentic_rank}")
+        if abs(m.sentiment_score) > 0.05:
+            hints.append(f"sentiment={m.sentiment_score:+.2f}")
+        if m.release_date:
+            hints.append(f"released={m.release_date.date().isoformat()}")
+        if m.is_free:
+            hints.append("FREE")
+        if not m.supports_tools:
+            hints.append("no-tools")
+        if not m.supports_reasoning:
+            hints.append("no-reasoning")
+        hint_str = ", ".join(hints) if hints else "—"
+        lines.append(f"- {m.id} | {m.name} | ctx={m.context_length} | {hint_str}")
+    full_prompt = prompt + "\n".join(lines) + "\n"
+
+    log.info("Calling %s for comparative re-rank of %d models", SENTIMENT_MODEL, len(candidates))
+    body = json.dumps({
+        "model": SENTIMENT_MODEL,
+        "max_tokens": 4000,
+        "response_format": {"type": "json_object"},
+        "messages": [
+            {"role": "system", "content": "You produce strict JSON only — no prose, no markdown fences."},
+            {"role": "user", "content": full_prompt},
+        ],
+    }).encode("utf-8")
+    try:
+        raw = _http(
+            "https://openrouter.ai/api/v1/chat/completions",
+            method="POST",
+            data=body,
+            headers={
+                "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+                "Content-Type": "application/json",
+                "X-Title": "automodel-runner",
+                "HTTP-Referer": "https://automodel.local",
+            },
+            timeout=LLM_HTTP_TIMEOUT,
+        )
+    except Exception as e:
+        log.warning("comparative call HTTP failed: %s", e)
+        return {}
+
+    # Always cache the raw envelope for debugging — even on parse failure,
+    # so we can see why (rate limit, content filter, refusal, etc.).
+    try:
+        raw_text = raw.decode("utf-8")
+    except Exception:
+        raw_text = repr(raw)
+    (CACHE_DIR / "last_comparative_envelope.json").write_text(raw_text, encoding="utf-8")
+
+    try:
+        resp = json.loads(raw_text)
+        content = resp["choices"][0]["message"]["content"]
+    except Exception as e:
+        snippet = raw_text[:400].replace("\n", " ")
+        log.warning("comparative parse failed: %s — envelope head: %s", e, snippet)
+        return {}
+
+    (CACHE_DIR / "last_comparative_raw.txt").write_text(content, encoding="utf-8")
+
+    content = content.strip()
+    if content.startswith("```"):
+        content = re.sub(r"^```[a-zA-Z]*\n?", "", content)
+        content = re.sub(r"\n?```$", "", content.strip())
+    first_brace = content.find("{")
+    if first_brace > 0:
+        content = content[first_brace:]
+
+    parsed = _try_parse_json(content)
+    if not parsed or not isinstance(parsed.get("rankings"), list):
+        log.warning("comparative response wasn't valid JSON; got len=%d", len(content))
+        return {}
+
+    out: dict[str, dict] = {}
+    for entry in parsed["rankings"]:
+        slug = (entry.get("openrouter_slug") or "").strip()
+        if not slug:
+            continue
+        try:
+            score = float(entry.get("relative_score") or 0)
+        except (TypeError, ValueError):
+            score = 0.0
+        score = max(0.0, min(1.0, score))
+        rationale = (entry.get("rationale") or "").strip()
+        out[slug] = {"score": score, "rationale": rationale}
+
+    (CACHE_DIR / "last_comparative.json").write_text(
+        json.dumps(out, indent=2), encoding="utf-8"
+    )
+    log.info("comparative re-rank produced scores for %d/%d candidates", len(out), len(candidates))
+    return out
+
+
+def apply_comparative_scores(
+    catalog: dict[str, ModelEntry],
+    comparative: dict[str, dict],
+) -> int:
+    """Apply comparative scores to the catalog (matched by normalized slug).
+    Returns the number of models that got a score."""
+    by_norm: dict[str, list[ModelEntry]] = {}
+    for m in catalog.values():
+        by_norm.setdefault(_slug_norm(m.id), []).append(m)
+
+    n = 0
+    for slug, info in comparative.items():
+        score = info.get("score", 0.0)
+        rationale = info.get("rationale", "")
+        for m in by_norm.get(_slug_norm(slug), []):
+            m.comparative_score = score
+            if rationale and not m.comparative_rationale:
+                m.comparative_rationale = rationale
+            n += 1
+    return n
+
+
 def fetch_sentiment() -> dict:
     if not OPENROUTER_API_KEY:
         log.warning("OPENROUTER_API_KEY missing — skipping sentiment enrichment")
@@ -398,6 +595,7 @@ def fetch_sentiment() -> dict:
                 "X-Title": "automodel-runner",
                 "HTTP-Referer": "https://automodel.local",
             },
+            timeout=LLM_HTTP_TIMEOUT,
         )
         resp = json.loads(raw.decode("utf-8"))
         content = resp["choices"][0]["message"]["content"]
@@ -515,7 +713,69 @@ def merge_signals(
                 model.sentiment_notes = notes
 
 
-def compute_scores(catalog: dict[str, ModelEntry]) -> None:
+def _recency_score(release_date: datetime | None, now: datetime) -> float:
+    """Map a release date to a 0..1 recency score with a soft decay.
+
+    < 30 days  → ~1.0
+    30-180 d   → linear-ish decline from ~0.9 to ~0.4
+    > 365 d    → ~0.1 floor
+    None       → 0.5 (neutral; don't penalize models with no metadata)
+    """
+    if release_date is None:
+        return 0.5
+    age_days = max(0, (now - release_date).days)
+    if age_days <= 30:
+        return 1.0
+    if age_days <= 365:
+        # Exponential-ish decay from 1.0 at 30d to ~0.25 at 365d
+        return round(max(0.1, 1.0 * (0.9 ** ((age_days - 30) / 45))), 4)
+    return 0.1
+
+
+def _value_score(quality: float, completion_price: float, is_free: bool) -> float:
+    out_price_per_mtok = completion_price * 1_000_000
+    if is_free or out_price_per_mtok <= 0.001:
+        return round(quality + 0.50, 4)  # large boost — free is the value bucket
+    return round(quality / (1.0 + (out_price_per_mtok / 5.0)), 4)
+
+
+# Composite weights. Stage-1 omits `comparative` (it's filled by stage-2);
+# the runtime always uses the appropriate dict for each pass.
+WEIGHTS_STAGE1 = {
+    "intelligence": 0.35,
+    "volume":       0.13,
+    "sentiment":    0.17,
+    "context":      0.10,
+    "recency":      0.10,
+    "tools":        0.10,
+    "reasoning":    0.05,
+}
+# After stage-2, `comparative` is mixed in and the other weights are scaled
+# down proportionally. Sums to 1.0.
+WEIGHTS_STAGE2 = {
+    "intelligence": 0.20,
+    "volume":       0.08,
+    "sentiment":    0.10,
+    "context":      0.06,
+    "recency":      0.07,
+    "tools":        0.06,
+    "reasoning":    0.03,
+    "comparative":  0.40,
+}
+
+
+def compute_scores(catalog: dict[str, ModelEntry], use_comparative: bool = False) -> None:
+    """Compute composite quality + value scores.
+
+    Called twice during a run:
+
+    1. After signal merging, before the stage-2 LLM call. Sets
+       `preliminary_quality_score` (and `quality_score` to match, so any
+       intermediate sort behaves consistently).
+    2. After `fetch_comparative_rankings`, with `use_comparative=True`.
+       Re-blends with the comparative signal and overwrites
+       `quality_score` + `value_score`.
+    """
     # Candidates: any model with a signal, OR free tool-capable model with
     # decent context (so the free list never ends up empty just because the
     # rankings page doesn't list free models).
@@ -527,42 +787,68 @@ def compute_scores(catalog: dict[str, ModelEntry]) -> None:
         return False
 
     candidates = [m for m in catalog.values() if is_candidate(m)]
+    if not candidates:
+        return
 
+    now = datetime.now(timezone.utc)
     intel_norm = _normalize([m.intelligence_score for m in candidates])
     volume_norm = _normalize([float(m.agentic_token_volume or 0) for m in candidates])
     ctx_norm = _normalize([float(m.context_length or 0) for m in candidates])
     # Sentiment is already -1..+1 → shift to 0..1; neutral (0) becomes 0.5
     sent_norm = [(m.sentiment_score + 1.0) / 2.0 if m.sentiment_score != 0 else 0.5 for m in candidates]
+    rec_scores = [_recency_score(m.release_date, now) for m in candidates]
+    for m, r in zip(candidates, rec_scores):
+        m.recency_score = r
 
-    # Bonus for tool-calling support — required for agentic work
+    weights = WEIGHTS_STAGE2 if use_comparative else WEIGHTS_STAGE1
+
     for i, m in enumerate(candidates):
         tool_bonus = 1.0 if m.supports_tools else 0.0
         reasoning_bonus = 0.5 if m.supports_reasoning else 0.0
-        # Weights: intelligence 0.40, agentic-app usage 0.15, sentiment 0.20,
-        # context 0.10, tool-call 0.10, reasoning 0.05.
-        m.quality_score = round(
-            0.40 * intel_norm[i]
-            + 0.15 * volume_norm[i]
-            + 0.20 * sent_norm[i]
-            + 0.10 * ctx_norm[i]
-            + 0.10 * tool_bonus
-            + 0.05 * reasoning_bonus,
-            4,
-        )
 
-        # Value = quality per million-output-tokens cost. Free models get
-        # the highest value bucket because cost is zero.
-        out_price_per_mtok = m.completion_price * 1_000_000
-        if m.is_free or out_price_per_mtok <= 0.001:
-            m.value_score = round(m.quality_score + 0.50, 4)  # large boost
+        if use_comparative and m.comparative_score > 0:
+            # Stage 2 blend — full reweight with the comparative signal.
+            quality = (
+                weights["intelligence"] * intel_norm[i]
+                + weights["volume"]     * volume_norm[i]
+                + weights["sentiment"]  * sent_norm[i]
+                + weights["context"]    * ctx_norm[i]
+                + weights["recency"]    * rec_scores[i]
+                + weights["tools"]      * tool_bonus
+                + weights["reasoning"]  * reasoning_bonus
+                + weights["comparative"] * m.comparative_score
+            )
+        elif use_comparative:
+            # Stage 2 was requested but the LLM didn't score this model —
+            # keep its stage-1 quality rather than penalizing it for the
+            # LLM's omission. (Without this, comparative_score=0 multiplied
+            # by 0.40 would drag the score down by 0.4 in absolute terms.)
+            quality = m.preliminary_quality_score
         else:
-            m.value_score = round(m.quality_score / (1.0 + (out_price_per_mtok / 5.0)), 4)
+            # Stage 1 — composite without comparative.
+            quality = (
+                weights["intelligence"] * intel_norm[i]
+                + weights["volume"]     * volume_norm[i]
+                + weights["sentiment"]  * sent_norm[i]
+                + weights["context"]    * ctx_norm[i]
+                + weights["recency"]    * rec_scores[i]
+                + weights["tools"]      * tool_bonus
+                + weights["reasoning"]  * reasoning_bonus
+            )
+
+        m.quality_score = round(quality, 4)
+        if not use_comparative:
+            m.preliminary_quality_score = m.quality_score
+        m.value_score = _value_score(m.quality_score, m.completion_price, m.is_free)
 
 
 # ----------------------------------------------------------------------------
 # List builders
 # ----------------------------------------------------------------------------
 def _model_card(m: ModelEntry, ranking_kind: str, rank: int) -> dict:
+    age_days: int | None = None
+    if m.release_date:
+        age_days = max(0, (datetime.now(timezone.utc) - m.release_date).days)
     return {
         "rank": rank,
         "id": m.id,
@@ -571,6 +857,8 @@ def _model_card(m: ModelEntry, ranking_kind: str, rank: int) -> dict:
         "supports_tools": m.supports_tools,
         "supports_reasoning": m.supports_reasoning,
         "context_length": m.context_length,
+        "release_date": m.release_date.date().isoformat() if m.release_date else None,
+        "age_days": age_days,
         "pricing": {
             "prompt_usd_per_mtok": round(m.prompt_price * 1_000_000, 4),
             "completion_usd_per_mtok": round(m.completion_price * 1_000_000, 4),
@@ -580,57 +868,82 @@ def _model_card(m: ModelEntry, ranking_kind: str, rank: int) -> dict:
             "agentic_token_volume": m.agentic_token_volume,
             "agentic_rank": m.agentic_rank,
             "sentiment_score": m.sentiment_score,
+            "recency_score": m.recency_score,
+            "comparative_score": m.comparative_score,
         },
         "scores": {
             "quality_score": m.quality_score,
+            "preliminary_quality_score": m.preliminary_quality_score,
             "value_score": m.value_score,
         },
         "notes": m.sentiment_notes,
+        "comparative_rationale": m.comparative_rationale,
         "ranking_kind": ranking_kind,
     }
 
 
-def build_lists(catalog: dict[str, ModelEntry]) -> dict[str, list[dict]]:
-    # compute_scores() already filtered to candidates; quality_score == 0 still
-    # appears for free models that have no leaderboard signal but were
-    # admitted via the tool-call + context heuristic.
-    pool = [m for m in catalog.values() if m.quality_score > 0 or m.is_free]
+def _shortlist_for_kind(pool: list[ModelEntry], kind: str, size: int) -> list[ModelEntry]:
+    """Stage-1 candidate selection per category. Returns up to `size` models
+    in stage-1 order — stage-2 may reorder them."""
+    if kind == "free":
+        free_pool = [m for m in pool if m.is_free]
+        free_pool.sort(key=lambda m: (m.preliminary_quality_score, m.agentic_token_volume), reverse=True)
+        return free_pool[:size]
 
-    # ---- Free list ----
-    free_pool = [m for m in pool if m.is_free]
-    free_pool.sort(key=lambda m: (m.quality_score, m.agentic_token_volume), reverse=True)
-    free_list = [_model_card(m, "free", i + 1) for i, m in enumerate(free_pool[:LIST_SIZE])]
+    if kind == "balanced":
+        # Half free + half paid, picked by their respective natural orders.
+        free_pool = sorted(
+            [m for m in pool if m.is_free],
+            key=lambda m: (m.preliminary_quality_score, m.agentic_token_volume),
+            reverse=True,
+        )
+        paid_pool = sorted(
+            [m for m in pool if not m.is_free],
+            key=lambda m: (m.value_score, m.preliminary_quality_score),
+            reverse=True,
+        )
+        half = max(1, size // 2)
+        chosen: list[ModelEntry] = []
+        seen: set[str] = set()
+        for m in free_pool:
+            if m.id in seen:
+                continue
+            chosen.append(m); seen.add(m.id)
+            if len(chosen) >= half:
+                break
+        for m in paid_pool:
+            if m.id in seen:
+                continue
+            chosen.append(m); seen.add(m.id)
+            if len(chosen) >= size:
+                break
+        return chosen
 
-    # ---- Balanced list: top 5 free + top 5 paid by value_score ----
-    paid_pool = sorted(
-        [m for m in pool if not m.is_free],
-        key=lambda m: (m.value_score, m.quality_score),
-        reverse=True,
-    )
-    seen: set[str] = set()
-    balanced: list[ModelEntry] = []
-    for m in free_pool:
-        if m.id in seen:
-            continue
-        balanced.append(m)
-        seen.add(m.id)
-        if len(balanced) >= LIST_SIZE // 2:
-            break
-    for m in paid_pool:
-        if m.id in seen:
-            continue
-        balanced.append(m)
-        seen.add(m.id)
-        if len(balanced) >= LIST_SIZE:
-            break
-    balanced.sort(key=lambda m: (m.quality_score, m.value_score), reverse=True)
-    balanced_list = [_model_card(m, "balanced", i + 1) for i, m in enumerate(balanced[:LIST_SIZE])]
+    # "best": price-blind, by preliminary quality
+    return sorted(pool, key=lambda m: (m.preliminary_quality_score, m.agentic_token_volume), reverse=True)[:size]
 
-    # ---- Best list: top quality, no price filter ----
-    best_pool = sorted(pool, key=lambda m: (m.quality_score, m.agentic_token_volume), reverse=True)
-    best_list = [_model_card(m, "best", i + 1) for i, m in enumerate(best_pool[:LIST_SIZE])]
 
-    return {"free": free_list, "balanced": balanced_list, "best": best_list}
+def build_shortlists(catalog: dict[str, ModelEntry]) -> dict[str, list[ModelEntry]]:
+    """Stage-1: produce SHORTLIST_SIZE candidates per category from
+    preliminary-quality scores. Returns ModelEntry objects (not cards) so
+    stage-2 can attach comparative scores in place."""
+    pool = [m for m in catalog.values() if m.preliminary_quality_score > 0 or m.is_free]
+    return {kind: _shortlist_for_kind(pool, kind, SHORTLIST_SIZE) for kind in ("free", "balanced", "best")}
+
+
+def finalize_lists(shortlists: dict[str, list[ModelEntry]]) -> dict[str, list[dict]]:
+    """Stage-2: re-sort each shortlist by the final (post-comparative)
+    quality/value scores, then trim to LIST_SIZE.
+
+    All three lists sort by quality first, with value as tiebreaker. Sorting
+    `balanced` by value would let free models' +0.50 value-boost sweep the
+    top of the list — defeating the half-free / half-paid mix.
+    """
+    out: dict[str, list[dict]] = {}
+    for kind, candidates in shortlists.items():
+        ordered = sorted(candidates, key=lambda m: (m.quality_score, m.value_score), reverse=True)
+        out[kind] = [_model_card(m, kind, i + 1) for i, m in enumerate(ordered[:LIST_SIZE])]
+    return out
 
 
 # ----------------------------------------------------------------------------
@@ -640,6 +953,7 @@ def write_outputs(
     lists: dict[str, list[dict]],
     sentiment: dict,
     app_signals: list[AppSignals],
+    comparative_count: int = 0,
 ) -> dict[str, Path]:
     now = datetime.now(timezone.utc).isoformat()
     tracked_apps_payload = {
@@ -657,6 +971,9 @@ def write_outputs(
             "generated_at": now,
             "kind": kind,
             "list_size": len(lists[kind]),
+            "shortlist_size": SHORTLIST_SIZE,
+            "comparative_rerank_applied": comparative_count > 0,
+            "comparative_scored_count": comparative_count,
             "tracked_apps": tracked_apps_payload,
             "summary": sentiment.get("summary", ""),
             "models": lists[kind],
@@ -723,9 +1040,31 @@ def main() -> int:
     sentiment = fetch_sentiment()
 
     merge_signals(catalog, intelligence, agentic_usage, sentiment)
-    compute_scores(catalog)
-    lists = build_lists(catalog)
-    paths = write_outputs(lists, sentiment, app_signals)
+    # Stage 1: preliminary composite score → shortlists per category.
+    compute_scores(catalog, use_comparative=False)
+    shortlists = build_shortlists(catalog)
+
+    # Stage 2: union the three shortlists and ask an LLM to rank them
+    # head-to-head on benchmarks. Re-score the full catalog with the
+    # comparative weight blended in, then re-sort each shortlist.
+    shortlist_union: dict[str, ModelEntry] = {}
+    for cand_list in shortlists.values():
+        for m in cand_list:
+            shortlist_union.setdefault(m.id, m)
+    union_models = list(shortlist_union.values())
+    log.info("stage-2 shortlist union: %d unique models across %d lists",
+             len(union_models), len(shortlists))
+
+    comparative = fetch_comparative_rankings(union_models)
+    comparative_count = apply_comparative_scores(catalog, comparative) if comparative else 0
+
+    if comparative_count:
+        compute_scores(catalog, use_comparative=True)
+    else:
+        log.warning("stage-2 unavailable — falling back to stage-1 scores")
+
+    lists = finalize_lists(shortlists)
+    paths = write_outputs(lists, sentiment, app_signals, comparative_count=comparative_count)
 
     duration = time.monotonic() - started
     head = lists["best"][0] if lists["best"] else None
@@ -740,6 +1079,10 @@ def main() -> int:
     if app_signals:
         ordered = sorted(app_signals, key=lambda s: s.rank or 9999)
         msg += "• Tracked apps: " + ", ".join(f"{s.slug}=#{s.rank or '?'}" for s in ordered) + "\n"
+    if comparative_count:
+        msg += f"• Comparative re-rank: applied to {comparative_count} models\n"
+    else:
+        msg += "• Comparative re-rank: skipped\n"
     msg += "Files: `" + "`, `".join(p.name for p in paths.values()) + "` in `~/automodel/output/`"
 
     publish_line = _maybe_publish_to_repo()

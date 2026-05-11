@@ -44,27 +44,39 @@
     <section class="list" data-kind="free">
       <h2>free.json <small>— top 10 free models with tool calling</small></h2>
       <div class="table-wrap"><table><thead><tr>
-        <th>#</th><th>id</th><th>ctx</th>
+        <th>#</th><th>id</th><th>ctx</th><th>released</th>
         <th>tools</th><th>reason</th>
-        <th>quality</th><th>value</th><th>$/M in</th><th>$/M out</th>
+        <th class="th-quality" tabindex="0"
+            data-explain="A composite 0–1 score from several signals: OpenRouter intelligence ranking, agentic-app usage volume, web-sourced sentiment, context length, recency of release, and tool-call / reasoning support. Stage-2 then blends in a head-to-head benchmark comparison among the top-15 shortlist.">
+          quality<span class="info" aria-hidden="true">ⓘ</span>
+        </th>
+        <th>value</th><th>$/M in</th><th>$/M out</th>
       </tr></thead><tbody></tbody></table></div>
     </section>
 
     <section class="list" data-kind="balanced">
-      <h2>balanced.json <small>— top 5 free + top 5 paid by quality-per-dollar</small></h2>
+      <h2>balanced.json <small>— half-free / half-paid shortlist, re-ranked by quality</small></h2>
       <div class="table-wrap"><table><thead><tr>
-        <th>#</th><th>id</th><th>ctx</th>
+        <th>#</th><th>id</th><th>ctx</th><th>released</th>
         <th>tools</th><th>reason</th>
-        <th>quality</th><th>value</th><th>$/M in</th><th>$/M out</th>
+        <th class="th-quality" tabindex="0"
+            data-explain="A composite 0–1 score from several signals: OpenRouter intelligence ranking, agentic-app usage volume, web-sourced sentiment, context length, recency of release, and tool-call / reasoning support. Stage-2 then blends in a head-to-head benchmark comparison among the top-15 shortlist.">
+          quality<span class="info" aria-hidden="true">ⓘ</span>
+        </th>
+        <th>value</th><th>$/M in</th><th>$/M out</th>
       </tr></thead><tbody></tbody></table></div>
     </section>
 
     <section class="list" data-kind="best">
       <h2>best.json <small>— top 10 by raw quality, price-blind</small></h2>
       <div class="table-wrap"><table><thead><tr>
-        <th>#</th><th>id</th><th>ctx</th>
+        <th>#</th><th>id</th><th>ctx</th><th>released</th>
         <th>tools</th><th>reason</th>
-        <th>quality</th><th>value</th><th>$/M in</th><th>$/M out</th>
+        <th class="th-quality" tabindex="0"
+            data-explain="A composite 0–1 score from several signals: OpenRouter intelligence ranking, agentic-app usage volume, web-sourced sentiment, context length, recency of release, and tool-call / reasoning support. Stage-2 then blends in a head-to-head benchmark comparison among the top-15 shortlist.">
+          quality<span class="info" aria-hidden="true">ⓘ</span>
+        </th>
+        <th>value</th><th>$/M in</th><th>$/M out</th>
       </tr></thead><tbody></tbody></table></div>
     </section>
   </main>

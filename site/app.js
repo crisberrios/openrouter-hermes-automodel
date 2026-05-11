@@ -34,10 +34,24 @@ function fmtTimestamp(iso) {
   }
 }
 
+function fmtReleased(isoDate, ageDays) {
+  if (!isoDate) return { text: "—", title: "release date unknown", unknown: true };
+  let label = isoDate;
+  if (Number.isFinite(ageDays)) {
+    if (ageDays < 1) label = "today";
+    else if (ageDays < 7) label = `${ageDays}d ago`;
+    else if (ageDays < 60) label = `${Math.round(ageDays / 7)}w ago`;
+    else if (ageDays < 730) label = `${Math.round(ageDays / 30)}mo ago`;
+    else label = `${Math.round(ageDays / 365)}y ago`;
+  }
+  return { text: label, title: `${isoDate} (${ageDays}d)`, unknown: false };
+}
+
 function renderRow(m) {
   const tr = document.createElement("tr");
   const promptPrice = m.pricing?.prompt_usd_per_mtok;
   const completionPrice = m.pricing?.completion_usd_per_mtok;
+  const rel = fmtReleased(m.release_date, m.age_days);
 
   tr.innerHTML = `
     <td class="num rank">${m.rank}</td>
@@ -46,6 +60,7 @@ function renderRow(m) {
       <span class="name">${escapeHtml(m.name || "")}</span>
     </td>
     <td class="num">${fmtCtx(m.context_length)}</td>
+    <td class="released${rel.unknown ? " unknown" : ""}" title="${escapeHtml(rel.title)}">${escapeHtml(rel.text)}</td>
     <td class="${m.supports_tools ? "flag-yes" : "flag-no"}">${m.supports_tools ? "✓" : "·"}</td>
     <td class="${m.supports_reasoning ? "flag-yes" : "flag-no"}">${m.supports_reasoning ? "✓" : "·"}</td>
     <td class="num">${fmtScore(m.scores?.quality_score)}</td>
@@ -104,8 +119,33 @@ function renderHeader(first) {
   }
 }
 
+function wireQualityExplainers() {
+  const headers = document.querySelectorAll("th.th-quality");
+  headers.forEach(th => {
+    th.addEventListener("click", e => {
+      // Toggle pinned state. Click anywhere else dismisses.
+      e.stopPropagation();
+      const wasPinned = th.classList.contains("pinned");
+      headers.forEach(h => h.classList.remove("pinned"));
+      if (!wasPinned) th.classList.add("pinned");
+    });
+    th.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        th.click();
+      } else if (e.key === "Escape") {
+        th.classList.remove("pinned");
+      }
+    });
+  });
+  document.addEventListener("click", () => {
+    headers.forEach(h => h.classList.remove("pinned"));
+  });
+}
+
 (async function main() {
   const results = await Promise.all(LISTS.map(loadOne));
   const first = results.find(Boolean);
   renderHeader(first);
+  wireQualityExplainers();
 })();
