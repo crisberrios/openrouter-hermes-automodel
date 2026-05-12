@@ -30,9 +30,10 @@ Three JSON outputs:
 | `balanced.json`| Budget-minded mixture of free and paid models |
 | `best.json`    | Models with best value per dollar, focusing on quality |
 
-The skill (`/automodel`) reads any of these and patches `~/.hermes/config.yaml`'s
-`provider_routing.openrouter.models` so OpenRouter's `/auto` route falls into the
-weighted set. `/automodel set default` removes the override (stock auto-routing).
+The skill (`/automodel`) reads any of these and patches the Hermes config
+file's `provider_routing.openrouter.models` so OpenRouter's `/auto` route falls
+into the weighted set. `/automodel set default` removes the override (stock
+auto-routing).
 
 You can use **either** half on its own:
 
@@ -68,8 +69,8 @@ automodel-repo/
 
 - Hermes Agent ≥ 0.13
 - Python 3.10+
-- OpenRouter API key in `~/.hermes/.env` (`OPENROUTER_API_KEY=…`)
-- Optional: `TELEGRAM_BOT_TOKEN` + `TELEGRAM_HOME_CHANNEL` in `~/.hermes/.env`
+- OpenRouter API key (`OPENROUTER_API_KEY=…`) in the Hermes env file
+- Optional: `TELEGRAM_BOT_TOKEN` + `TELEGRAM_HOME_CHANNEL` in the same file
   for run-complete notifications
 
 ## Setup paths
@@ -203,7 +204,7 @@ apply, set `AUTOMODEL_PUBLISH=1` and `AUTOMODEL_REPO_PATH=/path/to/repo`.
 
 Cron-time prerequisites inside the WSL/Linux environment that runs the job:
 
-- `git config --global user.email` and `user.name` set for the cron user
+- A git author identity (email + name) configured for the cron user
 - `git push` from `~/automodel-repo` works non-interactively (passphraseless SSH
   key, a credential helper, or a deploy key with write access)
 

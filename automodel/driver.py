@@ -74,7 +74,7 @@ def _load_yaml():
     except ImportError:
         sys.stderr.write(
             "ERROR: PyYAML not installed in the active interpreter.\n"
-            "Install it: `python3 -m pip install --user PyYAML` and retry.\n"
+            "Install it: `python3 -m pip install --user 'PyYAML==6.*'` and retry.\n"
         )
         sys.exit(3)
     return yaml
