@@ -26,9 +26,9 @@ Three JSON outputs:
 
 | File           | Selection logic |
 |----------------|-----------------|
-| `free.json`    | Top 10 free models with tool calling |
-| `balanced.json`| Top 5 free + top 5 paid, ranked by quality-per-dollar |
-| `best.json`    | Top 10 by quality, ignoring price |
+| `free.json`    | Best quality free models |
+| `balanced.json`| Budget-minded mixture of free and paid models |
+| `best.json`    | Models with best value per dollar, focusing on quality |
 
 The skill (`/automodel`) reads any of these and patches `~/.hermes/config.yaml`'s
 `provider_routing.openrouter.models` so OpenRouter's `/auto` route falls into the
@@ -77,7 +77,7 @@ automodel-repo/
 ### A. Install the skill
 
 ```bash
-hermes skills install https://raw.githubusercontent.com/<you>/automodel-repo/main/SKILL.md
+hermes skills install https://raw.githubusercontent.com/crisberrios/openrouter-hermes-automodel/main/SKILL.md
 ```
 
 or from a local clone:
