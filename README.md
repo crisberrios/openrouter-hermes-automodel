@@ -94,9 +94,11 @@ Then load it and tell it where to read JSON from:
 /automodel init
 ```
 
-`init` asks one question: **local** (read from `~/automodel/output/` produced by
-the cron job) or **url** (fetch from `https://your-host/<selection>.json`).
-Scriptable variants:
+`init` asks one question: the **base URL** to fetch lists from (default
+`https://openrouter-hermes-automodel.netlify.app/`). Press enter to accept the
+default or paste your own deploy URL — lists are then fetched from
+`<base>/<selection>.json`. To use the local cron output instead, run the driver
+non-interactively. Scriptable variants:
 
 ```bash
 python3 ~/.hermes/skills/.../automodel/driver.py init --mode local

@@ -15,7 +15,7 @@ automodel cron job, OR fetched from any URL you configure.
 
 | Command | What it does |
 |---------|--------------|
-| `/automodel init`                | Configure where the JSON files come from. Asks **local** (read from `~/automodel/output/`) or **url** (HTTP GET `<base>/<selection>.json`). |
+| `/automodel init`                | Configure where the JSON files come from. Prompts for a base URL (default `https://openrouter-hermes-automodel.netlify.app/`) and saves URL mode — lists are fetched via HTTP GET `<base>/<selection>.json`. Pass `--mode local` for the cron-output fallback. |
 | `/automodel set free`            | Save selection + apply: top 10 free models with tool-calling. |
 | `/automodel set balanced`        | Save selection + apply: top 5 free + top 5 paid, ranked by quality-per-dollar. |
 | `/automodel set best`            | Save selection + apply: top 10 by quality, ignoring price. |
@@ -24,10 +24,13 @@ automodel cron job, OR fetched from any URL you configure.
 
 ## Workflow
 
-1. **One-time setup** — `/automodel init`. Pick `local` if the automodel cron job
-   is running on this machine (default). Pick `url` to fetch lists from any host
-   that exposes `free.json` / `balanced.json` / `best.json`. The choice is saved
-   to `automodel/data/source.json`.
+1. **One-time setup** — `/automodel init`. The command prompts for a base URL
+   (default `https://openrouter-hermes-automodel.netlify.app/`) and saves it as
+   URL mode, so lists are fetched from `<base>/free.json` / `balanced.json` /
+   `best.json`. Re-run `/automodel init` any time you want to point at a
+   different host. To use the local cron output instead, run the driver
+   non-interactively: `python3 <skill-dir>/automodel/driver.py init --mode local`.
+   Settings are saved to `automodel/data/source.json`.
 2. **Apply a list** — `/automodel set <selection>`. The driver writes a
    timestamped backup of the Hermes config (`.bak.YYYYMMDD_HHMMSS`), then
    either patches `provider_routing.openrouter.models` with weighted entries

@@ -64,6 +64,8 @@ VALID_SELECTIONS = LIST_SELECTIONS + ("default",)
 USER_AGENT = "automodel-driver/2.0"
 HTTP_TIMEOUT = 20
 
+DEFAULT_BASE_URL = "https://openrouter-hermes-automodel.netlify.app/"
+
 
 # ----------------------------------------------------------------------------
 # Small utilities
@@ -254,22 +256,19 @@ def cmd_init(args: argparse.Namespace) -> int:
     base_url = args.url
     local_path = args.local_path
 
-    # If neither --mode nor --url provided, ask interactively.
+    # Interactive default: always prompt for the base URL (URL mode).
+    # Scripted callers can still pick local mode explicitly via --mode local.
     if not mode:
-        choice = input("Source for model lists — [l]ocal (cron output) or [u]rl? ").strip().lower()
-        if choice in ("u", "url"):
-            mode = "url"
-        elif choice in ("l", "local", ""):
-            mode = "local"
-        else:
-            sys.stderr.write(f"Unrecognized choice: {choice!r}\n")
-            return 2
+        mode = "url"
+        if not base_url:
+            entered = input(f"Base URL for JSON lists [{DEFAULT_BASE_URL}]: ").strip()
+            base_url = entered or DEFAULT_BASE_URL
 
     cfg: dict[str, Any] = {"mode": mode, "configured_at": _utcnow_iso()}
 
     if mode == "url":
         if not base_url:
-            base_url = input("Base URL (e.g. https://example.com/automodel): ").strip()
+            base_url = DEFAULT_BASE_URL
         try:
             cfg["base_url"] = _normalize_url(base_url)
         except ValueError as e:
