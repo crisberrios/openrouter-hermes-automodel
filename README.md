@@ -1,5 +1,28 @@
 # automodel
 
+> ## ⚠️ Status: driver currently non-functional
+>
+> OpenRouter currently only supports updating the allowed model list for
+> `openrouter/auto` **through the web UI** — there is no public API endpoint to
+> set it programmatically. I'm still looking for a way to automate this.
+>
+> In the meantime, the driver half of this project does not work: installing
+> the skill and pointing it at the JSON lists won't actually patch
+> `openrouter/auto`'s allowed-model set, because no API surface exists to do so.
+>
+> What still works today:
+> - The **cron job / runner** that ranks models and produces `free.json`,
+>   `balanced.json`, and `best.json`
+> - The **Netlify site** that publishes those lists
+>
+> What does **not** work yet:
+> - `hermes skills install` for this skill + `/automodel set <list>` — the
+>   driver has no endpoint to call, so the selection is never applied to
+>   `openrouter/auto`
+>
+> Until OpenRouter exposes an API (or I find a workaround), treat this repo
+> as a ranked-list generator only. Skip the "Install the skill" path.
+
 A Hermes Agent skill + cron-job runner that keeps three ranked OpenRouter model lists
 fresh and applies any of them to your Hermes `provider_routing` with one slash command.
 
