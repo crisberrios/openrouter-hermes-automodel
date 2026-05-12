@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-12T10:00:59.380993+00:00",
+  "generated_at": "2026-05-12T16:01:00.224843+00:00",
   "kind": "balanced",
   "list_size": 10,
   "shortlist_size": 15,
@@ -9,12 +9,12 @@
     "hermes-agent": {
       "rank": 1,
       "models_used": 350,
-      "total_tokens": 5567355718075
+      "total_tokens": 5628030270451
     },
     "openclaw": {
       "rank": 2,
       "models_used": 380,
-      "total_tokens": 6392279510134
+      "total_tokens": 6428239088733
     }
   },
   "summary": "",
@@ -35,19 +35,19 @@
       },
       "signals": {
         "intelligence_score": 36.0,
-        "agentic_token_volume": 1038323290078,
+        "agentic_token_volume": 1046647171514,
         "agentic_rank": 3,
         "sentiment_score": 0.0,
         "recency_score": 0.93,
-        "comparative_score": 0.55
+        "comparative_score": 0.75
       },
       "scores": {
-        "quality_score": 0.5891,
-        "preliminary_quality_score": 0.6091,
-        "value_score": 0.8261
+        "quality_score": 0.6743,
+        "preliminary_quality_score": 0.6176,
+        "value_score": 0.8829
       },
       "notes": "",
-      "comparative_rationale": "High platform agentic hint helps, but exact public benchmark mapping is sparse; placing mid-pack pending direct Terminal-Bench or SWE-Bench results.",
+      "comparative_rationale": "Vendor hint shows very high agentic rank; public benchmark coverage is thinner than leaders, so placed strong but not top-tier.",
       "ranking_kind": "balanced"
     },
     {
@@ -59,92 +59,61 @@
       "supports_reasoning": true,
       "context_length": 196608,
       "release_date": "2026-02-12",
-      "age_days": 88,
+      "age_days": 89,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 459119254129,
+        "agentic_token_volume": 461665469021,
         "agentic_rank": 10,
         "sentiment_score": 0.0,
-        "recency_score": 0.873,
-        "comparative_score": 0.64
+        "recency_score": 0.871,
+        "comparative_score": 0.69
       },
       "scores": {
-        "quality_score": 0.4703,
-        "preliminary_quality_score": 0.3433,
-        "value_score": 0.7469
+        "quality_score": 0.4924,
+        "preliminary_quality_score": 0.3467,
+        "value_score": 0.7616
       },
       "notes": "",
-      "comparative_rationale": "Newer than MiniMax M2.1/M2 and MiniMax variants score strongly on tau-bench, but direct coding-agent benchmarks for M2.5 remain limited.",
+      "comparative_rationale": "Newer than MiniMax M2.1 and M2, and MiniMax family posts competitive tau-bench agent results, supporting upper-mid placement [awesomeagents.ai](https://awesomeagents.ai/leaderboards/function-calling-benchmarks-leaderboard/).",
       "ranking_kind": "balanced"
     },
     {
       "rank": 3,
-      "id": "stepfun/step-3.5-flash",
-      "name": "StepFun: Step 3.5 Flash",
+      "id": "nvidia/nemotron-3-super-120b-a12b",
+      "name": "NVIDIA: Nemotron 3 Super",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
       "context_length": 262144,
-      "release_date": "2026-01-29",
-      "age_days": 102,
+      "release_date": "2026-03-11",
+      "age_days": 61,
       "pricing": {
-        "prompt_usd_per_mtok": 0.1,
-        "completion_usd_per_mtok": 0.3
+        "prompt_usd_per_mtok": 0.09,
+        "completion_usd_per_mtok": 0.45
       },
       "signals": {
-        "intelligence_score": 38.5,
-        "agentic_token_volume": 349742863551,
-        "agentic_rank": 14,
+        "intelligence_score": 36.0,
+        "agentic_token_volume": 1046647171514,
+        "agentic_rank": 3,
         "sentiment_score": 0.0,
-        "recency_score": 0.8449,
-        "comparative_score": 0.69
+        "recency_score": 0.93,
+        "comparative_score": 0.75
       },
       "scores": {
-        "quality_score": 0.6127,
-        "preliminary_quality_score": 0.5587,
-        "value_score": 0.7229
+        "quality_score": 0.6743,
+        "preliminary_quality_score": 0.6176,
+        "value_score": 0.7553
       },
       "notes": "",
-      "comparative_rationale": "Vendor-provided agentic rank is solid, but limited public SWE-Bench, BFCL, or Terminal-Bench evidence keeps it below top-tier models.",
+      "comparative_rationale": "Vendor hint shows very high agentic rank; public benchmark coverage is thinner than leaders, so placed strong but not top-tier.",
       "ranking_kind": "balanced"
     },
     {
       "rank": 4,
-      "id": "xiaomi/mimo-v2.5-pro",
-      "name": "Xiaomi: MiMo-V2.5-Pro",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1048576,
-      "release_date": "2026-04-22",
-      "age_days": 19,
-      "pricing": {
-        "prompt_usd_per_mtok": 1.0,
-        "completion_usd_per_mtok": 3.0
-      },
-      "signals": {
-        "intelligence_score": 53.8,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0,
-        "recency_score": 1.0,
-        "comparative_score": 0.9
-      },
-      "scores": {
-        "quality_score": 0.7647,
-        "preliminary_quality_score": 0.6744,
-        "value_score": 0.7181
-      },
-      "notes": "",
-      "comparative_rationale": "Third on Terminal-Bench 2.0 at 68.4%, a strong public signal for CLI-heavy agentic coding and multi-step tool execution.",
-      "ranking_kind": "balanced"
-    },
-    {
-      "rank": 5,
       "id": "x-ai/grok-4.3",
       "name": "xAI: Grok 4.3",
       "is_free": false,
@@ -163,81 +132,50 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.82
+        "comparative_score": 0.9
       },
       "scores": {
-        "quality_score": 0.7292,
+        "quality_score": 0.7612,
         "preliminary_quality_score": 0.6685,
-        "value_score": 0.7084
+        "value_score": 0.7297
       },
       "notes": "",
-      "comparative_rationale": "Newer Grok snapshot outranks Grok 4.1 Fast by recency and stronger general intelligence, though public agentic benchmark coverage is thinner.",
+      "comparative_rationale": "Newest Grok snapshot should outrank older Grok variants; limited direct public coding-agent benchmarks keep it below GPT-5.5 and Claude 4.7.",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 5,
+      "id": "stepfun/step-3.5-flash",
+      "name": "StepFun: Step 3.5 Flash",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "release_date": "2026-01-29",
+      "age_days": 102,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.1,
+        "completion_usd_per_mtok": 0.3
+      },
+      "signals": {
+        "intelligence_score": 38.5,
+        "agentic_token_volume": 350046201798,
+        "agentic_rank": 14,
+        "sentiment_score": 0.0,
+        "recency_score": 0.8449,
+        "comparative_score": 0.66
+      },
+      "scores": {
+        "quality_score": 0.6023,
+        "preliminary_quality_score": 0.5613,
+        "value_score": 0.716
+      },
+      "notes": "",
+      "comparative_rationale": "High vendor agentic rank hint suggests solid end-to-end agent performance, though public SWE-Bench and BFCL visibility remains limited.",
       "ranking_kind": "balanced"
     },
     {
       "rank": 6,
-      "id": "qwen/qwen3.6-35b-a3b",
-      "name": "Qwen: Qwen3.6 35B A3B",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 262144,
-      "release_date": "2026-04-27",
-      "age_days": 15,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.15,
-        "completion_usd_per_mtok": 1.0
-      },
-      "signals": {
-        "intelligence_score": 43.5,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0,
-        "recency_score": 1.0,
-        "comparative_score": 0.74
-      },
-      "scores": {
-        "quality_score": 0.6425,
-        "preliminary_quality_score": 0.5746,
-        "value_score": 0.7061
-      },
-      "notes": "",
-      "comparative_rationale": "Qwen 3.6 Max posts 65.4% on Terminal-Bench 2.0, suggesting this newer Qwen family is competitive for tool-using coding agents.",
-      "ranking_kind": "balanced"
-    },
-    {
-      "rank": 7,
-      "id": "nvidia/nemotron-3-super-120b-a12b",
-      "name": "NVIDIA: Nemotron 3 Super",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 262144,
-      "release_date": "2026-03-11",
-      "age_days": 61,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.09,
-        "completion_usd_per_mtok": 0.45
-      },
-      "signals": {
-        "intelligence_score": 36.0,
-        "agentic_token_volume": 1038323290078,
-        "agentic_rank": 3,
-        "sentiment_score": 0.0,
-        "recency_score": 0.93,
-        "comparative_score": 0.55
-      },
-      "scores": {
-        "quality_score": 0.5891,
-        "preliminary_quality_score": 0.6091,
-        "value_score": 0.6985
-      },
-      "notes": "",
-      "comparative_rationale": "High platform agentic hint helps, but exact public benchmark mapping is sparse; placing mid-pack pending direct Terminal-Bench or SWE-Bench results.",
-      "ranking_kind": "balanced"
-    },
-    {
-      "rank": 8,
       "id": "x-ai/grok-4.1-fast",
       "name": "xAI: Grok 4.1 Fast",
       "is_free": false,
@@ -256,15 +194,77 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 0.7155,
-        "comparative_score": 0.51
+        "comparative_score": 0.6
       },
       "scores": {
-        "quality_score": 0.5673,
+        "quality_score": 0.6033,
         "preliminary_quality_score": 0.606,
-        "value_score": 0.6812
+        "value_score": 0.7052
       },
       "notes": "",
-      "comparative_rationale": "Newer than Grok 4 Fast and should rank higher absent regression, but public coding-agent benchmark evidence remains limited.",
+      "comparative_rationale": "Newer than Grok 4 Fast, so ranked higher by version rule; still lacks strong public agentic coding benchmark evidence versus top models.",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 7,
+      "id": "openrouter/owl-alpha",
+      "name": "Owl Alpha",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": false,
+      "context_length": 1048756,
+      "release_date": "2026-04-28",
+      "age_days": 13,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 186750880054,
+        "agentic_rank": 20,
+        "sentiment_score": 0.0,
+        "recency_score": 1.0,
+        "comparative_score": 0.45
+      },
+      "scores": {
+        "quality_score": 0.4013,
+        "preliminary_quality_score": 0.3533,
+        "value_score": 0.7009
+      },
+      "notes": "",
+      "comparative_rationale": "Agentic-rank hint is decent, but no-reasoning label and sparse public benchmark coverage weaken confidence for multi-step coding autonomy.",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 8,
+      "id": "xiaomi/mimo-v2.5-pro",
+      "name": "Xiaomi: MiMo-V2.5-Pro",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1048576,
+      "release_date": "2026-04-22",
+      "age_days": 19,
+      "pricing": {
+        "prompt_usd_per_mtok": 1.0,
+        "completion_usd_per_mtok": 3.0
+      },
+      "signals": {
+        "intelligence_score": 53.8,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 1.0,
+        "comparative_score": 0.82
+      },
+      "scores": {
+        "quality_score": 0.7327,
+        "preliminary_quality_score": 0.6744,
+        "value_score": 0.6968
+      },
+      "notes": "",
+      "comparative_rationale": "Third on Terminal-Bench 2.0 at 68.4%, signaling strong CLI autonomy and repository workflow execution [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
       "ranking_kind": "balanced"
     },
     {
@@ -283,50 +283,50 @@
       },
       "signals": {
         "intelligence_score": 33.3,
-        "agentic_token_volume": 176189395073,
+        "agentic_token_volume": 177520798999,
         "agentic_rank": 21,
         "sentiment_score": 0.0,
         "recency_score": 0.5582,
-        "comparative_score": 0.18
+        "comparative_score": 0.23
       },
       "scores": {
-        "quality_score": 0.3586,
-        "preliminary_quality_score": 0.4789,
-        "value_score": 0.6724
+        "quality_score": 0.3795,
+        "preliminary_quality_score": 0.4803,
+        "value_score": 0.6863
       },
       "notes": "",
-      "comparative_rationale": "Open-weight OpenAI model has decent general promise, but limited public agentic coding benchmark coverage versus tested frontier systems.",
+      "comparative_rationale": "Despite OpenAI branding, vendor hint shows weak agentic rank and there is little public benchmark confirmation for coding-agent performance.",
       "ranking_kind": "balanced"
     },
     {
       "rank": 10,
-      "id": "x-ai/grok-4-fast",
-      "name": "xAI: Grok 4 Fast",
+      "id": "qwen/qwen3.6-35b-a3b",
+      "name": "Qwen: Qwen3.6 35B A3B",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
-      "context_length": 2000000,
-      "release_date": "2025-09-19",
-      "age_days": 235,
+      "context_length": 262144,
+      "release_date": "2026-04-27",
+      "age_days": 15,
       "pricing": {
-        "prompt_usd_per_mtok": 0.2,
-        "completion_usd_per_mtok": 0.5
+        "prompt_usd_per_mtok": 0.15,
+        "completion_usd_per_mtok": 1.0
       },
       "signals": {
-        "intelligence_score": 35.1,
+        "intelligence_score": 43.5,
         "agentic_token_volume": 0,
         "agentic_rank": 0,
         "sentiment_score": 0.0,
-        "recency_score": 0.6188,
-        "comparative_score": 0.43
+        "recency_score": 1.0,
+        "comparative_score": 0.63
       },
       "scores": {
-        "quality_score": 0.5169,
-        "preliminary_quality_score": 0.5759,
-        "value_score": 0.6476
+        "quality_score": 0.5985,
+        "preliminary_quality_score": 0.5746,
+        "value_score": 0.6768
       },
       "notes": "",
-      "comparative_rationale": "Older Grok fast snapshot; no clear public regression data, but newer Grok 4.1 Fast and 4.3 should outrank it by versioning rule.",
+      "comparative_rationale": "Qwen family is consistently strong on BFCL and tool use; this newer 3.6 snapshot should beat older Qwen 3.5 absent regression [awesomeagents.ai](https://awesomeagents.ai/leaderboards/function-calling-benchmarks-leaderboard/).",
       "ranking_kind": "balanced"
     }
   ]
