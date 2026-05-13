@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-13T04:00:38.672536+00:00",
+  "generated_at": "2026-05-13T10:01:31.134107+00:00",
   "kind": "best",
   "list_size": 10,
   "shortlist_size": 15,
@@ -9,12 +9,12 @@
     "hermes-agent": {
       "rank": 1,
       "models_used": 352,
-      "total_tokens": 5613529115874
+      "total_tokens": 5671518934463
     },
     "openclaw": {
       "rank": 2,
       "models_used": 382,
-      "total_tokens": 6244845855780
+      "total_tokens": 6274001328532
     }
   },
   "summary": "",
@@ -35,19 +35,19 @@
       },
       "signals": {
         "intelligence_score": 36.0,
-        "agentic_token_volume": 1017646820910,
+        "agentic_token_volume": 1025367304739,
         "agentic_rank": 3,
         "sentiment_score": 0.0,
         "recency_score": 0.9278,
-        "comparative_score": 0.75
+        "comparative_score": 0.79
       },
       "scores": {
-        "quality_score": 0.6759,
-        "preliminary_quality_score": 0.6201,
-        "value_score": 0.7839
+        "quality_score": 0.6923,
+        "preliminary_quality_score": 0.6209,
+        "value_score": 0.7949
       },
       "notes": "",
-      "comparative_rationale": "High shortlist agentic prior and large-capacity reasoning model, but limited public SWE-Bench, BFCL, or Terminal-Bench evidence keeps it below benchmarked leaders.",
+      "comparative_rationale": "High shortlist agentic rank and large model size suggest strong planning/tool use, though public benchmark coverage remains thinner than top models.",
       "ranking_kind": "best"
     },
     {
@@ -66,19 +66,19 @@
       },
       "signals": {
         "intelligence_score": 36.0,
-        "agentic_token_volume": 1017646820910,
+        "agentic_token_volume": 1025367304739,
         "agentic_rank": 3,
         "sentiment_score": 0.0,
         "recency_score": 0.9278,
-        "comparative_score": 0.75
+        "comparative_score": 0.79
       },
       "scores": {
-        "quality_score": 0.6759,
-        "preliminary_quality_score": 0.6201,
-        "value_score": 0.7564
+        "quality_score": 0.6923,
+        "preliminary_quality_score": 0.6209,
+        "value_score": 0.7673
       },
       "notes": "",
-      "comparative_rationale": "High shortlist agentic prior and large-capacity reasoning model, but limited public SWE-Bench, BFCL, or Terminal-Bench evidence keeps it below benchmarked leaders.",
+      "comparative_rationale": "High shortlist agentic rank and large model size suggest strong planning/tool use, though public benchmark coverage remains thinner than top models.",
       "ranking_kind": "best"
     },
     {
@@ -109,7 +109,7 @@
         "value_score": 0.7345
       },
       "notes": "",
-      "comparative_rationale": "Newer than Grok 4 Fast and therefore ranked above it; however, public coding-agent benchmark coverage remains sparse versus top entrants.",
+      "comparative_rationale": "Newer Grok family snapshot should beat Grok 4 Fast unless regression is shown; still lacks the public agentic benchmark strength of GPT-5.5 or Claude.",
       "ranking_kind": "best"
     },
     {
@@ -140,7 +140,7 @@
         "value_score": 0.7267
       },
       "notes": "",
-      "comparative_rationale": "Very strong general reasoning and newest Grok snapshot; lacks comparable agentic coding benchmarks, so placed below GPT-5.5 and Opus 4.7.",
+      "comparative_rationale": "Newest Grok snapshot must outrank older Grok variants; comparable family shows mid-pack coding benchmark strength, but less agentic evidence than top two [awesomeagents.ai](https://awesomeagents.ai/leaderboards/coding-benchmarks-leaderboard/).",
       "ranking_kind": "best"
     },
     {
@@ -159,19 +159,19 @@
       },
       "signals": {
         "intelligence_score": 38.5,
-        "agentic_token_volume": 350438941653,
+        "agentic_token_volume": 352321428854,
         "agentic_rank": 14,
         "sentiment_score": 0.0,
         "recency_score": 0.8429,
         "comparative_score": 0.63
       },
       "scores": {
-        "quality_score": 0.5908,
-        "preliminary_quality_score": 0.562,
-        "value_score": 0.7083
+        "quality_score": 0.5909,
+        "preliminary_quality_score": 0.5622,
+        "value_score": 0.7084
       },
       "notes": "",
-      "comparative_rationale": "Mid-tier agentic shortlist placement and strong general intelligence hints suggest usable coding agency, though hard benchmark evidence is thin.",
+      "comparative_rationale": "Decent shortlist agentic prior and modern release, but limited public SWE-Bench or terminal-agent evidence keeps it below better-documented models.",
       "ranking_kind": "best"
     },
     {
@@ -190,19 +190,19 @@
       },
       "signals": {
         "intelligence_score": 53.8,
-        "agentic_token_volume": 76090081263,
+        "agentic_token_volume": 77060027206,
         "agentic_rank": 29,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.82
+        "comparative_score": 0.84
       },
       "scores": {
-        "quality_score": 0.7367,
-        "preliminary_quality_score": 0.6809,
-        "value_score": 0.6995
+        "quality_score": 0.7448,
+        "preliminary_quality_score": 0.681,
+        "value_score": 0.7049
       },
       "notes": "",
-      "comparative_rationale": "BenchLM lists MiMo-V2.5-Pro at 68.4% on Terminal-Bench 2.0, making it one of the stronger public agentic coding entries [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
+      "comparative_rationale": "Scores 68.4% on Terminal-Bench 2.0 public snapshot, giving unusually direct evidence of strong CLI-agent competence [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
       "ranking_kind": "best"
     },
     {
@@ -233,38 +233,38 @@
         "value_score": 0.6868
       },
       "notes": "",
-      "comparative_rationale": "Qwen-family open models are generally competitive, but no direct public agentic coding benchmark for this exact 3.6 35B A3B snapshot.",
+      "comparative_rationale": "Recent Qwen release with strong general capability; Qwen family is competitive but not benchmark-leading on public coding leaderboards [awesomeagents.ai](https://awesomeagents.ai/leaderboards/coding-benchmarks-leaderboard/).",
       "ranking_kind": "best"
     },
     {
       "rank": 8,
-      "id": "x-ai/grok-4-fast",
-      "name": "xAI: Grok 4 Fast",
+      "id": "openai/gpt-5.5",
+      "name": "OpenAI: GPT-5.5",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
-      "context_length": 2000000,
-      "release_date": "2025-09-19",
-      "age_days": 236,
+      "context_length": 1050000,
+      "release_date": "2026-04-24",
+      "age_days": 18,
       "pricing": {
-        "prompt_usd_per_mtok": 0.2,
-        "completion_usd_per_mtok": 0.5
+        "prompt_usd_per_mtok": 5.0,
+        "completion_usd_per_mtok": 30.0
       },
       "signals": {
-        "intelligence_score": 35.1,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0,
-        "recency_score": 0.6174,
-        "comparative_score": 0.46
+        "intelligence_score": 60.2,
+        "agentic_token_volume": 103385869123,
+        "agentic_rank": 27,
+        "sentiment_score": 0.82,
+        "recency_score": 1.0,
+        "comparative_score": 1.0
       },
       "scores": {
-        "quality_score": 0.5288,
-        "preliminary_quality_score": 0.5758,
-        "value_score": 0.6556
+        "quality_score": 0.8727,
+        "preliminary_quality_score": 0.7905,
+        "value_score": 0.6294
       },
-      "notes": "",
-      "comparative_rationale": "Older Grok fast snapshot, so it trails Grok 4.1 Fast and Grok 4.3; public agentic coding benchmarks remain limited.",
+      "notes": "Current coding-agent commentary is very positive on GPT-5.5 for agent loops, citing 82.7% on Terminal-Bench 2.0 and a leading composite intelligence score. The main caveat repeated across recent comparisons is weaker real-world patch resolution than Claude Opus 4.7.",
+      "comparative_rationale": "Leads Terminal-Bench 2.0 at 82.0%; strongest public signal here for autonomous terminal and coding-agent workflows [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
       "ranking_kind": "best"
     },
     {
@@ -287,46 +287,46 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 0.7711,
-        "comparative_score": 0.5
+        "comparative_score": 0.52
       },
       "scores": {
-        "quality_score": 0.5139,
+        "quality_score": 0.5219,
         "preliminary_quality_score": 0.523,
-        "value_score": 0.6227
+        "value_score": 0.628
       },
       "notes": "",
-      "comparative_rationale": "Appears on Terminal-Bench 2.0 leaderboard via Crux and Terminus 2, giving it some concrete agentic coding evidence [tbench.ai](https://www.tbench.ai/leaderboard/terminal-bench/2.0?models=Kimi+K2.5%2CGPT-5.3-Codex%2CGLM+4.7%2CClaude+Opus+4.5%2CMiniMax+M2.1).",
+      "comparative_rationale": "Newer MiniMax snapshot should outrank M2; public benchmark visibility is limited, so confidence is moderate rather than high.",
       "ranking_kind": "best"
     },
     {
       "rank": 10,
-      "id": "openai/gpt-5.5",
-      "name": "OpenAI: GPT-5.5",
+      "id": "anthropic/claude-opus-4.7",
+      "name": "Anthropic: Claude Opus 4.7",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
-      "context_length": 1050000,
-      "release_date": "2026-04-24",
-      "age_days": 18,
+      "context_length": 1000000,
+      "release_date": "2026-04-16",
+      "age_days": 26,
       "pricing": {
         "prompt_usd_per_mtok": 5.0,
-        "completion_usd_per_mtok": 30.0
+        "completion_usd_per_mtok": 25.0
       },
       "signals": {
-        "intelligence_score": 60.2,
-        "agentic_token_volume": 101589039389,
-        "agentic_rank": 27,
-        "sentiment_score": 0.0,
+        "intelligence_score": 57.3,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.88,
         "recency_score": 1.0,
-        "comparative_score": 1.0
+        "comparative_score": 0.95
       },
       "scores": {
-        "quality_score": 0.8315,
-        "preliminary_quality_score": 0.7207,
-        "value_score": 0.602
+        "quality_score": 0.8383,
+        "preliminary_quality_score": 0.7662,
+        "value_score": 0.6144
       },
-      "notes": "",
-      "comparative_rationale": "Leads Terminal-Bench 2.0 at 82.0%, giving it the strongest public signal for autonomous terminal and coding-agent workflows [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
+      "notes": "Recent benchmark writeups consistently place Opus 4.7 at or near the top for agentic coding, with 64.3% SWE-bench Pro in multiple recaps and strong tool-use reliability. Practitioner-oriented comparisons still warn that its cost and longer outputs make it less attractive for brute-force autonomous loops than GPT-5.x.",
+      "comparative_rationale": "Newest Opus outranks prior Claude versions; Claude family leads SWE-Bench Pro scaffolds and is consistently strong on coding-agent benchmarks [scaleapi.github.io](https://scaleapi.github.io/SWE-bench_Pro-os/) [awesomeagents.ai](https://awesomeagents.ai/leaderboards/coding-benchmarks-leaderboard/).",
       "ranking_kind": "best"
     }
   ]
