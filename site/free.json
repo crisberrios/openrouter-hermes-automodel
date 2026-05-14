@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-14T16:01:25.299667+00:00",
+  "generated_at": "2026-05-14T22:01:22.985528+00:00",
   "kind": "free",
   "list_size": 10,
   "shortlist_size": 15,
@@ -8,13 +8,13 @@
   "tracked_apps": {
     "hermes-agent": {
       "rank": 1,
-      "models_used": 355,
-      "total_tokens": 5872682245462
+      "models_used": 356,
+      "total_tokens": 5958681370131
     },
     "openclaw": {
       "rank": 2,
-      "models_used": 385,
-      "total_tokens": 6159431008813
+      "models_used": 386,
+      "total_tokens": 6197015820094
     }
   },
   "summary": "",
@@ -28,26 +28,26 @@
       "supports_reasoning": true,
       "context_length": 262144,
       "release_date": "2026-03-11",
-      "age_days": 63,
+      "age_days": 64,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
       },
       "signals": {
         "intelligence_score": 36.0,
-        "agentic_token_volume": 1019283583582,
+        "agentic_token_volume": 1027456011226,
         "agentic_rank": 3,
         "sentiment_score": 0.0,
-        "recency_score": 0.9256,
-        "comparative_score": 0.79
+        "recency_score": 0.9235,
+        "comparative_score": 0.71
       },
       "scores": {
-        "quality_score": 0.6978,
-        "preliminary_quality_score": 0.6297,
+        "quality_score": 0.6661,
+        "preliminary_quality_score": 0.6304,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Provided shortlist metadata places it agentic_rank #3; strong relative standing despite limited benchmark detail in retrieved public sources.",
+      "comparative_rationale": "Input metadata places it agentic_rank #3; large Nemotron variant likely stronger than smaller NVIDIA siblings for planning and tool use.",
       "ranking_kind": "free"
     },
     {
@@ -66,19 +66,19 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 639590535994,
+        "agentic_token_volume": 656007902300,
         "agentic_rank": 5,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.74
+        "comparative_score": 0.68
       },
       "scores": {
-        "quality_score": 0.5631,
-        "preliminary_quality_score": 0.4284,
+        "quality_score": 0.5401,
+        "preliminary_quality_score": 0.4301,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Shortlist metadata gives agentic_rank #5, and DeepSeek models show strong terminal and coding benchmark performance in public leaderboards [awesomeagents.ai](https://awesomeagents.ai/leaderboards/coding-benchmarks-leaderboard/).",
+      "comparative_rationale": "Input metadata gives agentic_rank #5, and DeepSeek models are repeatedly competitive on coding and terminal-style benchmarks.",
       "ranking_kind": "free"
     },
     {
@@ -90,26 +90,26 @@
       "supports_reasoning": false,
       "context_length": 1048756,
       "release_date": "2026-04-28",
-      "age_days": 15,
+      "age_days": 16,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 280665353322,
+        "agentic_token_volume": 302080913452,
         "agentic_rank": 17,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.62
+        "comparative_score": 0.56
       },
       "scores": {
-        "quality_score": 0.4767,
-        "preliminary_quality_score": 0.3655,
+        "quality_score": 0.4541,
+        "preliminary_quality_score": 0.3677,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Shortlist metadata places it agentic_rank #17; no-reasoning tag caps it below stronger planning-centric coding agents.",
+      "comparative_rationale": "Input metadata lists agentic_rank #17; no-reasoning note limits multi-step planning confidence despite recent release.",
       "ranking_kind": "free"
     },
     {
@@ -128,85 +128,23 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 439838470784,
+        "agentic_token_volume": 442302270908,
         "agentic_rank": 12,
         "sentiment_score": 0.0,
         "recency_score": 0.8669,
-        "comparative_score": 0.56
+        "comparative_score": 0.48
       },
       "scores": {
-        "quality_score": 0.4423,
-        "preliminary_quality_score": 0.3499,
+        "quality_score": 0.4105,
+        "preliminary_quality_score": 0.3502,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Newer than MiniMax M2.1 and M2, and shortlist metadata gives agentic_rank #12, so it leads its family here.",
+      "comparative_rationale": "Input metadata gives agentic_rank #12; newer than M2.1 and M2, so it should lead its family for agentic coding.",
       "ranking_kind": "free"
     },
     {
       "rank": 5,
-      "id": "poolside/laguna-m.1:free",
-      "name": "Poolside: Laguna M.1 (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 131072,
-      "release_date": "2026-04-28",
-      "age_days": 16,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0,
-        "recency_score": 1.0,
-        "comparative_score": 0.52
-      },
-      "scores": {
-        "quality_score": 0.405,
-        "preliminary_quality_score": 0.3134,
-        "value_score": 0.0
-      },
-      "notes": "",
-      "comparative_rationale": "Poolside is coding-focused, but limited public benchmark coverage in retrieved sources keeps it below models with clearer Terminal-Bench evidence.",
-      "ranking_kind": "free"
-    },
-    {
-      "rank": 6,
-      "id": "poolside/laguna-xs.2:free",
-      "name": "Poolside: Laguna XS.2 (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 131072,
-      "release_date": "2026-04-28",
-      "age_days": 16,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0,
-        "recency_score": 1.0,
-        "comparative_score": 0.4
-      },
-      "scores": {
-        "quality_score": 0.357,
-        "preliminary_quality_score": 0.3134,
-        "value_score": 0.0
-      },
-      "notes": "",
-      "comparative_rationale": "Likely below Laguna M.1 by sizing/tiering; limited public agentic benchmark data keeps placement conservative.",
-      "ranking_kind": "free"
-    },
-    {
-      "rank": 7,
       "id": "openai/gpt-oss-120b:free",
       "name": "OpenAI: gpt-oss-120b (free)",
       "is_free": true,
@@ -214,30 +152,30 @@
       "supports_reasoning": true,
       "context_length": 131072,
       "release_date": "2025-08-05",
-      "age_days": 281,
+      "age_days": 282,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
       },
       "signals": {
         "intelligence_score": 33.3,
-        "agentic_token_volume": 173018604690,
+        "agentic_token_volume": 174642988051,
         "agentic_rank": 21,
         "sentiment_score": 0.0,
-        "recency_score": 0.5556,
-        "comparative_score": 0.16
+        "recency_score": 0.5543,
+        "comparative_score": 0.28
       },
       "scores": {
-        "quality_score": 0.3518,
-        "preliminary_quality_score": 0.4808,
+        "quality_score": 0.3998,
+        "preliminary_quality_score": 0.4809,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Shortlist metadata gives weak agentic_rank #21 and no retrieved benchmark support strong autonomous coding performance, so it stays low.",
+      "comparative_rationale": "Input metadata lists agentic_rank #21; open-weight OpenAI model likely useful, but public autonomous coding benchmark evidence is limited.",
       "ranking_kind": "free"
     },
     {
-      "rank": 8,
+      "rank": 6,
       "id": "google/gemma-4-31b-it:free",
       "name": "Google: Gemma 4 31B (free)",
       "is_free": true,
@@ -245,7 +183,7 @@
       "supports_reasoning": true,
       "context_length": 262144,
       "release_date": "2026-04-02",
-      "age_days": 41,
+      "age_days": 42,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
@@ -255,20 +193,20 @@
         "agentic_token_volume": 0,
         "agentic_rank": 0,
         "sentiment_score": 0.0,
-        "recency_score": 0.9746,
-        "comparative_score": 0.25
+        "recency_score": 0.9723,
+        "comparative_score": 0.44
       },
       "scores": {
-        "quality_score": 0.2993,
-        "preliminary_quality_score": 0.3176,
+        "quality_score": 0.3752,
+        "preliminary_quality_score": 0.3174,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Must rank above Gemma 4 26B sibling because it is the newer, larger family variant with no clear regression shown.",
+      "comparative_rationale": "Larger Gemma 4 variant should edge the 26B model on coding and planning; public agentic benchmark coverage remains limited.",
       "ranking_kind": "free"
     },
     {
-      "rank": 9,
+      "rank": 7,
       "id": "google/gemma-4-26b-a4b-it:free",
       "name": "Google: Gemma 4 26B A4B  (free)",
       "is_free": true,
@@ -287,27 +225,27 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 0.9746,
-        "comparative_score": 0.22
+        "comparative_score": 0.41
       },
       "scores": {
-        "quality_score": 0.2873,
+        "quality_score": 0.3633,
         "preliminary_quality_score": 0.3176,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Open small-model family with limited public agentic coding benchmark evidence; placed below larger newer Gemma sibling.",
+      "comparative_rationale": "Likely capable for lightweight coding assistance, but sparse public terminal-agent and SWE-Bench evidence keeps it below stronger open models.",
       "ranking_kind": "free"
     },
     {
-      "rank": 10,
-      "id": "inclusionai/ring-2.6-1t:free",
-      "name": "inclusionAI: Ring-2.6-1T (free)",
+      "rank": 8,
+      "id": "poolside/laguna-m.1:free",
+      "name": "Poolside: Laguna M.1 (free)",
       "is_free": true,
       "supports_tools": true,
       "supports_reasoning": true,
-      "context_length": 262144,
-      "release_date": "2026-05-08",
-      "age_days": 6,
+      "context_length": 131072,
+      "release_date": "2026-04-28",
+      "age_days": 16,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
@@ -318,15 +256,77 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.2
+        "comparative_score": 0.25
       },
       "scores": {
-        "quality_score": 0.2811,
-        "preliminary_quality_score": 0.3202,
+        "quality_score": 0.297,
+        "preliminary_quality_score": 0.3134,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Very recent release but little public benchmark evidence found for SWE-Bench, Terminal-Bench, or tool-use stability; placing low pending data.",
+      "comparative_rationale": "Poolside is coding-focused, so M.1 gets some credit for developer orientation, but public benchmark coverage is still thin.",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 9,
+      "id": "poolside/laguna-xs.2:free",
+      "name": "Poolside: Laguna XS.2 (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 131072,
+      "release_date": "2026-04-28",
+      "age_days": 16,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 1.0,
+        "comparative_score": 0.22
+      },
+      "scores": {
+        "quality_score": 0.285,
+        "preliminary_quality_score": 0.3134,
+        "value_score": 0.0
+      },
+      "notes": "",
+      "comparative_rationale": "Smaller Poolside variant likely trails Laguna M.1 on codebase work and planning; limited public benchmark data keeps confidence low.",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 10,
+      "id": "arcee-ai/trinity-large-thinking:free",
+      "name": "Arcee AI: Trinity Large Thinking (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "release_date": "2026-04-01",
+      "age_days": 43,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 124404766605,
+        "agentic_rank": 25,
+        "sentiment_score": 0.0,
+        "recency_score": 0.97,
+        "comparative_score": 0.18
+      },
+      "scores": {
+        "quality_score": 0.2791,
+        "preliminary_quality_score": 0.3303,
+        "value_score": 0.0
+      },
+      "notes": "",
+      "comparative_rationale": "Input metadata lists agentic_rank #25; reasoning-oriented branding helps somewhat, but public coding-agent benchmarks remain sparse.",
       "ranking_kind": "free"
     }
   ]
