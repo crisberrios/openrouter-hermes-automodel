@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-14T22:01:22.985528+00:00",
+  "generated_at": "2026-05-15T04:01:12.620074+00:00",
   "kind": "best",
   "list_size": 10,
   "shortlist_size": 15,
@@ -8,13 +8,13 @@
   "tracked_apps": {
     "hermes-agent": {
       "rank": 1,
-      "models_used": 356,
-      "total_tokens": 5958681370131
+      "models_used": 357,
+      "total_tokens": 5851091763298
     },
     "openclaw": {
       "rank": 2,
-      "models_used": 386,
-      "total_tokens": 6197015820094
+      "models_used": 383,
+      "total_tokens": 5942088426745
     }
   },
   "summary": "",
@@ -35,23 +35,54 @@
       },
       "signals": {
         "intelligence_score": 36.0,
-        "agentic_token_volume": 1027456011226,
+        "agentic_token_volume": 988683073830,
         "agentic_rank": 3,
         "sentiment_score": 0.0,
         "recency_score": 0.9235,
-        "comparative_score": 0.71
+        "comparative_score": 0.79
       },
       "scores": {
-        "quality_score": 0.6661,
-        "preliminary_quality_score": 0.6304,
-        "value_score": 0.7774
+        "quality_score": 0.6989,
+        "preliminary_quality_score": 0.6316,
+        "value_score": 0.7993
       },
       "notes": "",
-      "comparative_rationale": "Input metadata places it agentic_rank #3; large Nemotron variant likely stronger than smaller NVIDIA siblings for planning and tool use.",
+      "comparative_rationale": "Input hints give agentic_rank #3; despite sparse public benchmark detail, that places it above most shortlist peers for multi-step agents.",
       "ranking_kind": "best"
     },
     {
       "rank": 2,
+      "id": "nvidia/nemotron-3-super-120b-a12b",
+      "name": "NVIDIA: Nemotron 3 Super",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "release_date": "2026-03-11",
+      "age_days": 64,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.09,
+        "completion_usd_per_mtok": 0.45
+      },
+      "signals": {
+        "intelligence_score": 36.0,
+        "agentic_token_volume": 988683073830,
+        "agentic_rank": 3,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9235,
+        "comparative_score": 0.79
+      },
+      "scores": {
+        "quality_score": 0.6989,
+        "preliminary_quality_score": 0.6316,
+        "value_score": 0.7717
+      },
+      "notes": "",
+      "comparative_rationale": "Input hints give agentic_rank #3; despite sparse public benchmark detail, that places it above most shortlist peers for multi-step agents.",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 3,
       "id": "x-ai/grok-4.1-fast",
       "name": "xAI: Grok 4.1 Fast",
       "is_free": false,
@@ -70,46 +101,15 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 0.7105,
-        "comparative_score": 0.79
+        "comparative_score": 0.72
       },
       "scores": {
-        "quality_score": 0.679,
+        "quality_score": 0.651,
         "preliminary_quality_score": 0.6055,
-        "value_score": 0.7557
+        "value_score": 0.737
       },
       "notes": "",
-      "comparative_rationale": "Newer than Grok 4 Fast and generally positioned for fast agent loops; placed below Grok 4.3 due to weaker overall capability.",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 3,
-      "id": "nvidia/nemotron-3-super-120b-a12b",
-      "name": "NVIDIA: Nemotron 3 Super",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 262144,
-      "release_date": "2026-03-11",
-      "age_days": 64,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.09,
-        "completion_usd_per_mtok": 0.45
-      },
-      "signals": {
-        "intelligence_score": 36.0,
-        "agentic_token_volume": 1027456011226,
-        "agentic_rank": 3,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9235,
-        "comparative_score": 0.71
-      },
-      "scores": {
-        "quality_score": 0.6661,
-        "preliminary_quality_score": 0.6304,
-        "value_score": 0.7499
-      },
-      "notes": "",
-      "comparative_rationale": "Input metadata places it agentic_rank #3; large Nemotron variant likely stronger than smaller NVIDIA siblings for planning and tool use.",
+      "comparative_rationale": "Newer than Grok 4 Fast and thus ranks higher absent regression evidence; decent reasoning suggests solid planning, but public agentic data is thin.",
       "ranking_kind": "best"
     },
     {
@@ -121,7 +121,7 @@
       "supports_reasoning": true,
       "context_length": 1000000,
       "release_date": "2026-04-30",
-      "age_days": 13,
+      "age_days": 14,
       "pricing": {
         "prompt_usd_per_mtok": 1.25,
         "completion_usd_per_mtok": 2.5
@@ -132,15 +132,15 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.87
+        "comparative_score": 0.9
       },
       "scores": {
-        "quality_score": 0.7487,
+        "quality_score": 0.7607,
         "preliminary_quality_score": 0.6676,
-        "value_score": 0.7214
+        "value_score": 0.7294
       },
       "notes": "",
-      "comparative_rationale": "Newest Grok snapshot here; higher stated intelligence than Grok 4.1 Fast and Grok 4 Fast, with no clear regression evidence.",
+      "comparative_rationale": "Very strong frontier-reasoning profile and newer than Grok 4.1/4 Fast; lacking direct agentic benchmarks, but likely best xAI option here.",
       "ranking_kind": "best"
     },
     {
@@ -152,26 +152,26 @@
       "supports_reasoning": true,
       "context_length": 262144,
       "release_date": "2026-01-29",
-      "age_days": 104,
+      "age_days": 105,
       "pricing": {
         "prompt_usd_per_mtok": 0.1,
         "completion_usd_per_mtok": 0.3
       },
       "signals": {
         "intelligence_score": 38.5,
-        "agentic_token_volume": 390896312655,
-        "agentic_rank": 15,
+        "agentic_token_volume": 397083780718,
+        "agentic_rank": 14,
         "sentiment_score": 0.0,
-        "recency_score": 0.8409,
-        "comparative_score": 0.6
+        "recency_score": 0.839,
+        "comparative_score": 0.68
       },
       "scores": {
-        "quality_score": 0.5833,
-        "preliminary_quality_score": 0.5694,
-        "value_score": 0.7033
+        "quality_score": 0.6169,
+        "preliminary_quality_score": 0.572,
+        "value_score": 0.7257
       },
       "notes": "",
-      "comparative_rationale": "Input metadata lists agentic_rank #15, suggesting mid-tier autonomous workflow strength but behind top coding-agent leaders.",
+      "comparative_rationale": "Input hints list agentic_rank #14, giving it clearer tool-use evidence than many similarly sized generalist models in this shortlist.",
       "ranking_kind": "best"
     },
     {
@@ -190,19 +190,19 @@
       },
       "signals": {
         "intelligence_score": 53.8,
-        "agentic_token_volume": 85281965828,
+        "agentic_token_volume": 86602811864,
         "agentic_rank": 27,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
         "comparative_score": 0.76
       },
       "scores": {
-        "quality_score": 0.7138,
-        "preliminary_quality_score": 0.6826,
-        "value_score": 0.6842
+        "quality_score": 0.7141,
+        "preliminary_quality_score": 0.6832,
+        "value_score": 0.6844
       },
       "notes": "",
-      "comparative_rationale": "Terminal-Bench 2.0 public snapshot shows MiMo-V2.5-Pro at 68.4%, a strong signal for realistic terminal-based coding agents.",
+      "comparative_rationale": "Scores 68.4% on Terminal-Bench 2.0 public snapshot; better agentic evidence than most open models in this pool [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
       "ranking_kind": "best"
     },
     {
@@ -214,7 +214,7 @@
       "supports_reasoning": true,
       "context_length": 262144,
       "release_date": "2026-04-27",
-      "age_days": 17,
+      "age_days": 18,
       "pricing": {
         "prompt_usd_per_mtok": 0.15,
         "completion_usd_per_mtok": 1.0
@@ -225,19 +225,50 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.64
+        "comparative_score": 0.56
       },
       "scores": {
-        "quality_score": 0.6016,
+        "quality_score": 0.5696,
         "preliminary_quality_score": 0.5731,
-        "value_score": 0.6788
+        "value_score": 0.6575
       },
       "notes": "",
-      "comparative_rationale": "Qwen family is usually solid on code and structured tool use; newer 3.6 should outrank older Qwen 3.5 absent regression data.",
+      "comparative_rationale": "Strong recent reasoning profile and newer Qwen generation suggest better planning/tool selection than Qwen3.5-9B, though direct agentic scores are limited.",
       "ranking_kind": "best"
     },
     {
       "rank": 8,
+      "id": "x-ai/grok-4-fast",
+      "name": "xAI: Grok 4 Fast",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 2000000,
+      "release_date": "2025-09-19",
+      "age_days": 238,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.2,
+        "completion_usd_per_mtok": 0.5
+      },
+      "signals": {
+        "intelligence_score": 35.1,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 0.6145,
+        "comparative_score": 0.42
+      },
+      "scores": {
+        "quality_score": 0.5126,
+        "preliminary_quality_score": 0.5755,
+        "value_score": 0.6448
+      },
+      "notes": "",
+      "comparative_rationale": "Older than Grok 4.1 Fast and Grok 4.3, so it ranks below them under same-family recency rule absent contrary benchmarks.",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 9,
       "id": "openai/gpt-5.5",
       "name": "OpenAI: GPT-5.5",
       "is_free": false,
@@ -252,81 +283,50 @@
       },
       "signals": {
         "intelligence_score": 60.2,
-        "agentic_token_volume": 114839716826,
+        "agentic_token_volume": 117363735463,
         "agentic_rank": 26,
-        "sentiment_score": 0.81,
+        "sentiment_score": 0.8,
         "recency_score": 1.0,
         "comparative_score": 1.0
       },
       "scores": {
-        "quality_score": 0.8735,
+        "quality_score": 0.8736,
         "preliminary_quality_score": 0.7919,
         "value_score": 0.63
       },
-      "notes": "Recent coding-focused comparisons are notably positive on GPT-5.5 for terminal workflows, with a major jump on Terminal-Bench 2.0 and a leading composite agent index profile. Sentiment is strongest for agent loops and cost-efficiency, but several sources still position Claude Opus ahead for delicate codebase changes and strict tool-call safety.",
-      "comparative_rationale": "Leads Terminal-Bench 2.0 at 82.0% and tops BenchLM\u2019s verified agentic ranking, making it strongest for autonomous coding workflows.",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 9,
-      "id": "x-ai/grok-4-fast",
-      "name": "xAI: Grok 4 Fast",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 2000000,
-      "release_date": "2025-09-19",
-      "age_days": 237,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.2,
-        "completion_usd_per_mtok": 0.5
-      },
-      "signals": {
-        "intelligence_score": 35.1,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0,
-        "recency_score": 0.6159,
-        "comparative_score": 0.34
-      },
-      "scores": {
-        "quality_score": 0.4807,
-        "preliminary_quality_score": 0.5757,
-        "value_score": 0.6235
-      },
-      "notes": "",
-      "comparative_rationale": "Older Grok snapshot; must rank below Grok 4.1 Fast and Grok 4.3 since no benchmarked regression reversal is available.",
+      "notes": "Recent coding-focused reporting casts GPT-5.5 as the best OpenAI option for agent loops and terminal workflows, citing 82.7% on Terminal-Bench 2.0 and lower pricing than Opus 4.7, while still conceding a material gap on SWE-bench Pro and strict tool-call safety.",
+      "comparative_rationale": "Leads Terminal-Bench 2.0 at 82.0%; strongest public signal here for autonomous terminal-heavy coding agents [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
       "ranking_kind": "best"
     },
     {
       "rank": 10,
-      "id": "anthropic/claude-opus-4.7",
-      "name": "Anthropic: Claude Opus 4.7",
+      "id": "minimax/minimax-m2.1",
+      "name": "MiniMax: MiniMax M2.1",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
-      "context_length": 1000000,
-      "release_date": "2026-04-16",
-      "age_days": 28,
+      "context_length": 196608,
+      "release_date": "2025-12-23",
+      "age_days": 143,
       "pricing": {
-        "prompt_usd_per_mtok": 5.0,
-        "completion_usd_per_mtok": 25.0
+        "prompt_usd_per_mtok": 0.29,
+        "completion_usd_per_mtok": 0.95
       },
       "signals": {
-        "intelligence_score": 57.3,
+        "intelligence_score": 39.4,
         "agentic_token_volume": 0,
         "agentic_rank": 0,
-        "sentiment_score": 0.88,
-        "recency_score": 1.0,
-        "comparative_score": 0.95
+        "sentiment_score": 0.0,
+        "recency_score": 0.7675,
+        "comparative_score": 0.5
       },
       "scores": {
-        "quality_score": 0.8383,
-        "preliminary_quality_score": 0.7662,
-        "value_score": 0.6144
+        "quality_score": 0.5137,
+        "preliminary_quality_score": 0.5226,
+        "value_score": 0.6226
       },
-      "notes": "Recent benchmark writeups consistently place Opus 4.7 ahead on real codebase edits and SWE-bench-style tasks, while community commentary frames it as the safest default for subtle refactors and debugging. Multiple sources also note lower retry rates on strict tool calls versus GPT-family rivals, though with materially higher cost.",
-      "comparative_rationale": "Second on Terminal-Bench 2.0 at 69.4%; Claude family remains consistently elite on SWE-Bench-style coding and multi-turn agent reliability.",
+      "notes": "",
+      "comparative_rationale": "Older MiniMax release with respectable intelligence hint, but superseded by M2.5 and lacking stronger published coding-agent benchmark evidence.",
       "ranking_kind": "best"
     }
   ]
