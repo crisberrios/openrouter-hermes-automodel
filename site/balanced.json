@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-15T04:01:12.620074+00:00",
+  "generated_at": "2026-05-15T10:01:26.960609+00:00",
   "kind": "balanced",
   "list_size": 10,
   "shortlist_size": 15,
@@ -8,13 +8,13 @@
   "tracked_apps": {
     "hermes-agent": {
       "rank": 1,
-      "models_used": 357,
-      "total_tokens": 5851091763298
+      "models_used": 358,
+      "total_tokens": 5929608312833
     },
     "openclaw": {
       "rank": 2,
       "models_used": 383,
-      "total_tokens": 5942088426745
+      "total_tokens": 5973807020062
     }
   },
   "summary": "",
@@ -35,19 +35,19 @@
       },
       "signals": {
         "intelligence_score": 36.0,
-        "agentic_token_volume": 988683073830,
+        "agentic_token_volume": 996913502435,
         "agentic_rank": 3,
         "sentiment_score": 0.0,
         "recency_score": 0.9235,
-        "comparative_score": 0.79
+        "comparative_score": 0.71
       },
       "scores": {
-        "quality_score": 0.6989,
-        "preliminary_quality_score": 0.6316,
-        "value_score": 0.8993
+        "quality_score": 0.6671,
+        "preliminary_quality_score": 0.6319,
+        "value_score": 0.8781
       },
       "notes": "",
-      "comparative_rationale": "Input hints give agentic_rank #3; despite sparse public benchmark detail, that places it above most shortlist peers for multi-step agents.",
+      "comparative_rationale": "Very high shortlist agentic prior (#3) suggests strong tool-use and planning; limited direct public SWE/Terminal/BFCL data keeps it below established leaders [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks).",
       "ranking_kind": "balanced"
     },
     {
@@ -66,19 +66,19 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 679793136598,
+        "agentic_token_volume": 710244260560,
         "agentic_rank": 5,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.84
+        "comparative_score": 0.76
       },
       "scores": {
-        "quality_score": 0.608,
-        "preliminary_quality_score": 0.4363,
-        "value_score": 0.8387
+        "quality_score": 0.5778,
+        "preliminary_quality_score": 0.4393,
+        "value_score": 0.8185
       },
       "notes": "",
-      "comparative_rationale": "Input hints place it agentic_rank #5, and DeepSeek V4 Pro family appears near top agentic leaderboards; strong tool-use proxy [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks).",
+      "comparative_rationale": "High shortlist agentic prior (#5) and DeepSeek models are competitive on coding-agent evaluations, though direct V4 Flash public scores remain limited [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks).",
       "ranking_kind": "balanced"
     },
     {
@@ -97,54 +97,23 @@
       },
       "signals": {
         "intelligence_score": 36.0,
-        "agentic_token_volume": 988683073830,
+        "agentic_token_volume": 996913502435,
         "agentic_rank": 3,
         "sentiment_score": 0.0,
         "recency_score": 0.9235,
-        "comparative_score": 0.79
+        "comparative_score": 0.71
       },
       "scores": {
-        "quality_score": 0.6989,
-        "preliminary_quality_score": 0.6316,
-        "value_score": 0.7717
+        "quality_score": 0.6671,
+        "preliminary_quality_score": 0.6319,
+        "value_score": 0.7505
       },
       "notes": "",
-      "comparative_rationale": "Input hints give agentic_rank #3; despite sparse public benchmark detail, that places it above most shortlist peers for multi-step agents.",
+      "comparative_rationale": "Very high shortlist agentic prior (#3) suggests strong tool-use and planning; limited direct public SWE/Terminal/BFCL data keeps it below established leaders [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks).",
       "ranking_kind": "balanced"
     },
     {
       "rank": 4,
-      "id": "openrouter/owl-alpha",
-      "name": "Owl Alpha",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": false,
-      "context_length": 1048756,
-      "release_date": "2026-04-28",
-      "age_days": 16,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 319366118287,
-        "agentic_rank": 16,
-        "sentiment_score": 0.0,
-        "recency_score": 1.0,
-        "comparative_score": 0.64
-      },
-      "scores": {
-        "quality_score": 0.4883,
-        "preliminary_quality_score": 0.3713,
-        "value_score": 0.7589
-      },
-      "notes": "",
-      "comparative_rationale": "Input hints list agentic_rank #16; despite no-reasoning note, that ranking implies workable tool orchestration and autonomous workflow performance.",
-      "ranking_kind": "balanced"
-    },
-    {
-      "rank": 5,
       "id": "minimax/minimax-m2.5:free",
       "name": "MiniMax: MiniMax M2.5 (free)",
       "is_free": true,
@@ -159,19 +128,50 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 427879932570,
+        "agentic_token_volume": 430321972632,
         "agentic_rank": 12,
         "sentiment_score": 0.0,
         "recency_score": 0.8669,
-        "comparative_score": 0.6
+        "comparative_score": 0.54
       },
       "scores": {
-        "quality_score": 0.459,
+        "quality_score": 0.435,
         "preliminary_quality_score": 0.351,
-        "value_score": 0.7393
+        "value_score": 0.7233
       },
       "notes": "",
-      "comparative_rationale": "Newer than MiniMax M2.1 and M2 and tagged agentic_rank #12, so it ranks above older MiniMax variants for agentic coding.",
+      "comparative_rationale": "Newer MiniMax family version and shortlist agentic rank #12 justify a mid-pack spot; not enough public SWE/Terminal data to rank higher [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks).",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 5,
+      "id": "xiaomi/mimo-v2.5-pro",
+      "name": "Xiaomi: MiMo-V2.5-Pro",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1048576,
+      "release_date": "2026-04-22",
+      "age_days": 22,
+      "pricing": {
+        "prompt_usd_per_mtok": 1.0,
+        "completion_usd_per_mtok": 3.0
+      },
+      "signals": {
+        "intelligence_score": 53.8,
+        "agentic_token_volume": 87705619818,
+        "agentic_rank": 27,
+        "sentiment_score": 0.0,
+        "recency_score": 1.0,
+        "comparative_score": 0.9
+      },
+      "scores": {
+        "quality_score": 0.7702,
+        "preliminary_quality_score": 0.6833,
+        "value_score": 0.7218
+      },
+      "notes": "",
+      "comparative_rationale": "Third on Terminal-Bench 2.0 at 68.4%; newer MiMo snapshot outranks prior family variants on public agentic benchmark mirrors [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
       "ranking_kind": "balanced"
     },
     {
@@ -194,15 +194,15 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 0.7105,
-        "comparative_score": 0.72
+        "comparative_score": 0.66
       },
       "scores": {
-        "quality_score": 0.651,
+        "quality_score": 0.627,
         "preliminary_quality_score": 0.6055,
-        "value_score": 0.737
+        "value_score": 0.721
       },
       "notes": "",
-      "comparative_rationale": "Newer than Grok 4 Fast and thus ranks higher absent regression evidence; decent reasoning suggests solid planning, but public agentic data is thin.",
+      "comparative_rationale": "Newer Grok snapshot must outrank Grok 4 Fast absent clear regression; reasonable reasoning strength but sparse coding-agent benchmark coverage [codesota.com](https://www.codesota.com/llm).",
       "ranking_kind": "balanced"
     },
     {
@@ -225,15 +225,15 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.9
+        "comparative_score": 0.84
       },
       "scores": {
-        "quality_score": 0.7607,
+        "quality_score": 0.7367,
         "preliminary_quality_score": 0.6676,
-        "value_score": 0.7294
+        "value_score": 0.7134
       },
       "notes": "",
-      "comparative_rationale": "Very strong frontier-reasoning profile and newer than Grok 4.1/4 Fast; lacking direct agentic benchmarks, but likely best xAI option here.",
+      "comparative_rationale": "Very strong reasoning/intelligence signals, but weaker public agentic coding evidence than GPT-5.5, Claude Opus 4.7, or MiMo-V2.5-Pro [codesota.com](https://www.codesota.com/llm).",
       "ranking_kind": "balanced"
     },
     {
@@ -252,19 +252,19 @@
       },
       "signals": {
         "intelligence_score": 38.5,
-        "agentic_token_volume": 397083780718,
+        "agentic_token_volume": 405178816935,
         "agentic_rank": 14,
         "sentiment_score": 0.0,
         "recency_score": 0.839,
-        "comparative_score": 0.68
+        "comparative_score": 0.63
       },
       "scores": {
-        "quality_score": 0.6169,
-        "preliminary_quality_score": 0.572,
-        "value_score": 0.7257
+        "quality_score": 0.5973,
+        "preliminary_quality_score": 0.5727,
+        "value_score": 0.7127
       },
       "notes": "",
-      "comparative_rationale": "Input hints list agentic_rank #14, giving it clearer tool-use evidence than many similarly sized generalist models in this shortlist.",
+      "comparative_rationale": "Mid-high shortlist agentic prior (#14) and solid intelligence hint at useful agent workflows, but public SWE/Terminal evidence is thin [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks).",
       "ranking_kind": "balanced"
     },
     {
@@ -283,50 +283,50 @@
       },
       "signals": {
         "intelligence_score": 33.3,
-        "agentic_token_volume": 168971314984,
+        "agentic_token_volume": 170613215608,
         "agentic_rank": 21,
         "sentiment_score": 0.0,
         "recency_score": 0.5543,
-        "comparative_score": 0.24
+        "comparative_score": 0.25
       },
       "scores": {
-        "quality_score": 0.384,
-        "preliminary_quality_score": 0.4812,
-        "value_score": 0.6893
+        "quality_score": 0.3881,
+        "preliminary_quality_score": 0.4813,
+        "value_score": 0.6921
       },
       "notes": "",
-      "comparative_rationale": "Input hints place it at agentic_rank #21; open release is useful, but benchmarked agentic performance trails leaders in this pool.",
+      "comparative_rationale": "Open-source OpenAI-branded model likely benefits from strong tool-call priors, yet shortlist agentic rank #21 and limited benchmark evidence keep it low [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks).",
       "ranking_kind": "balanced"
     },
     {
       "rank": 10,
-      "id": "xiaomi/mimo-v2.5-pro",
-      "name": "Xiaomi: MiMo-V2.5-Pro",
-      "is_free": false,
+      "id": "openrouter/owl-alpha",
+      "name": "Owl Alpha",
+      "is_free": true,
       "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1048576,
-      "release_date": "2026-04-22",
-      "age_days": 22,
+      "supports_reasoning": false,
+      "context_length": 1048756,
+      "release_date": "2026-04-28",
+      "age_days": 16,
       "pricing": {
-        "prompt_usd_per_mtok": 1.0,
-        "completion_usd_per_mtok": 3.0
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
       },
       "signals": {
-        "intelligence_score": 53.8,
-        "agentic_token_volume": 86602811864,
-        "agentic_rank": 27,
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 333070662485,
+        "agentic_rank": 16,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.76
+        "comparative_score": 0.34
       },
       "scores": {
-        "quality_score": 0.7141,
-        "preliminary_quality_score": 0.6832,
-        "value_score": 0.6844
+        "quality_score": 0.3691,
+        "preliminary_quality_score": 0.3726,
+        "value_score": 0.6794
       },
       "notes": "",
-      "comparative_rationale": "Scores 68.4% on Terminal-Bench 2.0 public snapshot; better agentic evidence than most open models in this pool [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
+      "comparative_rationale": "Shortlist agentic rank #16 helps, but no-reasoning designation and sparse independent coding-agent benchmarks cap confidence [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks).",
       "ranking_kind": "balanced"
     }
   ]
