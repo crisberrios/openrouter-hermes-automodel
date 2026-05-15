@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-05-15T16:01:31.712355+00:00",
+  "generated_at": "2026-05-15T22:00:53.196866+00:00",
   "kind": "best",
   "list_size": 10,
   "shortlist_size": 15,
   "comparative_rerank_applied": true,
-  "comparative_scored_count": 37,
+  "comparative_scored_count": 42,
   "tracked_apps": {
     "hermes-agent": {
       "rank": 1,
       "models_used": 359,
-      "total_tokens": 6030048481705
+      "total_tokens": 6145240599530
     },
     "openclaw": {
       "rank": 2,
-      "models_used": 383,
-      "total_tokens": 6003704007399
+      "models_used": 384,
+      "total_tokens": 6036954171526
     }
   },
   "summary": "",
@@ -28,26 +28,26 @@
       "supports_reasoning": true,
       "context_length": 262144,
       "release_date": "2026-03-11",
-      "age_days": 64,
+      "age_days": 65,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
       },
       "signals": {
         "intelligence_score": 36.0,
-        "agentic_token_volume": 1004961061320,
+        "agentic_token_volume": 1013532851567,
         "agentic_rank": 3,
         "sentiment_score": 0.0,
-        "recency_score": 0.9235,
-        "comparative_score": 0.81
+        "recency_score": 0.9213,
+        "comparative_score": 0.7
       },
       "scores": {
-        "quality_score": 0.7072,
-        "preliminary_quality_score": 0.6321,
-        "value_score": 0.8048
+        "quality_score": 0.6691,
+        "preliminary_quality_score": 0.6419,
+        "value_score": 0.7794
       },
       "notes": "",
-      "comparative_rationale": "Input hints place it at agentic_rank #3, implying strong multi-step tool-use relative to this pool despite limited independently surfaced benchmark detail.",
+      "comparative_rationale": "Very high shortlist agentic rank (#3) suggests strong planning and tool-use, though broad public benchmark evidence remains limited. [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks)",
       "ranking_kind": "best"
     },
     {
@@ -59,57 +59,57 @@
       "supports_reasoning": true,
       "context_length": 262144,
       "release_date": "2026-03-11",
-      "age_days": 64,
+      "age_days": 65,
       "pricing": {
         "prompt_usd_per_mtok": 0.09,
         "completion_usd_per_mtok": 0.45
       },
       "signals": {
         "intelligence_score": 36.0,
-        "agentic_token_volume": 1004961061320,
+        "agentic_token_volume": 1013532851567,
         "agentic_rank": 3,
         "sentiment_score": 0.0,
-        "recency_score": 0.9235,
-        "comparative_score": 0.81
+        "recency_score": 0.9213,
+        "comparative_score": 0.7
       },
       "scores": {
-        "quality_score": 0.7072,
-        "preliminary_quality_score": 0.6321,
-        "value_score": 0.7773
+        "quality_score": 0.6691,
+        "preliminary_quality_score": 0.6419,
+        "value_score": 0.7519
       },
       "notes": "",
-      "comparative_rationale": "Input hints place it at agentic_rank #3, implying strong multi-step tool-use relative to this pool despite limited independently surfaced benchmark detail.",
+      "comparative_rationale": "Very high shortlist agentic rank (#3) suggests strong planning and tool-use, though broad public benchmark evidence remains limited. [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks)",
       "ranking_kind": "best"
     },
     {
       "rank": 3,
-      "id": "x-ai/grok-4.1-fast",
-      "name": "xAI: Grok 4.1 Fast",
+      "id": "xiaomi/mimo-v2.5-pro",
+      "name": "Xiaomi: MiMo-V2.5-Pro",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
-      "context_length": 2000000,
-      "release_date": "2025-11-19",
-      "age_days": 176,
+      "context_length": 1048576,
+      "release_date": "2026-04-22",
+      "age_days": 23,
       "pricing": {
-        "prompt_usd_per_mtok": 0.2,
-        "completion_usd_per_mtok": 0.5
+        "prompt_usd_per_mtok": 1.0,
+        "completion_usd_per_mtok": 3.0
       },
       "signals": {
-        "intelligence_score": 38.6,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
+        "intelligence_score": 53.8,
+        "agentic_token_volume": 90961835328,
+        "agentic_rank": 27,
         "sentiment_score": 0.0,
-        "recency_score": 0.7105,
-        "comparative_score": 0.7
+        "recency_score": 1.0,
+        "comparative_score": 0.87
       },
       "scores": {
-        "quality_score": 0.643,
-        "preliminary_quality_score": 0.6055,
-        "value_score": 0.7317
+        "quality_score": 0.7878,
+        "preliminary_quality_score": 0.7326,
+        "value_score": 0.7335
       },
       "notes": "",
-      "comparative_rationale": "Newer than Grok 4 Fast and should rank above it absent regression; strong intelligence signal but limited direct public agentic benchmark reporting in this packet.",
+      "comparative_rationale": "Newer than MiMo-V2-Pro and BenchLM shows MiMo-V2.5-Pro near the top on Terminal-Bench 2.0 at 68.4%. [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2)",
       "ranking_kind": "best"
     },
     {
@@ -132,15 +132,15 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.9
+        "comparative_score": 0.83
       },
       "scores": {
         "quality_score": 0.7607,
-        "preliminary_quality_score": 0.6676,
+        "preliminary_quality_score": 0.7142,
         "value_score": 0.7294
       },
       "notes": "",
-      "comparative_rationale": "Very high general intelligence signal and newer than Grok 4.1/4 Fast; placing just below leaders pending stronger public SWE-Bench or Terminal-Bench evidence.",
+      "comparative_rationale": "Strong frontier reasoning profile suggests high agentic ceiling, but public coding-agent benchmark coverage is thinner than GPT-5.5 or Claude. [codesota.com](https://www.codesota.com/llm)",
       "ranking_kind": "best"
     },
     {
@@ -159,54 +159,23 @@
       },
       "signals": {
         "intelligence_score": 38.5,
-        "agentic_token_volume": 413100482363,
+        "agentic_token_volume": 419890643253,
         "agentic_rank": 14,
         "sentiment_score": 0.0,
         "recency_score": 0.839,
-        "comparative_score": 0.62
+        "comparative_score": 0.61
       },
       "scores": {
-        "quality_score": 0.5936,
-        "preliminary_quality_score": 0.5732,
-        "value_score": 0.7102
+        "quality_score": 0.5958,
+        "preliminary_quality_score": 0.5835,
+        "value_score": 0.7117
       },
       "notes": "",
-      "comparative_rationale": "Input hint agentic_rank #14 suggests solid but not frontier tool-use; placed mid-pack due to scarce public SWE-Bench or Terminal-Bench specifics.",
+      "comparative_rationale": "Mid-high shortlist agentic rank (#14) plus solid intelligence hint implies capable planning, but limited direct public coding-agent scores. [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks)",
       "ranking_kind": "best"
     },
     {
       "rank": 6,
-      "id": "x-ai/grok-4-fast",
-      "name": "xAI: Grok 4 Fast",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 2000000,
-      "release_date": "2025-09-19",
-      "age_days": 238,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.2,
-        "completion_usd_per_mtok": 0.5
-      },
-      "signals": {
-        "intelligence_score": 35.1,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0,
-        "recency_score": 0.6145,
-        "comparative_score": 0.0
-      },
-      "scores": {
-        "quality_score": 0.5755,
-        "preliminary_quality_score": 0.5755,
-        "value_score": 0.6867
-      },
-      "notes": "",
-      "comparative_rationale": "",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 7,
       "id": "qwen/qwen3.6-35b-a3b",
       "name": "Qwen: Qwen3.6 35B A3B",
       "is_free": false,
@@ -228,47 +197,16 @@
         "comparative_score": 0.66
       },
       "scores": {
-        "quality_score": 0.6096,
-        "preliminary_quality_score": 0.5731,
-        "value_score": 0.6842
+        "quality_score": 0.6155,
+        "preliminary_quality_score": 0.5829,
+        "value_score": 0.6881
       },
       "notes": "",
-      "comparative_rationale": "Strong recent Qwen-family reasoning/coding trajectory and newer snapshot than Qwen3.5-9B, but limited direct Terminal-Bench or SWE-Bench evidence for this exact variant.",
+      "comparative_rationale": "Qwen 3.5 is competitive on coding leaderboards, and this newer 3.6 35B variant likely improves agentic coding performance. [awesomeagents.ai](https://awesomeagents.ai/leaderboards/coding-benchmarks-leaderboard/)",
       "ranking_kind": "best"
     },
     {
-      "rank": 8,
-      "id": "xiaomi/mimo-v2.5-pro",
-      "name": "Xiaomi: MiMo-V2.5-Pro",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1048576,
-      "release_date": "2026-04-22",
-      "age_days": 22,
-      "pricing": {
-        "prompt_usd_per_mtok": 1.0,
-        "completion_usd_per_mtok": 3.0
-      },
-      "signals": {
-        "intelligence_score": 53.8,
-        "agentic_token_volume": 89561969317,
-        "agentic_rank": 27,
-        "sentiment_score": 0.0,
-        "recency_score": 1.0,
-        "comparative_score": 0.74
-      },
-      "scores": {
-        "quality_score": 0.7063,
-        "preliminary_quality_score": 0.6834,
-        "value_score": 0.6792
-      },
-      "notes": "",
-      "comparative_rationale": "Scores 68.4% on Terminal-Bench 2.0 public snapshot, placing near frontier for autonomous terminal workflows [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 9,
+      "rank": 7,
       "id": "openai/gpt-5.5",
       "name": "OpenAI: GPT-5.5",
       "is_free": false,
@@ -276,30 +214,61 @@
       "supports_reasoning": true,
       "context_length": 1050000,
       "release_date": "2026-04-24",
-      "age_days": 20,
+      "age_days": 21,
       "pricing": {
         "prompt_usd_per_mtok": 5.0,
         "completion_usd_per_mtok": 30.0
       },
       "signals": {
         "intelligence_score": 60.2,
-        "agentic_token_volume": 120473552047,
+        "agentic_token_volume": 122064103146,
         "agentic_rank": 26,
-        "sentiment_score": 0.8,
+        "sentiment_score": 0.81,
         "recency_score": 1.0,
         "comparative_score": 1.0
       },
       "scores": {
-        "quality_score": 0.8737,
-        "preliminary_quality_score": 0.7921,
-        "value_score": 0.6301
+        "quality_score": 0.9037,
+        "preliminary_quality_score": 0.8422,
+        "value_score": 0.6501
       },
-      "notes": "Recent comparisons are favorable overall: GPT-5.5 reportedly leads Terminal-Bench 2.0 at 82.7% and tops Artificial Analysis' overall intelligence index, making it a preferred engine for agent loops and long-context workflows. But sentiment is mixed-positive rather than dominant because codebase patching and strict tool-call safety still lean Claude.",
-      "comparative_rationale": "Leads public Terminal-Bench 2.0 at 82.0% and tops BenchLM\u2019s verified agentic ranking, strongest overall autonomous coding signal [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2) [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks).",
+      "notes": "Recent coding-agent commentary is very positive on GPT-5.5 for bash-plus-edit agent loops, citing 82.7% on Terminal-Bench 2.0 and an Artificial Analysis index lead. Sentiment is slightly tempered by repeated claims that Opus remains safer for strict tool outputs and high-stakes codebase edits.",
+      "comparative_rationale": "Leads public Terminal-Bench 2.0 at 82.0% and tops BenchLM\u2019s verified agentic ranking, indicating strongest autonomous tool-use. [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2) [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks)",
       "ranking_kind": "best"
     },
     {
-      "rank": 10,
+      "rank": 8,
+      "id": "xiaomi/mimo-v2-pro",
+      "name": "Xiaomi: MiMo-V2-Pro",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1048576,
+      "release_date": "2026-03-18",
+      "age_days": 58,
+      "pricing": {
+        "prompt_usd_per_mtok": 1.0,
+        "completion_usd_per_mtok": 3.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 1099155661593,
+        "agentic_rank": 2,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9365,
+        "comparative_score": 0.8
+      },
+      "scores": {
+        "quality_score": 0.6442,
+        "preliminary_quality_score": 0.5233,
+        "value_score": 0.6378
+      },
+      "notes": "",
+      "comparative_rationale": "Very strong shortlist prior and public agentic signals, but ranked below newer MiMo-V2.5-Pro per version precedence rule. [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2)",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 9,
       "id": "anthropic/claude-opus-4.7",
       "name": "Anthropic: Claude Opus 4.7",
       "is_free": false,
@@ -316,17 +285,48 @@
         "intelligence_score": 57.3,
         "agentic_token_volume": 0,
         "agentic_rank": 0,
-        "sentiment_score": 0.9,
+        "sentiment_score": 0.89,
         "recency_score": 1.0,
-        "comparative_score": 0.96
+        "comparative_score": 0.95
       },
       "scores": {
-        "quality_score": 0.8433,
-        "preliminary_quality_score": 0.7679,
-        "value_score": 0.6178
+        "quality_score": 0.8668,
+        "preliminary_quality_score": 0.8137,
+        "value_score": 0.6334
       },
-      "notes": "Recent benchmark coverage is strongly positive: Opus 4.7 is reported at 64.3% on SWE-bench Pro and leading agentic coding/tool-use categories, while cross-stack agent rankings place Claude-backed agents effectively tied at the top. Practitioner-oriented comparisons still prefer Opus 4.7 for subtle codebase edits and lower tool-call retry rates even when GPT-5.5 wins terminal-loop benchmarks.",
-      "comparative_rationale": "Second on Terminal-Bench 2.0 at 69.4%, and Claude family remains strongest on SWE-Bench style coding-agent tasks in public leaderboards [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2) [awesomeagents.ai](https://awesomeagents.ai/leaderboards/coding-benchmarks-leaderboard/).",
+      "notes": "Recent benchmark writeups consistently place Opus 4.7 at or near the top for agentic coding, including 64.3% on SWE-Bench Pro and strong performance in Claude Code/Cursor-style harnesses. Sentiment is especially positive for subtle bug fixing and tool reliability, though users still flag cost and throughput tradeoffs.",
+      "comparative_rationale": "Second on Terminal-Bench 2.0 at 69.4%; Claude-family also leads coding leaderboards, supporting elite agentic coding reliability. [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2) [awesomeagents.ai](https://awesomeagents.ai/leaderboards/coding-benchmarks-leaderboard/)",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 10,
+      "id": "qwen/qwen3.5-9b",
+      "name": "Qwen: Qwen3.5-9B",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "release_date": "2026-03-10",
+      "age_days": 66,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.04,
+        "completion_usd_per_mtok": 0.15
+      },
+      "signals": {
+        "intelligence_score": 32.4,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9192,
+        "comparative_score": 0.21
+      },
+      "scores": {
+        "quality_score": 0.393,
+        "preliminary_quality_score": 0.5103,
+        "value_score": 0.5856
+      },
+      "notes": "",
+      "comparative_rationale": "Qwen family is solid, yet 9B scale is a major handicap for sustained tool use and autonomous code repair. [awesomeagents.ai](https://awesomeagents.ai/leaderboards/coding-benchmarks-leaderboard/)",
       "ranking_kind": "best"
     }
   ]
