@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-05-16T16:01:25.136317+00:00",
+  "generated_at": "2026-05-16T22:01:21.810394+00:00",
   "kind": "balanced",
   "list_size": 10,
   "shortlist_size": 15,
   "comparative_rerank_applied": true,
-  "comparative_scored_count": 40,
+  "comparative_scored_count": 35,
   "tracked_apps": {
     "hermes-agent": {
       "rank": 1,
       "models_used": 360,
-      "total_tokens": 6224098504172
+      "total_tokens": 6332380936545
     },
     "openclaw": {
       "rank": 2,
       "models_used": 383,
-      "total_tokens": 5841151612799
+      "total_tokens": 5871009311330
     }
   },
   "summary": "",
@@ -28,26 +28,26 @@
       "supports_reasoning": true,
       "context_length": 1000000,
       "release_date": "2026-03-11",
-      "age_days": 65,
+      "age_days": 66,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1011980718990,
+        "agentic_token_volume": 1019995067049,
         "agentic_rank": 2,
         "sentiment_score": 0.0,
-        "recency_score": 0.9213,
-        "comparative_score": 0.84
+        "recency_score": 0.9192,
+        "comparative_score": 0.8
       },
       "scores": {
-        "quality_score": 0.7523,
+        "quality_score": 0.7363,
         "preliminary_quality_score": 0.6856,
-        "value_score": 0.9349
+        "value_score": 0.9242
       },
       "notes": "",
-      "comparative_rationale": "High shortlist agentic rank and large reasoning footprint suggest strong autonomous workflow performance, though public SWE or Terminal data is sparse.",
+      "comparative_rationale": "Shortlist hint shows agentic_rank #2, placing it just behind top proprietary leaders though public SWE/terminal evidence is sparse.",
       "ranking_kind": "balanced"
     },
     {
@@ -66,54 +66,23 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 941083727867,
-        "agentic_rank": 4,
+        "agentic_token_volume": 986596991684,
+        "agentic_rank": 3,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.73
+        "comparative_score": 0.75
       },
       "scores": {
-        "quality_score": 0.7121,
-        "preliminary_quality_score": 0.6908,
-        "value_score": 0.9081
+        "quality_score": 0.7228,
+        "preliminary_quality_score": 0.6952,
+        "value_score": 0.9152
       },
       "notes": "",
-      "comparative_rationale": "Shortlist agentic rank is strong and BenchLM shows DeepSeek V4 Pro Max near the top on Terminal-Bench comparisons [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
+      "comparative_rationale": "Strong shortlist hint at agentic_rank #3 and DeepSeek line appears competitive on coding and agentic benchmarks [codesota.com](https://www.codesota.com/llm).",
       "ranking_kind": "balanced"
     },
     {
       "rank": 3,
-      "id": "nvidia/nemotron-3-super-120b-a12b",
-      "name": "NVIDIA: Nemotron 3 Super",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1000000,
-      "release_date": "2026-03-11",
-      "age_days": 65,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.09,
-        "completion_usd_per_mtok": 0.45
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 1011980718990,
-        "agentic_rank": 2,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9213,
-        "comparative_score": 0.84
-      },
-      "scores": {
-        "quality_score": 0.7523,
-        "preliminary_quality_score": 0.6856,
-        "value_score": 0.8073
-      },
-      "notes": "",
-      "comparative_rationale": "High shortlist agentic rank and large reasoning footprint suggest strong autonomous workflow performance, though public SWE or Terminal data is sparse.",
-      "ranking_kind": "balanced"
-    },
-    {
-      "rank": 4,
       "id": "openrouter/owl-alpha",
       "name": "Owl Alpha",
       "is_free": true,
@@ -121,30 +90,30 @@
       "supports_reasoning": false,
       "context_length": 1048756,
       "release_date": "2026-04-28",
-      "age_days": 17,
+      "age_days": 18,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 421380766366,
-        "agentic_rank": 15,
+        "agentic_token_volume": 445781109789,
+        "agentic_rank": 12,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.45
+        "comparative_score": 0.54
       },
       "scores": {
-        "quality_score": 0.5491,
-        "preliminary_quality_score": 0.6073,
-        "value_score": 0.7994
+        "quality_score": 0.5866,
+        "preliminary_quality_score": 0.6097,
+        "value_score": 0.8244
       },
       "notes": "",
-      "comparative_rationale": "Lower shortlist agentic rank and no-reasoning hint imply weaker multi-step planning and tool stability than frontier coding agents.",
+      "comparative_rationale": "Agentic_rank #12 keeps it mid-pack, though the no-reasoning hint makes it less trustworthy for long-horizon autonomous coding tasks.",
       "ranking_kind": "balanced"
     },
     {
-      "rank": 5,
+      "rank": 4,
       "id": "deepseek/deepseek-v4-flash",
       "name": "DeepSeek: DeepSeek V4 Flash",
       "is_free": false,
@@ -159,85 +128,54 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 941083727867,
-        "agentic_rank": 4,
+        "agentic_token_volume": 986596991684,
+        "agentic_rank": 3,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.73
+        "comparative_score": 0.75
       },
       "scores": {
-        "quality_score": 0.7121,
-        "preliminary_quality_score": 0.6908,
-        "value_score": 0.7938
+        "quality_score": 0.7228,
+        "preliminary_quality_score": 0.6952,
+        "value_score": 0.8009
       },
       "notes": "",
-      "comparative_rationale": "Shortlist agentic rank is strong and BenchLM shows DeepSeek V4 Pro Max near the top on Terminal-Bench comparisons [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
+      "comparative_rationale": "Strong shortlist hint at agentic_rank #3 and DeepSeek line appears competitive on coding and agentic benchmarks [codesota.com](https://www.codesota.com/llm).",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 5,
+      "id": "nvidia/nemotron-3-super-120b-a12b",
+      "name": "NVIDIA: Nemotron 3 Super",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1000000,
+      "release_date": "2026-03-11",
+      "age_days": 66,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.1,
+        "completion_usd_per_mtok": 0.5
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 1019995067049,
+        "agentic_rank": 2,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9192,
+        "comparative_score": 0.8
+      },
+      "scores": {
+        "quality_score": 0.7363,
+        "preliminary_quality_score": 0.6856,
+        "value_score": 0.7939
+      },
+      "notes": "",
+      "comparative_rationale": "Shortlist hint shows agentic_rank #2, placing it just behind top proprietary leaders though public SWE/terminal evidence is sparse.",
       "ranking_kind": "balanced"
     },
     {
       "rank": 6,
-      "id": "minimax/minimax-m2.7",
-      "name": "MiniMax: MiniMax M2.7",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 204800,
-      "release_date": "2026-03-18",
-      "age_days": 59,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.279,
-        "completion_usd_per_mtok": 1.2
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 1155138158497,
-        "agentic_rank": 1,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9344,
-        "comparative_score": 0.89
-      },
-      "scores": {
-        "quality_score": 0.7314,
-        "preliminary_quality_score": 0.6168,
-        "value_score": 0.7564
-      },
-      "notes": "",
-      "comparative_rationale": "Input metadata places it highest among shortlist agentic ranks, suggesting top-tier tool-use and planning despite limited public coding-benchmark detail.",
-      "ranking_kind": "balanced"
-    },
-    {
-      "rank": 7,
-      "id": "minimax/minimax-m2.5:free",
-      "name": "MiniMax: MiniMax M2.5 (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 204800,
-      "release_date": "2026-02-12",
-      "age_days": 93,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 427018823125,
-        "agentic_rank": 14,
-        "sentiment_score": 0.0,
-        "recency_score": 0.8629,
-        "comparative_score": 0.41
-      },
-      "scores": {
-        "quality_score": 0.484,
-        "preliminary_quality_score": 0.5277,
-        "value_score": 0.756
-      },
-      "notes": "",
-      "comparative_rationale": "Older MiniMax generation must sit below M2.7 absent clear regression evidence, with limited public coding-agent benchmark support.",
-      "ranking_kind": "balanced"
-    },
-    {
-      "rank": 8,
       "id": "qwen/qwen3-coder:free",
       "name": "Qwen: Qwen3 Coder 480B A35B (free)",
       "is_free": true,
@@ -256,46 +194,108 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 0.5352,
-        "comparative_score": 0.38
+        "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.4594,
+        "quality_score": 0.5134,
         "preliminary_quality_score": 0.5134,
-        "value_score": 0.7396
+        "value_score": 0.7756
       },
       "notes": "",
-      "comparative_rationale": "Coder specialization helps on code synthesis, but no-reasoning hint and scarce public agentic benchmarks limit confidence on autonomous workflows.",
+      "comparative_rationale": "",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 7,
+      "id": "minimax/minimax-m2.7",
+      "name": "MiniMax: MiniMax M2.7",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 204800,
+      "release_date": "2026-03-18",
+      "age_days": 59,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.279,
+        "completion_usd_per_mtok": 1.2
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 1162421923131,
+        "agentic_rank": 1,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9344,
+        "comparative_score": 0.84
+      },
+      "scores": {
+        "quality_score": 0.7114,
+        "preliminary_quality_score": 0.6168,
+        "value_score": 0.7431
+      },
+      "notes": "",
+      "comparative_rationale": "Highest provided shortlist hint at agentic_rank #1, so it edges most non-frontier peers despite limited public coding-benchmark detail.",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 8,
+      "id": "minimax/minimax-m2.5:free",
+      "name": "MiniMax: MiniMax M2.5 (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 204800,
+      "release_date": "2026-02-12",
+      "age_days": 93,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 428857169560,
+        "agentic_rank": 15,
+        "sentiment_score": 0.0,
+        "recency_score": 0.8629,
+        "comparative_score": 0.36
+      },
+      "scores": {
+        "quality_score": 0.4639,
+        "preliminary_quality_score": 0.5276,
+        "value_score": 0.7426
+      },
+      "notes": "",
+      "comparative_rationale": "Older than MiniMax M2.7 and only agentic_rank #15, so it falls clearly behind its newer family member.",
       "ranking_kind": "balanced"
     },
     {
       "rank": 9,
-      "id": "deepseek/deepseek-v4-pro",
-      "name": "DeepSeek: DeepSeek V4 Pro",
-      "is_free": false,
+      "id": "arcee-ai/trinity-large-thinking:free",
+      "name": "Arcee AI: Trinity Large Thinking (free)",
+      "is_free": true,
       "supports_tools": true,
       "supports_reasoning": true,
-      "context_length": 1048576,
-      "release_date": "2026-04-24",
-      "age_days": 22,
+      "context_length": 262144,
+      "release_date": "2026-04-01",
+      "age_days": 45,
       "pricing": {
-        "prompt_usd_per_mtok": 0.435,
-        "completion_usd_per_mtok": 0.87
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 326434840260,
-        "agentic_rank": 17,
+        "agentic_token_volume": 126938755471,
+        "agentic_rank": 25,
         "sentiment_score": 0.0,
-        "recency_score": 1.0,
-        "comparative_score": 0.69
+        "recency_score": 0.9655,
+        "comparative_score": 0.27
       },
       "scores": {
-        "quality_score": 0.6535,
-        "preliminary_quality_score": 0.6216,
-        "value_score": 0.7196
+        "quality_score": 0.4181,
+        "preliminary_quality_score": 0.5103,
+        "value_score": 0.7121
       },
       "notes": "",
-      "comparative_rationale": "Pro naming suggests stronger raw capability, but input agentic rank is weaker than V4 Flash so placed below despite probable coding depth.",
+      "comparative_rationale": "Agentic_rank #25 and scarce public coding-agent measurements make it a cautious lower-tier placement pending more benchmarks.",
       "ranking_kind": "balanced"
     },
     {
@@ -307,26 +307,26 @@
       "supports_reasoning": true,
       "context_length": 1048576,
       "release_date": "2025-07-22",
-      "age_days": 297,
+      "age_days": 298,
       "pricing": {
         "prompt_usd_per_mtok": 0.1,
         "completion_usd_per_mtok": 0.4
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 471019965504,
+        "agentic_token_volume": 473541375963,
         "agentic_rank": 9,
         "sentiment_score": 0.0,
-        "recency_score": 0.5352,
-        "comparative_score": 0.61
+        "recency_score": 0.5339,
+        "comparative_score": 0.62
       },
       "scores": {
-        "quality_score": 0.599,
-        "preliminary_quality_score": 0.5914,
-        "value_score": 0.708
+        "quality_score": 0.6029,
+        "preliminary_quality_score": 0.5912,
+        "value_score": 0.7106
       },
       "notes": "",
-      "comparative_rationale": "Gemini family is competitive on broad reasoning and coding leaderboards, but Flash Lite trails higher-end Gemini and top agent models [codesota.com](https://www.codesota.com/llm).",
+      "comparative_rationale": "Gemini family is strong on coding benchmarks, but the Lite tier trails top agentic models despite good tool-use potential [codesota.com](https://www.codesota.com/llm).",
       "ranking_kind": "balanced"
     }
   ]
