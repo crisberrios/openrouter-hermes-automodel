@@ -1,57 +1,26 @@
 {
-  "generated_at": "2026-05-16T04:01:36.603051+00:00",
+  "generated_at": "2026-05-16T10:00:52.732727+00:00",
   "kind": "free",
   "list_size": 10,
   "shortlist_size": 15,
-  "comparative_rerank_applied": true,
-  "comparative_scored_count": 41,
+  "comparative_rerank_applied": false,
+  "comparative_scored_count": 0,
   "tracked_apps": {
     "hermes-agent": {
       "rank": 1,
-      "models_used": 359,
-      "total_tokens": 6030294021211
+      "models_used": 360,
+      "total_tokens": 6123161917583
     },
     "openclaw": {
       "rank": 2,
       "models_used": 383,
-      "total_tokens": 5790361850022
+      "total_tokens": 5814225706914
     }
   },
   "summary": "",
   "models": [
     {
       "rank": 1,
-      "id": "nvidia/nemotron-3-super-120b-a12b:free",
-      "name": "NVIDIA: Nemotron 3 Super (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1000000,
-      "release_date": "2026-03-11",
-      "age_days": 65,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 36.0,
-        "agentic_token_volume": 996330517356,
-        "agentic_rank": 2,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9213,
-        "comparative_score": 0.91
-      },
-      "scores": {
-        "quality_score": 0.7995,
-        "preliminary_quality_score": 0.7193,
-        "value_score": 0.0
-      },
-      "notes": "",
-      "comparative_rationale": "Input indicates agentic rank #2, and BenchLM identifies Holo3-35B-A3B as best open-weight agent model; strong but public coding-specific evidence is thinner [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks).",
-      "ranking_kind": "free"
-    },
-    {
-      "rank": 2,
       "id": "deepseek/deepseek-v4-flash:free",
       "name": "DeepSeek: DeepSeek V4 Flash (free)",
       "is_free": true,
@@ -66,23 +35,116 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 845805477349,
+        "agentic_token_volume": 891419207439,
         "agentic_rank": 4,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.87
+        "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.6621,
-        "preliminary_quality_score": 0.506,
+        "quality_score": 0.6857,
+        "preliminary_quality_score": 0.6857,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Input places it agentic rank #4, and DeepSeek variants show competitive coding and terminal performance across public coding leaderboards [awesomeagents.ai](https://awesomeagents.ai/leaderboards/coding-benchmarks-leaderboard/).",
+      "comparative_rationale": "",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 2,
+      "id": "nvidia/nemotron-3-super-120b-a12b:free",
+      "name": "NVIDIA: Nemotron 3 Super (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1000000,
+      "release_date": "2026-03-11",
+      "age_days": 65,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 1004092792523,
+        "agentic_rank": 2,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9213,
+        "comparative_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.6853,
+        "preliminary_quality_score": 0.6853,
+        "value_score": 0.0
+      },
+      "notes": "",
+      "comparative_rationale": "",
       "ranking_kind": "free"
     },
     {
       "rank": 3,
+      "id": "openrouter/owl-alpha",
+      "name": "Owl Alpha",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": false,
+      "context_length": 1048756,
+      "release_date": "2026-04-28",
+      "age_days": 17,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 404750310143,
+        "agentic_rank": 15,
+        "sentiment_score": 0.0,
+        "recency_score": 1.0,
+        "comparative_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.6057,
+        "preliminary_quality_score": 0.6057,
+        "value_score": 0.0
+      },
+      "notes": "",
+      "comparative_rationale": "",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 4,
+      "id": "minimax/minimax-m2.5:free",
+      "name": "MiniMax: MiniMax M2.5 (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 204800,
+      "release_date": "2026-02-12",
+      "age_days": 92,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 424917344965,
+        "agentic_rank": 14,
+        "sentiment_score": 0.0,
+        "recency_score": 0.8649,
+        "comparative_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.5279,
+        "preliminary_quality_score": 0.5279,
+        "value_score": 0.0
+      },
+      "notes": "",
+      "comparative_rationale": "",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 5,
       "id": "qwen/qwen3-coder:free",
       "name": "Qwen: Qwen3 Coder 480B A35B (free)",
       "is_free": true,
@@ -101,112 +163,19 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 0.5352,
-        "comparative_score": 0.72
+        "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.4954,
-        "preliminary_quality_score": 0.3384,
+        "quality_score": 0.5134,
+        "preliminary_quality_score": 0.5134,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Coder-focused Qwen variant likely benefits on autonomous coding, but I found no direct Terminal-Bench or SWE-Bench numbers for this exact model.",
-      "ranking_kind": "free"
-    },
-    {
-      "rank": 4,
-      "id": "openrouter/owl-alpha",
-      "name": "Owl Alpha",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": false,
-      "context_length": 1048756,
-      "release_date": "2026-04-28",
-      "age_days": 17,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 390389700107,
-        "agentic_rank": 15,
-        "sentiment_score": 0.0,
-        "recency_score": 1.0,
-        "comparative_score": 0.57
-      },
-      "scores": {
-        "quality_score": 0.4952,
-        "preliminary_quality_score": 0.4292,
-        "value_score": 0.0
-      },
-      "notes": "",
-      "comparative_rationale": "Agentic rank #15 hint supports usable tool execution, but no robust public SWE-Bench, Terminal-Bench, or BFCL evidence surfaced.",
-      "ranking_kind": "free"
-    },
-    {
-      "rank": 5,
-      "id": "minimax/minimax-m2.5:free",
-      "name": "MiniMax: MiniMax M2.5 (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 204800,
-      "release_date": "2026-02-12",
-      "age_days": 92,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 423065123844,
-        "agentic_rank": 14,
-        "sentiment_score": 0.0,
-        "recency_score": 0.8649,
-        "comparative_score": 0.6
-      },
-      "scores": {
-        "quality_score": 0.4601,
-        "preliminary_quality_score": 0.3529,
-        "value_score": 0.0
-      },
-      "notes": "",
-      "comparative_rationale": "Agentic rank #14 hint places it solidly mid-tier for multi-step tool workflows, though public coding-agent benchmarks remain sparse.",
+      "comparative_rationale": "",
       "ranking_kind": "free"
     },
     {
       "rank": 6,
-      "id": "openai/gpt-oss-120b:free",
-      "name": "OpenAI: gpt-oss-120b (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 131072,
-      "release_date": "2025-08-05",
-      "age_days": 283,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 33.3,
-        "agentic_token_volume": 168737783726,
-        "agentic_rank": 21,
-        "sentiment_score": 0.0,
-        "recency_score": 0.553,
-        "comparative_score": 0.39
-      },
-      "scores": {
-        "quality_score": 0.4423,
-        "preliminary_quality_score": 0.4784,
-        "value_score": 0.0
-      },
-      "notes": "",
-      "comparative_rationale": "Input tags it agentic rank #21; open-weight utility is attractive, but public agentic coding evidence trails frontier closed models.",
-      "ranking_kind": "free"
-    },
-    {
-      "rank": 7,
       "id": "arcee-ai/trinity-large-thinking:free",
       "name": "Arcee AI: Trinity Large Thinking (free)",
       "is_free": true,
@@ -221,85 +190,23 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 125970049172,
+        "agentic_token_volume": 126335418493,
         "agentic_rank": 24,
         "sentiment_score": 0.0,
         "recency_score": 0.9678,
-        "comparative_score": 0.33
+        "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.3423,
-        "preliminary_quality_score": 0.3357,
+        "quality_score": 0.5106,
+        "preliminary_quality_score": 0.5106,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Agentic rank #24 hint and scarce public coding-agent benchmarks suggest weaker reliability for sustained autonomous development tasks.",
+      "comparative_rationale": "",
       "ranking_kind": "free"
     },
     {
-      "rank": 8,
-      "id": "google/gemma-4-31b-it:free",
-      "name": "Google: Gemma 4 31B (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 262144,
-      "release_date": "2026-04-02",
-      "age_days": 43,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0,
-        "recency_score": 0.97,
-        "comparative_score": 0.29
-      },
-      "scores": {
-        "quality_score": 0.3176,
-        "preliminary_quality_score": 0.3215,
-        "value_score": 0.0
-      },
-      "notes": "",
-      "comparative_rationale": "Larger Gemma 4 variant should edge the 26B sibling, but public agentic coding benchmarks are limited, so placement stays conservative.",
-      "ranking_kind": "free"
-    },
-    {
-      "rank": 9,
-      "id": "google/gemma-4-26b-a4b-it:free",
-      "name": "Google: Gemma 4 26B A4B  (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 262144,
-      "release_date": "2026-04-03",
-      "age_days": 42,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9723,
-        "comparative_score": 0.27
-      },
-      "scores": {
-        "quality_score": 0.3098,
-        "preliminary_quality_score": 0.3218,
-        "value_score": 0.0
-      },
-      "notes": "",
-      "comparative_rationale": "Smaller Gemma 4 model with little direct public evidence on Terminal-Bench, SWE-Bench, or BFCL; ranks below the 31B sibling.",
-      "ranking_kind": "free"
-    },
-    {
-      "rank": 10,
+      "rank": 7,
       "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
       "name": "NVIDIA: Nemotron 3 Nano Omni (free)",
       "is_free": true,
@@ -318,15 +225,108 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.2
+        "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.2833,
-        "preliminary_quality_score": 0.3239,
+        "quality_score": 0.4989,
+        "preliminary_quality_score": 0.4989,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Reasoning-tuned Nano may help planning, but there is limited public data on coding-agent execution, terminal work, or tool-use stability.",
+      "comparative_rationale": "",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 8,
+      "id": "google/gemma-4-26b-a4b-it:free",
+      "name": "Google: Gemma 4 26B A4B  (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "release_date": "2026-04-03",
+      "age_days": 42,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9723,
+        "comparative_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.4968,
+        "preliminary_quality_score": 0.4968,
+        "value_score": 0.0
+      },
+      "notes": "",
+      "comparative_rationale": "",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 9,
+      "id": "google/gemma-4-31b-it:free",
+      "name": "Google: Gemma 4 31B (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "release_date": "2026-04-02",
+      "age_days": 43,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 0.97,
+        "comparative_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.4965,
+        "preliminary_quality_score": 0.4965,
+        "value_score": 0.0
+      },
+      "notes": "",
+      "comparative_rationale": "",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 10,
+      "id": "baidu/cobuddy:free",
+      "name": "Baidu Qianfan: CoBuddy (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 131072,
+      "release_date": "2026-05-06",
+      "age_days": 10,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 1.0,
+        "comparative_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.4853,
+        "preliminary_quality_score": 0.4853,
+        "value_score": 0.0
+      },
+      "notes": "",
+      "comparative_rationale": "",
       "ranking_kind": "free"
     }
   ]

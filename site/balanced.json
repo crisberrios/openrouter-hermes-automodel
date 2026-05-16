@@ -1,57 +1,26 @@
 {
-  "generated_at": "2026-05-16T04:01:36.603051+00:00",
+  "generated_at": "2026-05-16T10:00:52.732727+00:00",
   "kind": "balanced",
   "list_size": 10,
   "shortlist_size": 15,
-  "comparative_rerank_applied": true,
-  "comparative_scored_count": 41,
+  "comparative_rerank_applied": false,
+  "comparative_scored_count": 0,
   "tracked_apps": {
     "hermes-agent": {
       "rank": 1,
-      "models_used": 359,
-      "total_tokens": 6030294021211
+      "models_used": 360,
+      "total_tokens": 6123161917583
     },
     "openclaw": {
       "rank": 2,
       "models_used": 383,
-      "total_tokens": 5790361850022
+      "total_tokens": 5814225706914
     }
   },
   "summary": "",
   "models": [
     {
       "rank": 1,
-      "id": "nvidia/nemotron-3-super-120b-a12b:free",
-      "name": "NVIDIA: Nemotron 3 Super (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1000000,
-      "release_date": "2026-03-11",
-      "age_days": 65,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 36.0,
-        "agentic_token_volume": 996330517356,
-        "agentic_rank": 2,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9213,
-        "comparative_score": 0.91
-      },
-      "scores": {
-        "quality_score": 0.7995,
-        "preliminary_quality_score": 0.7193,
-        "value_score": 0.9663
-      },
-      "notes": "",
-      "comparative_rationale": "Input indicates agentic rank #2, and BenchLM identifies Holo3-35B-A3B as best open-weight agent model; strong but public coding-specific evidence is thinner [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks).",
-      "ranking_kind": "balanced"
-    },
-    {
-      "rank": 2,
       "id": "deepseek/deepseek-v4-flash:free",
       "name": "DeepSeek: DeepSeek V4 Flash (free)",
       "is_free": true,
@@ -66,54 +35,147 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 845805477349,
+        "agentic_token_volume": 891419207439,
         "agentic_rank": 4,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.87
+        "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.6621,
-        "preliminary_quality_score": 0.506,
-        "value_score": 0.8747
+        "quality_score": 0.6857,
+        "preliminary_quality_score": 0.6857,
+        "value_score": 0.8905
       },
       "notes": "",
-      "comparative_rationale": "Input places it agentic rank #4, and DeepSeek variants show competitive coding and terminal performance across public coding leaderboards [awesomeagents.ai](https://awesomeagents.ai/leaderboards/coding-benchmarks-leaderboard/).",
+      "comparative_rationale": "",
       "ranking_kind": "balanced"
     },
     {
-      "rank": 3,
-      "id": "nvidia/nemotron-3-super-120b-a12b",
-      "name": "NVIDIA: Nemotron 3 Super",
-      "is_free": false,
+      "rank": 2,
+      "id": "nvidia/nemotron-3-super-120b-a12b:free",
+      "name": "NVIDIA: Nemotron 3 Super (free)",
+      "is_free": true,
       "supports_tools": true,
       "supports_reasoning": true,
       "context_length": 1000000,
       "release_date": "2026-03-11",
       "age_days": 65,
       "pricing": {
-        "prompt_usd_per_mtok": 0.09,
-        "completion_usd_per_mtok": 0.45
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
       },
       "signals": {
-        "intelligence_score": 36.0,
-        "agentic_token_volume": 996330517356,
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 1004092792523,
         "agentic_rank": 2,
         "sentiment_score": 0.0,
         "recency_score": 0.9213,
-        "comparative_score": 0.91
+        "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.7995,
-        "preliminary_quality_score": 0.7193,
-        "value_score": 0.8388
+        "quality_score": 0.6853,
+        "preliminary_quality_score": 0.6853,
+        "value_score": 0.8902
       },
       "notes": "",
-      "comparative_rationale": "Input indicates agentic rank #2, and BenchLM identifies Holo3-35B-A3B as best open-weight agent model; strong but public coding-specific evidence is thinner [benchlm.ai](https://benchlm.ai/llm-agent-benchmarks).",
+      "comparative_rationale": "",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 3,
+      "id": "openrouter/owl-alpha",
+      "name": "Owl Alpha",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": false,
+      "context_length": 1048756,
+      "release_date": "2026-04-28",
+      "age_days": 17,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 404750310143,
+        "agentic_rank": 15,
+        "sentiment_score": 0.0,
+        "recency_score": 1.0,
+        "comparative_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.6057,
+        "preliminary_quality_score": 0.6057,
+        "value_score": 0.8371
+      },
+      "notes": "",
+      "comparative_rationale": "",
       "ranking_kind": "balanced"
     },
     {
       "rank": 4,
+      "id": "minimax/minimax-m2.5:free",
+      "name": "MiniMax: MiniMax M2.5 (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 204800,
+      "release_date": "2026-02-12",
+      "age_days": 92,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 424917344965,
+        "agentic_rank": 14,
+        "sentiment_score": 0.0,
+        "recency_score": 0.8649,
+        "comparative_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.5279,
+        "preliminary_quality_score": 0.5279,
+        "value_score": 0.7853
+      },
+      "notes": "",
+      "comparative_rationale": "",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 5,
+      "id": "deepseek/deepseek-v4-flash",
+      "name": "DeepSeek: DeepSeek V4 Flash",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1048576,
+      "release_date": "2026-04-24",
+      "age_days": 22,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.112,
+        "completion_usd_per_mtok": 0.224
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 891419207439,
+        "agentic_rank": 4,
+        "sentiment_score": 0.0,
+        "recency_score": 1.0,
+        "comparative_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.6857,
+        "preliminary_quality_score": 0.6857,
+        "value_score": 0.7762
+      },
+      "notes": "",
+      "comparative_rationale": "",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 6,
       "id": "qwen/qwen3-coder:free",
       "name": "Qwen: Qwen3 Coder 480B A35B (free)",
       "is_free": true,
@@ -132,25 +194,56 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 0.5352,
-        "comparative_score": 0.72
+        "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.4954,
-        "preliminary_quality_score": 0.3384,
-        "value_score": 0.7636
+        "quality_score": 0.5134,
+        "preliminary_quality_score": 0.5134,
+        "value_score": 0.7756
       },
       "notes": "",
-      "comparative_rationale": "Coder-focused Qwen variant likely benefits on autonomous coding, but I found no direct Terminal-Bench or SWE-Bench numbers for this exact model.",
+      "comparative_rationale": "",
       "ranking_kind": "balanced"
     },
     {
-      "rank": 5,
-      "id": "openrouter/owl-alpha",
-      "name": "Owl Alpha",
+      "rank": 7,
+      "id": "arcee-ai/trinity-large-thinking:free",
+      "name": "Arcee AI: Trinity Large Thinking (free)",
       "is_free": true,
       "supports_tools": true,
-      "supports_reasoning": false,
-      "context_length": 1048756,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "release_date": "2026-04-01",
+      "age_days": 44,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 126335418493,
+        "agentic_rank": 24,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9678,
+        "comparative_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.5106,
+        "preliminary_quality_score": 0.5106,
+        "value_score": 0.7737
+      },
+      "notes": "",
+      "comparative_rationale": "",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 8,
+      "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "name": "NVIDIA: Nemotron 3 Nano Omni (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 256000,
       "release_date": "2026-04-28",
       "age_days": 17,
       "pricing": {
@@ -159,174 +252,81 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 390389700107,
-        "agentic_rank": 15,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.57
+        "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.4952,
-        "preliminary_quality_score": 0.4292,
-        "value_score": 0.7635
+        "quality_score": 0.4989,
+        "preliminary_quality_score": 0.4989,
+        "value_score": 0.7659
       },
       "notes": "",
-      "comparative_rationale": "Agentic rank #15 hint supports usable tool execution, but no robust public SWE-Bench, Terminal-Bench, or BFCL evidence surfaced.",
-      "ranking_kind": "balanced"
-    },
-    {
-      "rank": 6,
-      "id": "deepseek/deepseek-v4-flash",
-      "name": "DeepSeek: DeepSeek V4 Flash",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1048576,
-      "release_date": "2026-04-24",
-      "age_days": 22,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.112,
-        "completion_usd_per_mtok": 0.224
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 845805477349,
-        "agentic_rank": 4,
-        "sentiment_score": 0.0,
-        "recency_score": 1.0,
-        "comparative_score": 0.87
-      },
-      "scores": {
-        "quality_score": 0.6621,
-        "preliminary_quality_score": 0.506,
-        "value_score": 0.7604
-      },
-      "notes": "",
-      "comparative_rationale": "Input places it agentic rank #4, and DeepSeek variants show competitive coding and terminal performance across public coding leaderboards [awesomeagents.ai](https://awesomeagents.ai/leaderboards/coding-benchmarks-leaderboard/).",
-      "ranking_kind": "balanced"
-    },
-    {
-      "rank": 7,
-      "id": "minimax/minimax-m2.5:free",
-      "name": "MiniMax: MiniMax M2.5 (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 204800,
-      "release_date": "2026-02-12",
-      "age_days": 92,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 423065123844,
-        "agentic_rank": 14,
-        "sentiment_score": 0.0,
-        "recency_score": 0.8649,
-        "comparative_score": 0.6
-      },
-      "scores": {
-        "quality_score": 0.4601,
-        "preliminary_quality_score": 0.3529,
-        "value_score": 0.7401
-      },
-      "notes": "",
-      "comparative_rationale": "Agentic rank #14 hint places it solidly mid-tier for multi-step tool workflows, though public coding-agent benchmarks remain sparse.",
-      "ranking_kind": "balanced"
-    },
-    {
-      "rank": 8,
-      "id": "openai/gpt-oss-120b:free",
-      "name": "OpenAI: gpt-oss-120b (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 131072,
-      "release_date": "2025-08-05",
-      "age_days": 283,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 33.3,
-        "agentic_token_volume": 168737783726,
-        "agentic_rank": 21,
-        "sentiment_score": 0.0,
-        "recency_score": 0.553,
-        "comparative_score": 0.39
-      },
-      "scores": {
-        "quality_score": 0.4423,
-        "preliminary_quality_score": 0.4784,
-        "value_score": 0.7282
-      },
-      "notes": "",
-      "comparative_rationale": "Input tags it agentic rank #21; open-weight utility is attractive, but public agentic coding evidence trails frontier closed models.",
+      "comparative_rationale": "",
       "ranking_kind": "balanced"
     },
     {
       "rank": 9,
-      "id": "xiaomi/mimo-v2.5-pro",
-      "name": "Xiaomi: MiMo-V2.5-Pro",
+      "id": "nvidia/nemotron-3-super-120b-a12b",
+      "name": "NVIDIA: Nemotron 3 Super",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
-      "context_length": 1048576,
-      "release_date": "2026-04-22",
-      "age_days": 23,
+      "context_length": 1000000,
+      "release_date": "2026-03-11",
+      "age_days": 65,
       "pricing": {
-        "prompt_usd_per_mtok": 1.0,
-        "completion_usd_per_mtok": 3.0
+        "prompt_usd_per_mtok": 0.09,
+        "completion_usd_per_mtok": 0.45
       },
       "signals": {
-        "intelligence_score": 53.8,
-        "agentic_token_volume": 92134480598,
-        "agentic_rank": 27,
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 1004092792523,
+        "agentic_rank": 2,
         "sentiment_score": 0.0,
-        "recency_score": 1.0,
-        "comparative_score": 0.84
+        "recency_score": 0.9213,
+        "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.7761,
-        "preliminary_quality_score": 0.7331,
-        "value_score": 0.7257
+        "quality_score": 0.6853,
+        "preliminary_quality_score": 0.6853,
+        "value_score": 0.7627
       },
       "notes": "",
-      "comparative_rationale": "Newer than MiMo-V2-Pro and posts 68.4% on Terminal-Bench 2.0, narrowly trailing Claude Opus 4.7 [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
+      "comparative_rationale": "",
       "ranking_kind": "balanced"
     },
     {
       "rank": 10,
-      "id": "stepfun/step-3.5-flash",
-      "name": "StepFun: Step 3.5 Flash",
+      "id": "google/gemini-2.5-flash-lite",
+      "name": "Google: Gemini 2.5 Flash Lite",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
-      "context_length": 262144,
-      "release_date": "2026-01-29",
-      "age_days": 106,
+      "context_length": 1048576,
+      "release_date": "2025-07-22",
+      "age_days": 297,
       "pricing": {
         "prompt_usd_per_mtok": 0.1,
-        "completion_usd_per_mtok": 0.3
+        "completion_usd_per_mtok": 0.4
       },
       "signals": {
-        "intelligence_score": 38.5,
-        "agentic_token_volume": 424703068468,
-        "agentic_rank": 13,
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 468558840781,
+        "agentic_rank": 9,
         "sentiment_score": 0.0,
-        "recency_score": 0.837,
-        "comparative_score": 0.64
+        "recency_score": 0.5352,
+        "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.6059,
-        "preliminary_quality_score": 0.5804,
-        "value_score": 0.7184
+        "quality_score": 0.5914,
+        "preliminary_quality_score": 0.5914,
+        "value_score": 0.7029
       },
       "notes": "",
-      "comparative_rationale": "Agentic rank #13 hint suggests upper-mid pack tool use, but public benchmark coverage across SWE-Bench and Terminal-Bench appears limited.",
+      "comparative_rationale": "",
       "ranking_kind": "balanced"
     }
   ]
