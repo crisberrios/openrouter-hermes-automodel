@@ -1,57 +1,26 @@
 {
-  "generated_at": "2026-05-16T10:00:52.732727+00:00",
+  "generated_at": "2026-05-16T16:01:25.136317+00:00",
   "kind": "best",
   "list_size": 10,
   "shortlist_size": 15,
-  "comparative_rerank_applied": false,
-  "comparative_scored_count": 0,
+  "comparative_rerank_applied": true,
+  "comparative_scored_count": 40,
   "tracked_apps": {
     "hermes-agent": {
       "rank": 1,
       "models_used": 360,
-      "total_tokens": 6123161917583
+      "total_tokens": 6224098504172
     },
     "openclaw": {
       "rank": 2,
       "models_used": 383,
-      "total_tokens": 5814225706914
+      "total_tokens": 5841151612799
     }
   },
   "summary": "",
   "models": [
     {
       "rank": 1,
-      "id": "deepseek/deepseek-v4-flash:free",
-      "name": "DeepSeek: DeepSeek V4 Flash (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1048576,
-      "release_date": "2026-04-24",
-      "age_days": 22,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 891419207439,
-        "agentic_rank": 4,
-        "sentiment_score": 0.0,
-        "recency_score": 1.0,
-        "comparative_score": 0.0
-      },
-      "scores": {
-        "quality_score": 0.6857,
-        "preliminary_quality_score": 0.6857,
-        "value_score": 0.7905
-      },
-      "notes": "",
-      "comparative_rationale": "",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 2,
       "id": "nvidia/nemotron-3-super-120b-a12b:free",
       "name": "NVIDIA: Nemotron 3 Super (free)",
       "is_free": true,
@@ -66,54 +35,54 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1004092792523,
+        "agentic_token_volume": 1011980718990,
         "agentic_rank": 2,
         "sentiment_score": 0.0,
         "recency_score": 0.9213,
-        "comparative_score": 0.0
+        "comparative_score": 0.84
       },
       "scores": {
-        "quality_score": 0.6853,
-        "preliminary_quality_score": 0.6853,
-        "value_score": 0.7902
+        "quality_score": 0.7523,
+        "preliminary_quality_score": 0.6856,
+        "value_score": 0.8349
       },
       "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "High shortlist agentic rank and large reasoning footprint suggest strong autonomous workflow performance, though public SWE or Terminal data is sparse.",
       "ranking_kind": "best"
     },
     {
-      "rank": 3,
-      "id": "deepseek/deepseek-v4-flash",
-      "name": "DeepSeek: DeepSeek V4 Flash",
-      "is_free": false,
+      "rank": 2,
+      "id": "deepseek/deepseek-v4-flash:free",
+      "name": "DeepSeek: DeepSeek V4 Flash (free)",
+      "is_free": true,
       "supports_tools": true,
       "supports_reasoning": true,
       "context_length": 1048576,
       "release_date": "2026-04-24",
       "age_days": 22,
       "pricing": {
-        "prompt_usd_per_mtok": 0.112,
-        "completion_usd_per_mtok": 0.224
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 891419207439,
+        "agentic_token_volume": 941083727867,
         "agentic_rank": 4,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.0
+        "comparative_score": 0.73
       },
       "scores": {
-        "quality_score": 0.6857,
-        "preliminary_quality_score": 0.6857,
-        "value_score": 0.7762
+        "quality_score": 0.7121,
+        "preliminary_quality_score": 0.6908,
+        "value_score": 0.8081
       },
       "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "Shortlist agentic rank is strong and BenchLM shows DeepSeek V4 Pro Max near the top on Terminal-Bench comparisons [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
       "ranking_kind": "best"
     },
     {
-      "rank": 4,
+      "rank": 3,
       "id": "nvidia/nemotron-3-super-120b-a12b",
       "name": "NVIDIA: Nemotron 3 Super",
       "is_free": false,
@@ -128,85 +97,85 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1004092792523,
+        "agentic_token_volume": 1011980718990,
         "agentic_rank": 2,
         "sentiment_score": 0.0,
         "recency_score": 0.9213,
-        "comparative_score": 0.0
+        "comparative_score": 0.84
       },
       "scores": {
-        "quality_score": 0.6853,
-        "preliminary_quality_score": 0.6853,
-        "value_score": 0.7627
+        "quality_score": 0.7523,
+        "preliminary_quality_score": 0.6856,
+        "value_score": 0.8073
       },
       "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "High shortlist agentic rank and large reasoning footprint suggest strong autonomous workflow performance, though public SWE or Terminal data is sparse.",
       "ranking_kind": "best"
     },
     {
-      "rank": 5,
-      "id": "openrouter/owl-alpha",
-      "name": "Owl Alpha",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": false,
-      "context_length": 1048756,
-      "release_date": "2026-04-28",
-      "age_days": 17,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 404750310143,
-        "agentic_rank": 15,
-        "sentiment_score": 0.0,
-        "recency_score": 1.0,
-        "comparative_score": 0.0
-      },
-      "scores": {
-        "quality_score": 0.6057,
-        "preliminary_quality_score": 0.6057,
-        "value_score": 0.7371
-      },
-      "notes": "",
-      "comparative_rationale": "",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 6,
-      "id": "google/gemini-2.5-flash-lite",
-      "name": "Google: Gemini 2.5 Flash Lite",
+      "rank": 4,
+      "id": "deepseek/deepseek-v4-flash",
+      "name": "DeepSeek: DeepSeek V4 Flash",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
       "context_length": 1048576,
-      "release_date": "2025-07-22",
-      "age_days": 297,
+      "release_date": "2026-04-24",
+      "age_days": 22,
       "pricing": {
-        "prompt_usd_per_mtok": 0.1,
-        "completion_usd_per_mtok": 0.4
+        "prompt_usd_per_mtok": 0.112,
+        "completion_usd_per_mtok": 0.224
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 468558840781,
-        "agentic_rank": 9,
+        "agentic_token_volume": 941083727867,
+        "agentic_rank": 4,
         "sentiment_score": 0.0,
-        "recency_score": 0.5352,
-        "comparative_score": 0.0
+        "recency_score": 1.0,
+        "comparative_score": 0.73
       },
       "scores": {
-        "quality_score": 0.5914,
-        "preliminary_quality_score": 0.5914,
-        "value_score": 0.7029
+        "quality_score": 0.7121,
+        "preliminary_quality_score": 0.6908,
+        "value_score": 0.7938
       },
       "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "Shortlist agentic rank is strong and BenchLM shows DeepSeek V4 Pro Max near the top on Terminal-Bench comparisons [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
       "ranking_kind": "best"
     },
     {
-      "rank": 7,
+      "rank": 5,
+      "id": "minimax/minimax-m2.7",
+      "name": "MiniMax: MiniMax M2.7",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 204800,
+      "release_date": "2026-03-18",
+      "age_days": 59,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.279,
+        "completion_usd_per_mtok": 1.2
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 1155138158497,
+        "agentic_rank": 1,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9344,
+        "comparative_score": 0.89
+      },
+      "scores": {
+        "quality_score": 0.7314,
+        "preliminary_quality_score": 0.6168,
+        "value_score": 0.7564
+      },
+      "notes": "",
+      "comparative_rationale": "Input metadata places it highest among shortlist agentic ranks, suggesting top-tier tool-use and planning despite limited public coding-benchmark detail.",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 6,
       "id": "deepseek/deepseek-v4-pro",
       "name": "DeepSeek: DeepSeek V4 Pro",
       "is_free": false,
@@ -221,85 +190,85 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 320305249418,
+        "agentic_token_volume": 326434840260,
         "agentic_rank": 17,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.0
+        "comparative_score": 0.69
       },
       "scores": {
-        "quality_score": 0.6211,
-        "preliminary_quality_score": 0.6211,
-        "value_score": 0.698
+        "quality_score": 0.6535,
+        "preliminary_quality_score": 0.6216,
+        "value_score": 0.7196
       },
       "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "Pro naming suggests stronger raw capability, but input agentic rank is weaker than V4 Flash so placed below despite probable coding depth.",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 7,
+      "id": "google/gemini-2.5-flash-lite",
+      "name": "Google: Gemini 2.5 Flash Lite",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1048576,
+      "release_date": "2025-07-22",
+      "age_days": 297,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.1,
+        "completion_usd_per_mtok": 0.4
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 471019965504,
+        "agentic_rank": 9,
+        "sentiment_score": 0.0,
+        "recency_score": 0.5352,
+        "comparative_score": 0.61
+      },
+      "scores": {
+        "quality_score": 0.599,
+        "preliminary_quality_score": 0.5914,
+        "value_score": 0.708
+      },
+      "notes": "",
+      "comparative_rationale": "Gemini family is competitive on broad reasoning and coding leaderboards, but Flash Lite trails higher-end Gemini and top agent models [codesota.com](https://www.codesota.com/llm).",
       "ranking_kind": "best"
     },
     {
       "rank": 8,
-      "id": "tencent/hy3-preview",
-      "name": "Tencent: Hy3 preview",
-      "is_free": false,
+      "id": "openrouter/owl-alpha",
+      "name": "Owl Alpha",
+      "is_free": true,
       "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 262144,
-      "release_date": "2026-04-22",
-      "age_days": 23,
+      "supports_reasoning": false,
+      "context_length": 1048756,
+      "release_date": "2026-04-28",
+      "age_days": 17,
       "pricing": {
-        "prompt_usd_per_mtok": 0.066,
-        "completion_usd_per_mtok": 0.26
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 463433446016,
-        "agentic_rank": 11,
+        "agentic_token_volume": 421380766366,
+        "agentic_rank": 15,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.0
+        "comparative_score": 0.45
       },
       "scores": {
-        "quality_score": 0.552,
-        "preliminary_quality_score": 0.552,
-        "value_score": 0.6849
+        "quality_score": 0.5491,
+        "preliminary_quality_score": 0.6073,
+        "value_score": 0.6994
       },
       "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "Lower shortlist agentic rank and no-reasoning hint imply weaker multi-step planning and tool stability than frontier coding agents.",
       "ranking_kind": "best"
     },
     {
       "rank": 9,
-      "id": "minimax/minimax-m2.7",
-      "name": "MiniMax: MiniMax M2.7",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 204800,
-      "release_date": "2026-03-18",
-      "age_days": 58,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.279,
-        "completion_usd_per_mtok": 1.2
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 1148875180622,
-        "agentic_rank": 1,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9365,
-        "comparative_score": 0.0
-      },
-      "scores": {
-        "quality_score": 0.617,
-        "preliminary_quality_score": 0.617,
-        "value_score": 0.6802
-      },
-      "notes": "",
-      "comparative_rationale": "",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 10,
       "id": "xiaomi/mimo-v2-pro",
       "name": "Xiaomi: MiMo-V2-Pro",
       "is_free": false,
@@ -314,19 +283,50 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 952289582668,
+        "agentic_token_volume": 952431930980,
         "agentic_rank": 3,
         "sentiment_score": 0.0,
         "recency_score": 0.9365,
-        "comparative_score": 0.0
+        "comparative_score": 0.78
       },
       "scores": {
-        "quality_score": 0.6863,
-        "preliminary_quality_score": 0.6863,
-        "value_score": 0.6659
+        "quality_score": 0.7284,
+        "preliminary_quality_score": 0.6857,
+        "value_score": 0.6939
       },
       "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "Very high shortlist rank and same family as a strong Terminal-Bench performer, but superseded by newer MiMo-V2.5-Pro version.",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 10,
+      "id": "xiaomi/mimo-v2.5-pro",
+      "name": "Xiaomi: MiMo-V2.5-Pro",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1048576,
+      "release_date": "2026-04-22",
+      "age_days": 23,
+      "pricing": {
+        "prompt_usd_per_mtok": 1.0,
+        "completion_usd_per_mtok": 3.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 93947522231,
+        "agentic_rank": 27,
+        "sentiment_score": 0.0,
+        "recency_score": 1.0,
+        "comparative_score": 0.81
+      },
+      "scores": {
+        "quality_score": 0.6854,
+        "preliminary_quality_score": 0.5954,
+        "value_score": 0.6653
+      },
+      "notes": "",
+      "comparative_rationale": "Newer than MiMo-V2-Pro and Terminal-Bench 2.0 lists MiMo-V2.5-Pro at 68.4%, supporting strong agentic coding rank [benchlm.ai](https://benchlm.ai/benchmarks/terminalBench2).",
       "ranking_kind": "best"
     }
   ]
