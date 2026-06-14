@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-06-14T04:01:27.025131+00:00",
+  "generated_at": "2026-06-14T10:01:29.167378+00:00",
   "kind": "balanced",
   "list_size": 10,
   "shortlist_size": 15,
   "comparative_rerank_applied": true,
-  "comparative_scored_count": 36,
+  "comparative_scored_count": 37,
   "tracked_apps": {
     "hermes-agent": {
       "rank": 1,
       "models_used": 386,
-      "total_tokens": 16217945633064
+      "total_tokens": 16394781175692
     },
     "openclaw": {
       "rank": 3,
       "models_used": 392,
-      "total_tokens": 3821722475186
+      "total_tokens": 3853708558339
     }
   },
   "summary": "",
@@ -35,19 +35,19 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 5091939314971,
+        "agentic_token_volume": 5159781783494,
         "agentic_rank": 1,
         "sentiment_score": 0.0,
         "recency_score": 0.9632,
-        "comparative_score": 1.0
+        "comparative_score": 0.65
       },
       "scores": {
-        "quality_score": 0.8173,
+        "quality_score": 0.6773,
         "preliminary_quality_score": 0.6862,
-        "value_score": 0.9782
+        "value_score": 0.8849
       },
       "notes": "",
-      "comparative_rationale": "Highest shortlist prior agentic rank and very long context; public benchmark coverage is limited, but current evidence places it first here.",
+      "comparative_rationale": "Top prior agentic_rank hint suggests excellent internal standing, but limited public benchmark transparency keeps it below well-documented leaders.",
       "ranking_kind": "balanced"
     },
     {
@@ -59,7 +59,7 @@
       "supports_reasoning": true,
       "context_length": 1000000,
       "release_date": "2026-06-04",
-      "age_days": 9,
+      "age_days": 10,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
@@ -70,15 +70,15 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.86
+        "comparative_score": 0.61
       },
       "scores": {
-        "quality_score": 0.6957,
+        "quality_score": 0.5957,
         "preliminary_quality_score": 0.5796,
-        "value_score": 0.8971
+        "value_score": 0.8305
       },
       "notes": "",
-      "comparative_rationale": "Newer Nemotron family flagship should outrank Super absent evidence of regression; large scale suggests stronger planning and tool orchestration than earlier variants.",
+      "comparative_rationale": "Newer flagship Nemotron should outrank smaller same-family variants, but limited public agentic benchmark data prevents a higher placement.",
       "ranking_kind": "balanced"
     },
     {
@@ -97,19 +97,19 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1020648394664,
+        "agentic_token_volume": 1029220808676,
         "agentic_rank": 5,
         "sentiment_score": 0.0,
         "recency_score": 0.8608,
-        "comparative_score": 0.81
+        "comparative_score": 0.56
       },
       "scores": {
-        "quality_score": 0.682,
-        "preliminary_quality_score": 0.5917,
-        "value_score": 0.888
+        "quality_score": 0.582,
+        "preliminary_quality_score": 0.5916,
+        "value_score": 0.8213
       },
       "notes": "",
-      "comparative_rationale": "Same model line as ranked Super; prior shortlist agentic rank #5 supports a high placement despite limited public SWE-bench or Terminal-Bench reporting.",
+      "comparative_rationale": "Strong prior agentic rank hint places it above mid-tier open models, though benchmark visibility is still sparse versus Anthropic/OpenAI leaders.",
       "ranking_kind": "balanced"
     },
     {
@@ -128,50 +128,50 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 4650583921301,
+        "agentic_token_volume": 4683660924259,
         "agentic_rank": 2,
         "sentiment_score": 0.0,
         "recency_score": 0.952,
-        "comparative_score": 0.96
+        "comparative_score": 0.78
       },
       "scores": {
-        "quality_score": 0.8086,
-        "preliminary_quality_score": 0.6988,
-        "value_score": 0.8608
+        "quality_score": 0.7362,
+        "preliminary_quality_score": 0.698,
+        "value_score": 0.8126
       },
       "notes": "",
-      "comparative_rationale": "Second on the shortlist\u2019s prior agentic ranking; strong long-context agent profile, though public SWE-bench and Terminal-Bench numbers remain sparse.",
+      "comparative_rationale": "Very high shortlist prior rank and modern long-context design indicate strong autonomous coding potential, though public head-to-heads are limited.",
       "ranking_kind": "balanced"
     },
     {
       "rank": 5,
-      "id": "qwen/qwen3-coder:free",
-      "name": "Qwen: Qwen3 Coder 480B A35B (free)",
-      "is_free": true,
+      "id": "minimax/minimax-m3",
+      "name": "MiniMax: MiniMax M3",
+      "is_free": false,
       "supports_tools": true,
-      "supports_reasoning": false,
+      "supports_reasoning": true,
       "context_length": 1048576,
-      "release_date": "2025-07-23",
-      "age_days": 326,
+      "release_date": "2026-05-31",
+      "age_days": 13,
       "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
+        "prompt_usd_per_mtok": 0.3,
+        "completion_usd_per_mtok": 1.2
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
+        "agentic_token_volume": 1758748030520,
+        "agentic_rank": 3,
         "sentiment_score": 0.0,
-        "recency_score": 0.5001,
-        "comparative_score": 0.61
+        "recency_score": 1.0,
+        "comparative_score": 0.9
       },
       "scores": {
-        "quality_score": 0.5489,
-        "preliminary_quality_score": 0.5099,
-        "value_score": 0.7993
+        "quality_score": 0.7422,
+        "preliminary_quality_score": 0.6292,
+        "value_score": 0.7636
       },
       "notes": "",
-      "comparative_rationale": "Coder-specialized open model with huge context; likely solid on Aider-style and code generation tasks, but limited current public agent-benchmark evidence.",
+      "comparative_rationale": "Near GPT-5.5 on SWE-Bench Pro at 59.0% while winning decisively on cost, making it a strong high-volume agentic choice [digitalapplied.com](https://www.digitalapplied.com/blog/minimax-m3-vs-opus-4-8-vs-gpt-5-5-agentic-coding-2026).",
       "ranking_kind": "balanced"
     },
     {
@@ -190,54 +190,85 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1341841489587,
+        "agentic_token_volume": 1351970384521,
         "agentic_rank": 4,
         "sentiment_score": 0.0,
         "recency_score": 0.952,
-        "comparative_score": 0.9
+        "comparative_score": 0.82
       },
       "scores": {
-        "quality_score": 0.7326,
-        "preliminary_quality_score": 0.6143,
-        "value_score": 0.7723
+        "quality_score": 0.7005,
+        "preliminary_quality_score": 0.6141,
+        "value_score": 0.7509
       },
       "notes": "",
-      "comparative_rationale": "Fourth in the shortlist\u2019s prior agentic ranking; strong likely repo-agent profile, but lacks recent public head-to-head benchmark transparency versus Opus or GPT-5.5.",
+      "comparative_rationale": "High shortlist prior rank and frontier positioning suggest strong agentic coding, but public benchmark detail remains thinner than top three.",
       "ranking_kind": "balanced"
     },
     {
       "rank": 7,
-      "id": "minimax/minimax-m3",
-      "name": "MiniMax: MiniMax M3",
-      "is_free": false,
+      "id": "poolside/laguna-m.1:free",
+      "name": "Poolside: Laguna M.1 (free)",
+      "is_free": true,
       "supports_tools": true,
       "supports_reasoning": true,
-      "context_length": 1048576,
-      "release_date": "2026-05-31",
-      "age_days": 13,
+      "context_length": 262144,
+      "release_date": "2026-04-28",
+      "age_days": 46,
       "pricing": {
-        "prompt_usd_per_mtok": 0.3,
-        "completion_usd_per_mtok": 1.2
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1721004304961,
-        "agentic_rank": 3,
+        "agentic_token_volume": 140509956440,
+        "agentic_rank": 22,
         "sentiment_score": 0.0,
-        "recency_score": 1.0,
-        "comparative_score": 0.93
+        "recency_score": 0.9632,
+        "comparative_score": 0.35
       },
       "scores": {
-        "quality_score": 0.7539,
-        "preliminary_quality_score": 0.6288,
-        "value_score": 0.7714
+        "quality_score": 0.4433,
+        "preliminary_quality_score": 0.4994,
+        "value_score": 0.7289
       },
       "notes": "",
-      "comparative_rationale": "Vendor-stated 59.0% on SWE-Bench Pro and strongest economics; competitive for agentic coding, but trails top repo specialists on issue resolution [digitalapplied.com](https://www.digitalapplied.com/blog/minimax-m3-vs-opus-4-8-vs-gpt-5-5-agentic-coding-2026).",
+      "comparative_rationale": "Poolside is coding-focused, yet this model\u2019s prior rank is materially below top agents and public benchmark data is limited.",
       "ranking_kind": "balanced"
     },
     {
       "rank": 8,
+      "id": "qwen/qwen3-coder:free",
+      "name": "Qwen: Qwen3 Coder 480B A35B (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": false,
+      "context_length": 1048576,
+      "release_date": "2025-07-23",
+      "age_days": 326,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 0.5001,
+        "comparative_score": 0.31
+      },
+      "scores": {
+        "quality_score": 0.4289,
+        "preliminary_quality_score": 0.5099,
+        "value_score": 0.7193
+      },
+      "notes": "",
+      "comparative_rationale": "Coder-specialized and likely strong on coding micro-benchmarks, but scarce public tool-use and autonomous-agent benchmark results constrain placement.",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 9,
       "id": "nvidia/nemotron-3-super-120b-a12b",
       "name": "NVIDIA: Nemotron 3 Super",
       "is_free": false,
@@ -252,23 +283,23 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1020648394664,
+        "agentic_token_volume": 1029220808676,
         "agentic_rank": 5,
         "sentiment_score": 0.0,
         "recency_score": 0.8608,
-        "comparative_score": 0.81
+        "comparative_score": 0.56
       },
       "scores": {
-        "quality_score": 0.682,
-        "preliminary_quality_score": 0.5917,
-        "value_score": 0.7605
+        "quality_score": 0.582,
+        "preliminary_quality_score": 0.5916,
+        "value_score": 0.6938
       },
       "notes": "",
-      "comparative_rationale": "Same model line as ranked Super; prior shortlist agentic rank #5 supports a high placement despite limited public SWE-bench or Terminal-Bench reporting.",
+      "comparative_rationale": "Strong prior agentic rank hint places it above mid-tier open models, though benchmark visibility is still sparse versus Anthropic/OpenAI leaders.",
       "ranking_kind": "balanced"
     },
     {
-      "rank": 9,
+      "rank": 10,
       "id": "nex-agi/nex-n2-pro:free",
       "name": "Nex AGI: Nex-N2-Pro (free)",
       "is_free": true,
@@ -287,46 +318,15 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.44
+        "comparative_score": 0.17
       },
       "scores": {
-        "quality_score": 0.4797,
+        "quality_score": 0.3717,
         "preliminary_quality_score": 0.4995,
-        "value_score": 0.7531
+        "value_score": 0.6811
       },
       "notes": "",
-      "comparative_rationale": "Very recent release with Pro branding suggests competent tool use, but almost no public SWE-bench, Terminal-Bench, or BFCL evidence yet.",
-      "ranking_kind": "balanced"
-    },
-    {
-      "rank": 10,
-      "id": "poolside/laguna-m.1:free",
-      "name": "Poolside: Laguna M.1 (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 262144,
-      "release_date": "2026-04-28",
-      "age_days": 46,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 137467124955,
-        "agentic_rank": 22,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9632,
-        "comparative_score": 0.27
-      },
-      "scores": {
-        "quality_score": 0.4113,
-        "preliminary_quality_score": 0.4994,
-        "value_score": 0.7075
-      },
-      "notes": "",
-      "comparative_rationale": "Shortlist agentic rank #22 places it toward the bottom; limited public benchmark data prevents a stronger placement.",
+      "comparative_rationale": "Very limited public benchmark evidence for SWE-Bench, Terminal-Bench, or BFCL; placing low pending clearer agentic coding data.",
       "ranking_kind": "balanced"
     }
   ]
