@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-06-15T10:00:36.978534+00:00",
+  "generated_at": "2026-06-15T16:01:05.397307+00:00",
   "kind": "free",
   "list_size": 10,
   "shortlist_size": 15,
-  "comparative_rerank_applied": false,
-  "comparative_scored_count": 0,
+  "comparative_rerank_applied": true,
+  "comparative_scored_count": 36,
   "tracked_apps": {
     "hermes-agent": {
       "rank": 1,
       "models_used": 383,
-      "total_tokens": 16770221321970
+      "total_tokens": 16972672347713
     },
     "openclaw": {
       "rank": 3,
       "models_used": 384,
-      "total_tokens": 3860958248252
+      "total_tokens": 3907094741335
     }
   },
   "summary": "",
@@ -35,54 +35,23 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 5304910642991,
+        "agentic_token_volume": 5352619528286,
         "agentic_rank": 1,
         "sentiment_score": 0.0,
         "recency_score": 0.961,
-        "comparative_score": 0.0
+        "comparative_score": 1.0
       },
       "scores": {
-        "quality_score": 0.686,
+        "quality_score": 0.8172,
         "preliminary_quality_score": 0.686,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "Highest shortlist prior agentic rank and very long context suggest strongest autonomous coding, though public benchmark detail remains limited.",
       "ranking_kind": "free"
     },
     {
       "rank": 2,
-      "id": "nvidia/nemotron-3-super-120b-a12b:free",
-      "name": "NVIDIA: Nemotron 3 Super (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1000000,
-      "release_date": "2026-03-11",
-      "age_days": 95,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 1031640308670,
-        "agentic_rank": 5,
-        "sentiment_score": 0.0,
-        "recency_score": 0.8588,
-        "comparative_score": 0.0
-      },
-      "scores": {
-        "quality_score": 0.5907,
-        "preliminary_quality_score": 0.5907,
-        "value_score": 0.0
-      },
-      "notes": "",
-      "comparative_rationale": "",
-      "ranking_kind": "free"
-    },
-    {
-      "rank": 3,
       "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
       "name": "NVIDIA: Nemotron 3 Ultra (free)",
       "is_free": true,
@@ -101,15 +70,46 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.0
+        "comparative_score": 0.88
       },
       "scores": {
-        "quality_score": 0.5796,
+        "quality_score": 0.7037,
         "preliminary_quality_score": 0.5796,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "Newer than Nemotron 3 Super and should rank above it absent regression evidence; likely strongest Nemotron for multi-step coding here.",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 3,
+      "id": "nvidia/nemotron-3-super-120b-a12b:free",
+      "name": "NVIDIA: Nemotron 3 Super (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1000000,
+      "release_date": "2026-03-11",
+      "age_days": 95,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 1041207176179,
+        "agentic_rank": 5,
+        "sentiment_score": 0.0,
+        "recency_score": 0.8588,
+        "comparative_score": 0.83
+      },
+      "scores": {
+        "quality_score": 0.6894,
+        "preliminary_quality_score": 0.5907,
+        "value_score": 0.0
+      },
+      "notes": "",
+      "comparative_rationale": "Strong prior agentic rank and likely solid tool-use stability, but limited public SWE-Bench or Terminal-Bench data caps confidence.",
       "ranking_kind": "free"
     },
     {
@@ -132,15 +132,15 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 0.4989,
-        "comparative_score": 0.0
+        "comparative_score": 0.63
       },
       "scores": {
-        "quality_score": 0.5097,
+        "quality_score": 0.5568,
         "preliminary_quality_score": 0.5097,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "Coder-specialized large model with huge context likely performs well on repo navigation and patching, but recent public agentic benchmarks are limited.",
       "ranking_kind": "free"
     },
     {
@@ -163,19 +163,50 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.0
+        "comparative_score": 0.58
       },
       "scores": {
-        "quality_score": 0.4995,
+        "quality_score": 0.5357,
         "preliminary_quality_score": 0.4995,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "Very recent release suggests competitive tuning, yet limited public SWE-Bench, Terminal-Bench, or BFCL data warrants a middle placement.",
       "ranking_kind": "free"
     },
     {
       "rank": 6,
+      "id": "openai/gpt-oss-120b:free",
+      "name": "OpenAI: gpt-oss-120b (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 131072,
+      "release_date": "2025-08-05",
+      "age_days": 313,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 300470694350,
+        "agentic_rank": 14,
+        "sentiment_score": 0.0,
+        "recency_score": 0.5155,
+        "comparative_score": 0.53
+      },
+      "scores": {
+        "quality_score": 0.4778,
+        "preliminary_quality_score": 0.4442,
+        "value_score": 0.0
+      },
+      "notes": "",
+      "comparative_rationale": "Mid-pack prior agentic rank and likely strong general coding competence, but public autonomous-agent benchmark evidence remains modest.",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 7,
       "id": "poolside/laguna-m.1:free",
       "name": "Poolside: Laguna M.1 (free)",
       "is_free": true,
@@ -183,123 +214,30 @@
       "supports_reasoning": true,
       "context_length": 262144,
       "release_date": "2026-04-28",
-      "age_days": 47,
+      "age_days": 48,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 149380208898,
+        "agentic_token_volume": 152034734474,
         "agentic_rank": 22,
         "sentiment_score": 0.0,
-        "recency_score": 0.961,
-        "comparative_score": 0.0
+        "recency_score": 0.9587,
+        "comparative_score": 0.27
       },
       "scores": {
-        "quality_score": 0.4993,
-        "preliminary_quality_score": 0.4993,
+        "quality_score": 0.4111,
+        "preliminary_quality_score": 0.4991,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "",
-      "ranking_kind": "free"
-    },
-    {
-      "rank": 7,
-      "id": "poolside/laguna-xs.2:free",
-      "name": "Poolside: Laguna XS.2 (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 262144,
-      "release_date": "2026-04-28",
-      "age_days": 47,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0,
-        "recency_score": 0.961,
-        "comparative_score": 0.0
-      },
-      "scores": {
-        "quality_score": 0.4956,
-        "preliminary_quality_score": 0.4956,
-        "value_score": 0.0
-      },
-      "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "Lower prior agentic rank and limited public benchmark coverage place it in the lower tier for reliable autonomous coding.",
       "ranking_kind": "free"
     },
     {
       "rank": 8,
-      "id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-      "name": "NVIDIA: Nemotron 3 Nano Omni (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 256000,
-      "release_date": "2026-04-28",
-      "age_days": 47,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0,
-        "recency_score": 0.961,
-        "comparative_score": 0.0
-      },
-      "scores": {
-        "quality_score": 0.495,
-        "preliminary_quality_score": 0.495,
-        "value_score": 0.0
-      },
-      "notes": "",
-      "comparative_rationale": "",
-      "ranking_kind": "free"
-    },
-    {
-      "rank": 9,
-      "id": "google/gemma-4-26b-a4b-it:free",
-      "name": "Google: Gemma 4 26B A4B  (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 262144,
-      "release_date": "2026-04-03",
-      "age_days": 72,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9063,
-        "comparative_score": 0.0
-      },
-      "scores": {
-        "quality_score": 0.4902,
-        "preliminary_quality_score": 0.4902,
-        "value_score": 0.0
-      },
-      "notes": "",
-      "comparative_rationale": "",
-      "ranking_kind": "free"
-    },
-    {
-      "rank": 10,
       "id": "google/gemma-4-31b-it:free",
       "name": "Google: Gemma 4 31B (free)",
       "is_free": true,
@@ -318,15 +256,77 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 0.9042,
-        "comparative_score": 0.0
+        "comparative_score": 0.23
       },
       "scores": {
-        "quality_score": 0.49,
+        "quality_score": 0.389,
         "preliminary_quality_score": 0.49,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "Slightly newer family variant than Gemma 4 26B A4B and likely better general reasoning, but little public agentic coding evidence.",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 9,
+      "id": "google/gemma-4-26b-a4b-it:free",
+      "name": "Google: Gemma 4 26B A4B  (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "release_date": "2026-04-03",
+      "age_days": 73,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9042,
+        "comparative_score": 0.21
+      },
+      "scores": {
+        "quality_score": 0.381,
+        "preliminary_quality_score": 0.49,
+        "value_score": 0.0
+      },
+      "notes": "",
+      "comparative_rationale": "Smaller instruction-tuned open model with limited public SWE-Bench or Terminal-Bench results; likely serviceable but not top-tier agentic.",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 10,
+      "id": "poolside/laguna-xs.2:free",
+      "name": "Poolside: Laguna XS.2 (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "release_date": "2026-04-28",
+      "age_days": 48,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9587,
+        "comparative_score": 0.19
+      },
+      "scores": {
+        "quality_score": 0.3768,
+        "preliminary_quality_score": 0.4954,
+        "value_score": 0.0
+      },
+      "notes": "",
+      "comparative_rationale": "Smaller Laguna variant likely trails M.1 on sustained planning and coding depth; public benchmark support is minimal.",
       "ranking_kind": "free"
     }
   ]
