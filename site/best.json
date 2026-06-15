@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T22:00:53.529181+00:00",
+  "generated_at": "2026-06-15T04:01:45.118267+00:00",
   "kind": "best",
   "list_size": 10,
   "shortlist_size": 15,
@@ -8,13 +8,13 @@
   "tracked_apps": {
     "hermes-agent": {
       "rank": 1,
-      "models_used": 388,
-      "total_tokens": 16784576759448
+      "models_used": 382,
+      "total_tokens": 16595530773090
     },
     "openclaw": {
       "rank": 3,
-      "models_used": 392,
-      "total_tokens": 3927054820710
+      "models_used": 384,
+      "total_tokens": 3824611679137
     }
   },
   "summary": "",
@@ -28,57 +28,57 @@
       "supports_reasoning": true,
       "context_length": 1048576,
       "release_date": "2026-04-24",
-      "age_days": 51,
+      "age_days": 52,
       "pricing": {
         "prompt_usd_per_mtok": 0.09,
         "completion_usd_per_mtok": 0.18
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 4771297137976,
+        "agentic_token_volume": 4651776047031,
         "agentic_rank": 2,
         "sentiment_score": 0.0,
-        "recency_score": 0.952,
-        "comparative_score": 0.85
+        "recency_score": 0.9498,
+        "comparative_score": 0.81
       },
       "scores": {
-        "quality_score": 0.7639,
-        "preliminary_quality_score": 0.6977,
-        "value_score": 0.831
+        "quality_score": 0.7462,
+        "preliminary_quality_score": 0.695,
+        "value_score": 0.8192
       },
       "notes": "",
-      "comparative_rationale": "Close behind V4 Pro by shortlist signal; likely strong on coding throughput, but less evidence on tool-use stability and held-out agent benchmarks.",
+      "comparative_rationale": "Very strong shortlist prior suggests excellent agentic throughput, though public SWE-Bench and Terminal-Bench reporting is sparse so placed below Pro.",
       "ranking_kind": "best"
     },
     {
       "rank": 2,
-      "id": "openrouter/owl-alpha",
-      "name": "Owl Alpha",
-      "is_free": true,
+      "id": "deepseek/deepseek-v4-pro",
+      "name": "DeepSeek: DeepSeek V4 Pro",
+      "is_free": false,
       "supports_tools": true,
-      "supports_reasoning": false,
-      "context_length": 1048756,
-      "release_date": "2026-04-28",
-      "age_days": 47,
+      "supports_reasoning": true,
+      "context_length": 1048576,
+      "release_date": "2026-04-24",
+      "age_days": 52,
       "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
+        "prompt_usd_per_mtok": 0.435,
+        "completion_usd_per_mtok": 0.87
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 5272060316029,
-        "agentic_rank": 1,
+        "agentic_token_volume": 1360527339449,
+        "agentic_rank": 4,
         "sentiment_score": 0.0,
-        "recency_score": 0.961,
-        "comparative_score": 0.82
+        "recency_score": 0.9498,
+        "comparative_score": 0.9
       },
       "scores": {
-        "quality_score": 0.7452,
-        "preliminary_quality_score": 0.686,
-        "value_score": 0.8301
+        "quality_score": 0.7321,
+        "preliminary_quality_score": 0.6135,
+        "value_score": 0.772
       },
       "notes": "",
-      "comparative_rationale": "Input shortlist marks it #1 agentic, but public benchmark coverage is thin, so kept below better-documented leaders.",
+      "comparative_rationale": "High shortlist prior and frontier-class coding reputation, but limited recent public agentic benchmark detail versus Opus 4.8 and GPT-5.5.",
       "ranking_kind": "best"
     },
     {
@@ -97,54 +97,23 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1856240130308,
+        "agentic_token_volume": 1898156104003,
         "agentic_rank": 3,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.92
+        "comparative_score": 0.86
       },
       "scores": {
-        "quality_score": 0.7511,
-        "preliminary_quality_score": 0.6306,
-        "value_score": 0.7696
+        "quality_score": 0.7278,
+        "preliminary_quality_score": 0.6318,
+        "value_score": 0.754
       },
       "notes": "",
-      "comparative_rationale": "Public comparison places it near GPT-5.5 on SWE-Bench Pro at 59.0%, with frontier agentic coding at much lower cost.",
+      "comparative_rationale": "Near GPT-5.5 on SWE-Bench Pro at 59.0% while winning strongly on cost, making it attractive for scaled agentic coding [digitalapplied.com](https://www.digitalapplied.com/blog/minimax-m3-vs-opus-4-8-vs-gpt-5-5-agentic-coding-2026).",
       "ranking_kind": "best"
     },
     {
       "rank": 4,
-      "id": "deepseek/deepseek-v4-pro",
-      "name": "DeepSeek: DeepSeek V4 Pro",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1048576,
-      "release_date": "2026-04-24",
-      "age_days": 51,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.435,
-        "completion_usd_per_mtok": 0.87
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 1381132722199,
-        "agentic_rank": 4,
-        "sentiment_score": 0.0,
-        "recency_score": 0.952,
-        "comparative_score": 0.89
-      },
-      "scores": {
-        "quality_score": 0.7285,
-        "preliminary_quality_score": 0.6141,
-        "value_score": 0.7696
-      },
-      "notes": "",
-      "comparative_rationale": "High prior shortlist placement and strong coding reputation suggest top-tier agentic performance, though benchmark transparency trails Opus and GPT-5.5.",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 5,
       "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
       "name": "NVIDIA: Nemotron 3 Ultra (free)",
       "is_free": true,
@@ -163,19 +132,19 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.69
+        "comparative_score": 0.68
       },
       "scores": {
-        "quality_score": 0.6277,
+        "quality_score": 0.6237,
         "preliminary_quality_score": 0.5796,
-        "value_score": 0.7518
+        "value_score": 0.7491
       },
       "notes": "",
-      "comparative_rationale": "Newest Nemotron flagship should outrank older Super variants absent regression evidence, but public agentic benchmarks remain limited.",
+      "comparative_rationale": "Newest Nemotron family entry should outrank older same-family variants absent regression, but public agentic benchmark coverage remains limited.",
       "ranking_kind": "best"
     },
     {
-      "rank": 6,
+      "rank": 5,
       "id": "nvidia/nemotron-3-super-120b-a12b:free",
       "name": "NVIDIA: Nemotron 3 Super (free)",
       "is_free": true,
@@ -190,23 +159,23 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1046836165481,
+        "agentic_token_volume": 1022761249803,
         "agentic_rank": 5,
         "sentiment_score": 0.0,
         "recency_score": 0.8588,
-        "comparative_score": 0.63
+        "comparative_score": 0.61
       },
       "scores": {
-        "quality_score": 0.6097,
-        "preliminary_quality_score": 0.5913,
-        "value_score": 0.7398
+        "quality_score": 0.6014,
+        "preliminary_quality_score": 0.5908,
+        "value_score": 0.7343
       },
       "notes": "",
-      "comparative_rationale": "Shortlist places it #5, implying credible agentic coding strength, though major public benchmark wins are not well documented.",
+      "comparative_rationale": "Strong shortlist prior indicates capable agentic coding, though I found little recent public SWE-Bench or Terminal-Bench evidence to rank it higher.",
       "ranking_kind": "best"
     },
     {
-      "rank": 7,
+      "rank": 6,
       "id": "nvidia/nemotron-3-super-120b-a12b",
       "name": "NVIDIA: Nemotron 3 Super",
       "is_free": false,
@@ -221,19 +190,50 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1046836165481,
+        "agentic_token_volume": 1022761249803,
         "agentic_rank": 5,
         "sentiment_score": 0.0,
         "recency_score": 0.8588,
-        "comparative_score": 0.63
+        "comparative_score": 0.61
       },
       "scores": {
-        "quality_score": 0.6097,
-        "preliminary_quality_score": 0.5913,
-        "value_score": 0.7123
+        "quality_score": 0.6014,
+        "preliminary_quality_score": 0.5908,
+        "value_score": 0.7067
       },
       "notes": "",
-      "comparative_rationale": "Shortlist places it #5, implying credible agentic coding strength, though major public benchmark wins are not well documented.",
+      "comparative_rationale": "Strong shortlist prior indicates capable agentic coding, though I found little recent public SWE-Bench or Terminal-Bench evidence to rank it higher.",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 7,
+      "id": "google/gemini-3.1-flash-lite",
+      "name": "Google: Gemini 3.1 Flash Lite",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1048576,
+      "release_date": "2026-05-07",
+      "age_days": 38,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.25,
+        "completion_usd_per_mtok": 1.5
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.9,
+        "recency_score": 0.9814,
+        "comparative_score": 0.52
+      },
+      "scores": {
+        "quality_score": 0.6066,
+        "preliminary_quality_score": 0.6595,
+        "value_score": 0.6608
+      },
+      "notes": "In Fox in the Box's May 2026 Hermes workloads, Gemini 3.1 Flash Lite was the only model to clear every category with a 100% pass rate, 3.6s average latency, and roughly $0.02 total suite cost. Sentiment is strongly positive for cost-sensitive agent operators because it appears to dominate the practical tool-calling benchmark that was designed around real agent failure modes.",
+      "comparative_rationale": "Usable long-context lightweight agent, yet public comparisons emphasize Gemini Pro rather than Flash Lite for serious agentic coding [andrew.ooo](https://andrew.ooo/answers/gpt-5-5-vs-claude-opus-4-7-vs-gemini-3-1-pro-may-2026/).",
       "ranking_kind": "best"
     },
     {
@@ -252,23 +252,54 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 290975783213,
+        "agentic_token_volume": 294235137605,
         "agentic_rank": 14,
         "sentiment_score": 0.0,
         "recency_score": 0.9476,
-        "comparative_score": 0.49
+        "comparative_score": 0.37
       },
       "scores": {
-        "quality_score": 0.5517,
-        "preliminary_quality_score": 0.5868,
-        "value_score": 0.6835
+        "quality_score": 0.5037,
+        "preliminary_quality_score": 0.5869,
+        "value_score": 0.6515
       },
       "notes": "",
-      "comparative_rationale": "Reasonable coding contender with shortlist support, but weaker than newer Pro snapshot and lacking strong public agentic benchmark visibility.",
+      "comparative_rationale": "Behind its newer Pro sibling by version rule, with modest shortlist prior and limited public agentic coding benchmarks.",
       "ranking_kind": "best"
     },
     {
       "rank": 9,
+      "id": "openrouter/owl-alpha",
+      "name": "Owl Alpha",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": false,
+      "context_length": 1048756,
+      "release_date": "2026-04-28",
+      "age_days": 47,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 5252135696255,
+        "agentic_rank": 1,
+        "sentiment_score": 0.0,
+        "recency_score": 0.961,
+        "comparative_score": 0.12
+      },
+      "scores": {
+        "quality_score": 0.4652,
+        "preliminary_quality_score": 0.686,
+        "value_score": 0.6435
+      },
+      "notes": "",
+      "comparative_rationale": "High internal hint rank, but almost no public benchmark transparency makes confidence low despite likely decent agent behavior.",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 10,
       "id": "xiaomi/mimo-v2.5-pro",
       "name": "Xiaomi: MiMo-V2.5-Pro",
       "is_free": false,
@@ -283,50 +314,19 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 281728529640,
+        "agentic_token_volume": 279991338712,
         "agentic_rank": 15,
         "sentiment_score": 0.0,
         "recency_score": 0.9476,
-        "comparative_score": 0.53
+        "comparative_score": 0.4
       },
       "scores": {
-        "quality_score": 0.5675,
-        "preliminary_quality_score": 0.5866,
-        "value_score": 0.6623
+        "quality_score": 0.5155,
+        "preliminary_quality_score": 0.5865,
+        "value_score": 0.6276
       },
       "notes": "",
-      "comparative_rationale": "Newer Pro variant must beat MiMo-V2.5 absent regression evidence, though public agentic benchmark data is sparse.",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 10,
-      "id": "google/gemini-3.1-flash-lite",
-      "name": "Google: Gemini 3.1 Flash Lite",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1048576,
-      "release_date": "2026-05-07",
-      "age_days": 38,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.25,
-        "completion_usd_per_mtok": 1.5
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.92,
-        "recency_score": 0.9814,
-        "comparative_score": 0.35
-      },
-      "scores": {
-        "quality_score": 0.5396,
-        "preliminary_quality_score": 0.6612,
-        "value_score": 0.6161
-      },
-      "notes": "In the May 2026 Hermes workload benchmark, Gemini 3.1 Flash Lite swept the field with 100% across categories, 3.6s average latency, and about $0.02 total suite cost. Recent agentic sentiment is strongly positive because it beats larger models on tool-calling and multi-step execution economics rather than raw prestige.",
-      "comparative_rationale": "Newer than Gemini 2.5 Flash Lite, so ranked higher by version rule, but lite positioning suggests weaker autonomous coding depth.",
+      "comparative_rationale": "Newer Pro variant must rank above MiMo-V2.5 unless regression appears; public agentic benchmark coverage is still limited.",
       "ranking_kind": "best"
     }
   ]
