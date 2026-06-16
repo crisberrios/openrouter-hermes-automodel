@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T22:01:36.413256+00:00",
+  "generated_at": "2026-06-16T10:01:27.241264+00:00",
   "kind": "best",
   "list_size": 10,
   "shortlist_size": 15,
@@ -9,12 +9,12 @@
     "hermes-agent": {
       "rank": 1,
       "models_used": 383,
-      "total_tokens": 17177094229107
+      "total_tokens": 17121629665498
     },
     "openclaw": {
       "rank": 3,
       "models_used": 384,
-      "total_tokens": 3941356457326
+      "total_tokens": 3883957628409
     }
   },
   "summary": "",
@@ -35,19 +35,19 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 5414554212961,
+        "agentic_token_volume": 5438749653797,
         "agentic_rank": 1,
         "sentiment_score": 0.0,
         "recency_score": 0.9587,
-        "comparative_score": 0.96
+        "comparative_score": 1.0
       },
       "scores": {
-        "quality_score": 0.801,
+        "quality_score": 0.817,
         "preliminary_quality_score": 0.6857,
-        "value_score": 0.8673
+        "value_score": 0.878
       },
       "notes": "",
-      "comparative_rationale": "Platform hint ranks it first here; limited public benchmark detail, but recent release and top shortlist prior suggest strongest relative placement.",
+      "comparative_rationale": "Highest shortlist prior agentic rank and 1M-context profile; no contrary public benchmark evidence overrides its lead.",
       "ranking_kind": "best"
     },
     {
@@ -59,26 +59,26 @@
       "supports_reasoning": true,
       "context_length": 1048576,
       "release_date": "2026-04-24",
-      "age_days": 52,
+      "age_days": 53,
       "pricing": {
         "prompt_usd_per_mtok": 0.098,
         "completion_usd_per_mtok": 0.196
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 4786722977898,
+        "agentic_token_volume": 4683498209486,
         "agentic_rank": 2,
         "sentiment_score": 0.0,
-        "recency_score": 0.9498,
-        "comparative_score": 0.92
+        "recency_score": 0.9476,
+        "comparative_score": 0.96
       },
       "scores": {
-        "quality_score": 0.7901,
-        "preliminary_quality_score": 0.6948,
-        "value_score": 0.8475
+        "quality_score": 0.8041,
+        "preliminary_quality_score": 0.6916,
+        "value_score": 0.8568
       },
       "notes": "",
-      "comparative_rationale": "Platform hint ranks it second for agentic use; limited public head-to-head data, so placed just below best-validated leaders.",
+      "comparative_rationale": "Second in prior agentic ranking; strong coding-agent positioning, though fewer public SWE-bench head-to-heads than top frontier leaders.",
       "ranking_kind": "best"
     },
     {
@@ -90,7 +90,7 @@
       "supports_reasoning": true,
       "context_length": 1000000,
       "release_date": "2026-06-04",
-      "age_days": 11,
+      "age_days": 12,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
@@ -101,15 +101,15 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.78
+        "comparative_score": 0.83
       },
       "scores": {
-        "quality_score": 0.6637,
+        "quality_score": 0.6837,
         "preliminary_quality_score": 0.5796,
-        "value_score": 0.7758
+        "value_score": 0.7891
       },
       "notes": "",
-      "comparative_rationale": "Newer than Nemotron 3 Super and thus ranked higher absent regression evidence, but public agentic coding benchmarks remain limited.",
+      "comparative_rationale": "Newer than Nemotron 3 Super and same family, so ranks higher absent public regression evidence per version-order rule.",
       "ranking_kind": "best"
     },
     {
@@ -128,54 +128,23 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1049953211070,
+        "agentic_token_volume": 1035356544898,
         "agentic_rank": 5,
         "sentiment_score": 0.0,
         "recency_score": 0.8568,
-        "comparative_score": 0.73
+        "comparative_score": 0.78
       },
       "scores": {
-        "quality_score": 0.6492,
-        "preliminary_quality_score": 0.5905,
-        "value_score": 0.7661
+        "quality_score": 0.669,
+        "preliminary_quality_score": 0.59,
+        "value_score": 0.7793
       },
       "notes": "",
-      "comparative_rationale": "Platform hint ranks it fifth; respectable placement, though lacking broad public SWE-Bench or Terminal-Bench validation against top frontier models.",
+      "comparative_rationale": "Prior agentic rank #5 indicates upper-mid agentic strength, but public SWE-bench and Terminal-Bench evidence remains sparse.",
       "ranking_kind": "best"
     },
     {
       "rank": 5,
-      "id": "deepseek/deepseek-v4-pro",
-      "name": "DeepSeek: DeepSeek V4 Pro",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1048576,
-      "release_date": "2026-04-24",
-      "age_days": 52,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.435,
-        "completion_usd_per_mtok": 0.87
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 1403054152247,
-        "agentic_rank": 4,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9498,
-        "comparative_score": 0.87
-      },
-      "scores": {
-        "quality_score": 0.7201,
-        "preliminary_quality_score": 0.6135,
-        "value_score": 0.764
-      },
-      "notes": "",
-      "comparative_rationale": "Platform hint ranks it fourth among agentic models; sparse public benchmark corroboration keeps it below better-documented coding leaders.",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 6,
       "id": "minimax/minimax-m3",
       "name": "MiniMax: MiniMax M3",
       "is_free": false,
@@ -190,19 +159,50 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 2032459978585,
+        "agentic_token_volume": 2078387753310,
         "agentic_rank": 3,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.89
+        "comparative_score": 0.91
       },
       "scores": {
-        "quality_score": 0.7409,
-        "preliminary_quality_score": 0.6336,
-        "value_score": 0.7628
+        "quality_score": 0.7495,
+        "preliminary_quality_score": 0.6345,
+        "value_score": 0.7685
       },
       "notes": "",
-      "comparative_rationale": "Near GPT-5.5 on SWE-Bench Pro at 59.0% while excelling on cost, making it strong for high-volume agentic coding [digitalapplied.com](https://www.digitalapplied.com/blog/minimax-m3-vs-opus-4-8-vs-gpt-5-5-agentic-coding-2026).",
+      "comparative_rationale": "Vendor-stated 59.0% on SWE-bench Pro beats GPT-5.5's 58.6%, supporting elite agentic coding placement [digitalapplied.com](https://www.digitalapplied.com/blog/minimax-m3-vs-opus-4-8-vs-gpt-5-5-agentic-coding-2026).",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 6,
+      "id": "deepseek/deepseek-v4-pro",
+      "name": "DeepSeek: DeepSeek V4 Pro",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1048576,
+      "release_date": "2026-04-24",
+      "age_days": 53,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.435,
+        "completion_usd_per_mtok": 0.87
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 1398483297070,
+        "agentic_rank": 4,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9476,
+        "comparative_score": 0.88
+      },
+      "scores": {
+        "quality_score": 0.7238,
+        "preliminary_quality_score": 0.613,
+        "value_score": 0.7665
+      },
+      "notes": "",
+      "comparative_rationale": "Prior agentic rank #4 and Pro tier suggest stronger multi-step coding than flash peers; limited direct public benchmark granularity.",
       "ranking_kind": "best"
     },
     {
@@ -221,19 +221,19 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1049953211070,
+        "agentic_token_volume": 1035356544898,
         "agentic_rank": 5,
         "sentiment_score": 0.0,
         "recency_score": 0.8568,
-        "comparative_score": 0.73
+        "comparative_score": 0.78
       },
       "scores": {
-        "quality_score": 0.6492,
-        "preliminary_quality_score": 0.5905,
-        "value_score": 0.7386
+        "quality_score": 0.669,
+        "preliminary_quality_score": 0.59,
+        "value_score": 0.7518
       },
       "notes": "",
-      "comparative_rationale": "Platform hint ranks it fifth; respectable placement, though lacking broad public SWE-Bench or Terminal-Bench validation against top frontier models.",
+      "comparative_rationale": "Prior agentic rank #5 indicates upper-mid agentic strength, but public SWE-bench and Terminal-Bench evidence remains sparse.",
       "ranking_kind": "best"
     },
     {
@@ -252,19 +252,19 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 314334819510,
+        "agentic_token_volume": 323454094335,
         "agentic_rank": 13,
         "sentiment_score": 0.0,
         "recency_score": 0.9454,
-        "comparative_score": 0.45
+        "comparative_score": 0.54
       },
       "scores": {
-        "quality_score": 0.5357,
-        "preliminary_quality_score": 0.5869,
-        "value_score": 0.6728
+        "quality_score": 0.5718,
+        "preliminary_quality_score": 0.5871,
+        "value_score": 0.6969
       },
       "notes": "",
-      "comparative_rationale": "Placed below MiMo-V2.5-Pro because newer family variant should rank higher; limited public benchmarks keep overall score moderate.",
+      "comparative_rationale": "Prior agentic rank #13 and long context imply competent planning, though benchmark visibility trails better-established coding agents.",
       "ranking_kind": "best"
     },
     {
@@ -283,50 +283,50 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 291909804227,
+        "agentic_token_volume": 294325116780,
         "agentic_rank": 15,
         "sentiment_score": 0.0,
         "recency_score": 0.9454,
-        "comparative_score": 0.54
+        "comparative_score": 0.62
       },
       "scores": {
-        "quality_score": 0.5714,
+        "quality_score": 0.6034,
         "preliminary_quality_score": 0.5864,
-        "value_score": 0.6649
+        "value_score": 0.6862
       },
       "notes": "",
-      "comparative_rationale": "Newer Pro variant must outrank MiMo-V2.5 absent regression evidence, though public agentic coding data remain sparse.",
+      "comparative_rationale": "Newer Pro sibling must outrank MiMo-V2.5 without clear regression; still limited public agentic benchmark coverage.",
       "ranking_kind": "best"
     },
     {
       "rank": 10,
-      "id": "google/gemini-3.1-flash-lite",
-      "name": "Google: Gemini 3.1 Flash Lite",
+      "id": "google/gemini-2.5-flash-lite",
+      "name": "Google: Gemini 2.5 Flash Lite",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
       "context_length": 1048576,
-      "release_date": "2026-05-07",
-      "age_days": 39,
+      "release_date": "2025-07-22",
+      "age_days": 328,
       "pricing": {
-        "prompt_usd_per_mtok": 0.25,
-        "completion_usd_per_mtok": 1.5
+        "prompt_usd_per_mtok": 0.1,
+        "completion_usd_per_mtok": 0.4
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.92,
-        "recency_score": 0.9791,
-        "comparative_score": 0.3
+        "agentic_token_volume": 212334765842,
+        "agentic_rank": 17,
+        "sentiment_score": 0.0,
+        "recency_score": 0.4977,
+        "comparative_score": 0.34
       },
       "scores": {
-        "quality_score": 0.5194,
-        "preliminary_quality_score": 0.661,
-        "value_score": 0.6027
+        "quality_score": 0.4589,
+        "preliminary_quality_score": 0.5397,
+        "value_score": 0.6146
       },
-      "notes": "In the May 2026 Hermes benchmark, Gemini 3.1 Flash Lite swept the suite with 100% pass rate, 3.6s average latency, and about $0.02 total suite cost. This created strong positive sentiment for production agent pipelines where tool reliability and cost dominate.",
-      "comparative_rationale": "Lite variant favors speed and cost; public comparisons usually place Gemini stronger on context/multimodal than agentic coding [andrew.ooo](https://andrew.ooo/answers/gpt-5-5-vs-claude-opus-4-7-vs-gemini-3-1-pro-may-2026/).",
+      "notes": "",
+      "comparative_rationale": "Prior agentic rank #17 edges many smaller models, but Lite positioning suggests weaker sustained coding-agent reliability than full tiers.",
       "ranking_kind": "best"
     }
   ]

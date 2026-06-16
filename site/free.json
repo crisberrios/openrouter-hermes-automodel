@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-15T22:01:36.413256+00:00",
+  "generated_at": "2026-06-16T10:01:27.241264+00:00",
   "kind": "free",
   "list_size": 10,
   "shortlist_size": 15,
@@ -9,12 +9,12 @@
     "hermes-agent": {
       "rank": 1,
       "models_used": 383,
-      "total_tokens": 17177094229107
+      "total_tokens": 17121629665498
     },
     "openclaw": {
       "rank": 3,
       "models_used": 384,
-      "total_tokens": 3941356457326
+      "total_tokens": 3883957628409
     }
   },
   "summary": "",
@@ -35,19 +35,19 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 5414554212961,
+        "agentic_token_volume": 5438749653797,
         "agentic_rank": 1,
         "sentiment_score": 0.0,
         "recency_score": 0.9587,
-        "comparative_score": 0.96
+        "comparative_score": 1.0
       },
       "scores": {
-        "quality_score": 0.801,
+        "quality_score": 0.817,
         "preliminary_quality_score": 0.6857,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Platform hint ranks it first here; limited public benchmark detail, but recent release and top shortlist prior suggest strongest relative placement.",
+      "comparative_rationale": "Highest shortlist prior agentic rank and 1M-context profile; no contrary public benchmark evidence overrides its lead.",
       "ranking_kind": "free"
     },
     {
@@ -59,7 +59,7 @@
       "supports_reasoning": true,
       "context_length": 1000000,
       "release_date": "2026-06-04",
-      "age_days": 11,
+      "age_days": 12,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
@@ -70,15 +70,15 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.78
+        "comparative_score": 0.83
       },
       "scores": {
-        "quality_score": 0.6637,
+        "quality_score": 0.6837,
         "preliminary_quality_score": 0.5796,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Newer than Nemotron 3 Super and thus ranked higher absent regression evidence, but public agentic coding benchmarks remain limited.",
+      "comparative_rationale": "Newer than Nemotron 3 Super and same family, so ranks higher absent public regression evidence per version-order rule.",
       "ranking_kind": "free"
     },
     {
@@ -97,54 +97,23 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1049953211070,
+        "agentic_token_volume": 1035356544898,
         "agentic_rank": 5,
         "sentiment_score": 0.0,
         "recency_score": 0.8568,
-        "comparative_score": 0.73
+        "comparative_score": 0.78
       },
       "scores": {
-        "quality_score": 0.6492,
-        "preliminary_quality_score": 0.5905,
+        "quality_score": 0.669,
+        "preliminary_quality_score": 0.59,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Platform hint ranks it fifth; respectable placement, though lacking broad public SWE-Bench or Terminal-Bench validation against top frontier models.",
+      "comparative_rationale": "Prior agentic rank #5 indicates upper-mid agentic strength, but public SWE-bench and Terminal-Bench evidence remains sparse.",
       "ranking_kind": "free"
     },
     {
       "rank": 4,
-      "id": "qwen/qwen3-coder:free",
-      "name": "Qwen: Qwen3 Coder 480B A35B (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": false,
-      "context_length": 1048576,
-      "release_date": "2025-07-23",
-      "age_days": 327,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0,
-        "recency_score": 0.4989,
-        "comparative_score": 0.63
-      },
-      "scores": {
-        "quality_score": 0.5568,
-        "preliminary_quality_score": 0.5097,
-        "value_score": 0.0
-      },
-      "notes": "",
-      "comparative_rationale": "Coder-specialized large model likely competitive on raw coding, but public agentic benchmarks versus this shortlist are limited.",
-      "ranking_kind": "free"
-    },
-    {
-      "rank": 5,
       "id": "nex-agi/nex-n2-pro:free",
       "name": "Nex AGI: Nex-N2-Pro (free)",
       "is_free": true,
@@ -163,15 +132,46 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.58
+        "comparative_score": 0.72
       },
       "scores": {
-        "quality_score": 0.5357,
+        "quality_score": 0.5917,
         "preliminary_quality_score": 0.4995,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Very recent release may help, but limited public data on SWE-Bench, Terminal-Bench, or tool-use stability warrants cautious mid-tier placement.",
+      "comparative_rationale": "Recent Pro release suggests competitive agentic tuning, but limited public SWE-bench, BFCL, or Terminal-Bench data keeps it below proven leaders.",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 5,
+      "id": "qwen/qwen3-coder:free",
+      "name": "Qwen: Qwen3 Coder 480B A35B (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": false,
+      "context_length": 1048576,
+      "release_date": "2025-07-23",
+      "age_days": 328,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 0.4977,
+        "comparative_score": 0.5
+      },
+      "scores": {
+        "quality_score": 0.5047,
+        "preliminary_quality_score": 0.5096,
+        "value_score": 0.0
+      },
+      "notes": "",
+      "comparative_rationale": "Coder-specialized model likely solid on HumanEval-style tasks, but absent recent agentic benchmark evidence caps its placement.",
       "ranking_kind": "free"
     },
     {
@@ -190,19 +190,19 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 303156928551,
+        "agentic_token_volume": 298571191252,
         "agentic_rank": 14,
         "sentiment_score": 0.0,
         "recency_score": 0.5143,
-        "comparative_score": 0.49
+        "comparative_score": 0.58
       },
       "scores": {
-        "quality_score": 0.4617,
-        "preliminary_quality_score": 0.444,
+        "quality_score": 0.4976,
+        "preliminary_quality_score": 0.4439,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Platform hint ranks it mid-pack at fourteenth; decent general agentic promise, but weaker evidence than closed frontier leaders.",
+      "comparative_rationale": "Prior agentic rank #14 suggests decent autonomous coding ability, but lacks strong public SWE-bench or tool-use leaderboard validation.",
       "ranking_kind": "free"
     },
     {
@@ -221,54 +221,23 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 154789479979,
-        "agentic_rank": 22,
+        "agentic_token_volume": 157637762117,
+        "agentic_rank": 20,
         "sentiment_score": 0.0,
         "recency_score": 0.9587,
-        "comparative_score": 0.23
+        "comparative_score": 0.42
       },
       "scores": {
-        "quality_score": 0.3951,
-        "preliminary_quality_score": 0.4991,
+        "quality_score": 0.4712,
+        "preliminary_quality_score": 0.4992,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Platform hint ranks it low at twenty-second, and public benchmark visibility for agentic coding is limited.",
+      "comparative_rationale": "Prior agentic rank #20 indicates capable coding orientation, yet public benchmark support is thinner than top open models.",
       "ranking_kind": "free"
     },
     {
       "rank": 8,
-      "id": "poolside/laguna-xs.2:free",
-      "name": "Poolside: Laguna XS.2 (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 262144,
-      "release_date": "2026-04-28",
-      "age_days": 48,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9587,
-        "comparative_score": 0.2
-      },
-      "scores": {
-        "quality_score": 0.3808,
-        "preliminary_quality_score": 0.4954,
-        "value_score": 0.0
-      },
-      "notes": "",
-      "comparative_rationale": "Smaller Laguna sibling likely trails M.1 on sustained planning and tool use; public benchmark evidence remains thin.",
-      "ranking_kind": "free"
-    },
-    {
-      "rank": 9,
       "id": "google/gemma-4-31b-it:free",
       "name": "Google: Gemma 4 31B (free)",
       "is_free": true,
@@ -287,19 +256,19 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 0.9021,
-        "comparative_score": 0.17
+        "comparative_score": 0.3
       },
       "scores": {
-        "quality_score": 0.3649,
+        "quality_score": 0.4169,
         "preliminary_quality_score": 0.4898,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "General instruction model with limited public agentic coding results; newer 31B should edge the 26B sibling.",
+      "comparative_rationale": "Slightly newer and larger same-family Gemma variant, so it ranks above 26B absent any public regression signal.",
       "ranking_kind": "free"
     },
     {
-      "rank": 10,
+      "rank": 9,
       "id": "google/gemma-4-26b-a4b-it:free",
       "name": "Google: Gemma 4 26B A4B  (free)",
       "is_free": true,
@@ -318,15 +287,46 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 0.9042,
-        "comparative_score": 0.15
+        "comparative_score": 0.28
       },
       "scores": {
-        "quality_score": 0.357,
+        "quality_score": 0.409,
         "preliminary_quality_score": 0.49,
         "value_score": 0.0
       },
       "notes": "",
-      "comparative_rationale": "Smaller Gemma 4 variant lacks strong public agentic coding benchmarks, so placed low in this competitive pool.",
+      "comparative_rationale": "Reasonable small open model candidate, but little public agentic coding evidence versus stronger ranked peers.",
+      "ranking_kind": "free"
+    },
+    {
+      "rank": 10,
+      "id": "poolside/laguna-xs.2:free",
+      "name": "Poolside: Laguna XS.2 (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "release_date": "2026-04-28",
+      "age_days": 48,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9587,
+        "comparative_score": 0.25
+      },
+      "scores": {
+        "quality_score": 0.4008,
+        "preliminary_quality_score": 0.4954,
+        "value_score": 0.0
+      },
+      "notes": "",
+      "comparative_rationale": "XS tier likely below Laguna M.1 on sustained multi-step coding; public benchmark data is limited.",
       "ranking_kind": "free"
     }
   ]
