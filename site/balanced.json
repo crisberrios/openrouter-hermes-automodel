@@ -1,57 +1,26 @@
 {
-  "generated_at": "2026-06-16T16:01:09.694915+00:00",
+  "generated_at": "2026-06-16T22:01:55.893833+00:00",
   "kind": "balanced",
   "list_size": 10,
   "shortlist_size": 15,
   "comparative_rerank_applied": true,
-  "comparative_scored_count": 36,
+  "comparative_scored_count": 37,
   "tracked_apps": {
     "hermes-agent": {
       "rank": 1,
-      "models_used": 383,
-      "total_tokens": 17316200990025
+      "models_used": 384,
+      "total_tokens": 17526196381543
     },
     "openclaw": {
       "rank": 3,
-      "models_used": 384,
-      "total_tokens": 3921411088046
+      "models_used": 385,
+      "total_tokens": 3960834796145
     }
   },
   "summary": "",
   "models": [
     {
       "rank": 1,
-      "id": "openrouter/owl-alpha",
-      "name": "Owl Alpha",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": false,
-      "context_length": 1048756,
-      "release_date": "2026-04-28",
-      "age_days": 48,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 5488620288474,
-        "agentic_rank": 1,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9587,
-        "comparative_score": 0.86
-      },
-      "scores": {
-        "quality_score": 0.761,
-        "preliminary_quality_score": 0.6857,
-        "value_score": 0.9407
-      },
-      "notes": "",
-      "comparative_rationale": "Input agentic_rank #1 suggests strongest aggregate product ranking here, though public benchmark transparency is limited versus branded frontier models.",
-      "ranking_kind": "balanced"
-    },
-    {
-      "rank": 2,
       "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
       "name": "NVIDIA: Nemotron 3 Ultra (free)",
       "is_free": true,
@@ -70,15 +39,46 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.74
+        "comparative_score": 0.68
       },
       "scores": {
-        "quality_score": 0.6477,
+        "quality_score": 0.6237,
         "preliminary_quality_score": 0.5796,
-        "value_score": 0.8651
+        "value_score": 0.8491
       },
       "notes": "",
-      "comparative_rationale": "Newest high-end Nemotron in this pool; by family progression it ranks above Super unless clear regression evidence appears, which public data lacks.",
+      "comparative_rationale": "Newer Ultra should outrank older Nemotron 3 Super absent regression evidence, but public agentic coding benchmark coverage remains sparse.",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 2,
+      "id": "nvidia/nemotron-3-super-120b-a12b:free",
+      "name": "NVIDIA: Nemotron 3 Super (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1000000,
+      "release_date": "2026-03-11",
+      "age_days": 97,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 1053972813682,
+        "agentic_rank": 5,
+        "sentiment_score": 0.0,
+        "recency_score": 0.8548,
+        "comparative_score": 0.61
+      },
+      "scores": {
+        "quality_score": 0.6008,
+        "preliminary_quality_score": 0.5898,
+        "value_score": 0.8339
+      },
+      "notes": "",
+      "comparative_rationale": "Strong prior agentic rank and large context make it plausible for coding agents, but scarce public SWE-Bench or Terminal-Bench results limit confidence.",
       "ranking_kind": "balanced"
     },
     {
@@ -92,59 +92,28 @@
       "release_date": "2026-04-24",
       "age_days": 53,
       "pricing": {
-        "prompt_usd_per_mtok": 0.098,
-        "completion_usd_per_mtok": 0.196
+        "prompt_usd_per_mtok": 0.09,
+        "completion_usd_per_mtok": 0.18
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 4733678933120,
+        "agentic_token_volume": 4787269575530,
         "agentic_rank": 2,
         "sentiment_score": 0.0,
         "recency_score": 0.9476,
-        "comparative_score": 0.97
+        "comparative_score": 0.75
       },
       "scores": {
-        "quality_score": 0.8082,
-        "preliminary_quality_score": 0.6917,
-        "value_score": 0.8596
+        "quality_score": 0.7203,
+        "preliminary_quality_score": 0.6919,
+        "value_score": 0.802
       },
       "notes": "",
-      "comparative_rationale": "Shortlist hint places it #2 agentic; strong million-token context and recent frontier positioning support near-top autonomous coding rank.",
+      "comparative_rationale": "Flash variant ranks high in prior agentic lists, but lacks stronger public benchmark evidence than DeepSeek V4 Pro and top frontier models.",
       "ranking_kind": "balanced"
     },
     {
       "rank": 4,
-      "id": "nvidia/nemotron-3-super-120b-a12b:free",
-      "name": "NVIDIA: Nemotron 3 Super (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1000000,
-      "release_date": "2026-03-11",
-      "age_days": 96,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 1045252376267,
-        "agentic_rank": 5,
-        "sentiment_score": 0.0,
-        "recency_score": 0.8568,
-        "comparative_score": 0.68
-      },
-      "scores": {
-        "quality_score": 0.629,
-        "preliminary_quality_score": 0.59,
-        "value_score": 0.8527
-      },
-      "notes": "",
-      "comparative_rationale": "Input agentic_rank #5 and large context make it a plausible upper-mid agentic coder, but broad public SWE/terminal results remain sparse.",
-      "ranking_kind": "balanced"
-    },
-    {
-      "rank": 5,
       "id": "minimax/minimax-m3",
       "name": "MiniMax: MiniMax M3",
       "is_free": false,
@@ -152,30 +121,30 @@
       "supports_reasoning": true,
       "context_length": 1048576,
       "release_date": "2026-05-31",
-      "age_days": 15,
+      "age_days": 16,
       "pricing": {
         "prompt_usd_per_mtok": 0.3,
         "completion_usd_per_mtok": 1.2
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 2114860517957,
+        "agentic_token_volume": 2157226640088,
         "agentic_rank": 3,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.93
+        "comparative_score": 0.88
       },
       "scores": {
-        "quality_score": 0.7577,
-        "preliminary_quality_score": 0.6349,
-        "value_score": 0.774
+        "quality_score": 0.738,
+        "preliminary_quality_score": 0.6354,
+        "value_score": 0.7608
       },
       "notes": "",
-      "comparative_rationale": "Competitive on repo-level agentic coding with 59.0% SWE-Bench Pro in public comparisons, trailing only premium leaders [digitalapplied.com](https://www.digitalapplied.com/blog/minimax-m3-vs-opus-4-8-vs-gpt-5-5-agentic-coding-2026).",
+      "comparative_rationale": "Competitive agentic coding model with vendor-stated 59.0% SWE-Bench Pro and excellent economics, though behind top Claude and GPT-5.5 [digitalapplied.com](https://www.digitalapplied.com/blog/minimax-m3-vs-opus-4-8-vs-gpt-5-5-agentic-coding-2026).",
       "ranking_kind": "balanced"
     },
     {
-      "rank": 6,
+      "rank": 5,
       "id": "deepseek/deepseek-v4-pro",
       "name": "DeepSeek: DeepSeek V4 Pro",
       "is_free": false,
@@ -190,54 +159,23 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1413032057904,
+        "agentic_token_volume": 1429698154596,
         "agentic_rank": 4,
         "sentiment_score": 0.0,
         "recency_score": 0.9476,
-        "comparative_score": 0.9
+        "comparative_score": 0.79
       },
       "scores": {
-        "quality_score": 0.7318,
+        "quality_score": 0.6879,
         "preliminary_quality_score": 0.6131,
-        "value_score": 0.7718
+        "value_score": 0.7425
       },
       "notes": "",
-      "comparative_rationale": "Agentic shortlist places it just behind top models; likely stronger repo reasoning than flash variants, but fewer public benchmark specifics.",
+      "comparative_rationale": "High shortlist prior suggests strong agentic coding, but limited fresh public SWE-Bench or Terminal-Bench data versus leaders keeps it below Claude/GPT/M3.",
       "ranking_kind": "balanced"
     },
     {
-      "rank": 7,
-      "id": "nex-agi/nex-n2-pro:free",
-      "name": "Nex AGI: Nex-N2-Pro (free)",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 262144,
-      "release_date": "2026-06-08",
-      "age_days": 7,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.0,
-        "recency_score": 1.0,
-        "comparative_score": 0.47
-      },
-      "scores": {
-        "quality_score": 0.4917,
-        "preliminary_quality_score": 0.4995,
-        "value_score": 0.7611
-      },
-      "notes": "",
-      "comparative_rationale": "Recent pro-labeled release suggests stronger tool orchestration than small open models, but limited public data; placing conservatively mid-lower.",
-      "ranking_kind": "balanced"
-    },
-    {
-      "rank": 8,
+      "rank": 6,
       "id": "qwen/qwen3-coder:free",
       "name": "Qwen: Qwen3 Coder 480B A35B (free)",
       "is_free": true,
@@ -256,50 +194,81 @@
         "agentic_rank": 0,
         "sentiment_score": 0.0,
         "recency_score": 0.4977,
-        "comparative_score": 0.43
+        "comparative_score": 0.38
       },
       "scores": {
-        "quality_score": 0.4767,
+        "quality_score": 0.4567,
         "preliminary_quality_score": 0.5096,
-        "value_score": 0.7511
+        "value_score": 0.7378
       },
       "notes": "",
-      "comparative_rationale": "Coder-specialized model should do well on code generation, but older 2025 release and no-reasoning hint reduce confidence for autonomous workflows.",
+      "comparative_rationale": "Coder-tuned branding helps, yet older release and scarce current public agentic benchmark data make it hard to rank higher.",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 7,
+      "id": "openrouter/owl-alpha",
+      "name": "Owl Alpha",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": false,
+      "context_length": 1048756,
+      "release_date": "2026-04-28",
+      "age_days": 49,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 5544290821414,
+        "agentic_rank": 1,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9565,
+        "comparative_score": 0.06
+      },
+      "scores": {
+        "quality_score": 0.4409,
+        "preliminary_quality_score": 0.6855,
+        "value_score": 0.7273
+      },
+      "notes": "",
+      "comparative_rationale": "High internal agentic hint, but essentially no credible public SWE-Bench, Terminal-Bench, or BFCL evidence to validate placement.",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 8,
+      "id": "nex-agi/nex-n2-pro:free",
+      "name": "Nex AGI: Nex-N2-Pro (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 262144,
+      "release_date": "2026-06-08",
+      "age_days": 8,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 1.0,
+        "comparative_score": 0.34
+      },
+      "scores": {
+        "quality_score": 0.4397,
+        "preliminary_quality_score": 0.4995,
+        "value_score": 0.7265
+      },
+      "notes": "",
+      "comparative_rationale": "Too little public benchmark coverage on SWE-Bench, Terminal-Bench, or tool-use reliability; placing cautiously above smaller generalist free models.",
       "ranking_kind": "balanced"
     },
     {
       "rank": 9,
-      "id": "nvidia/nemotron-3-super-120b-a12b",
-      "name": "NVIDIA: Nemotron 3 Super",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1000000,
-      "release_date": "2026-03-11",
-      "age_days": 96,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.09,
-        "completion_usd_per_mtok": 0.45
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 1045252376267,
-        "agentic_rank": 5,
-        "sentiment_score": 0.0,
-        "recency_score": 0.8568,
-        "comparative_score": 0.68
-      },
-      "scores": {
-        "quality_score": 0.629,
-        "preliminary_quality_score": 0.59,
-        "value_score": 0.7251
-      },
-      "notes": "",
-      "comparative_rationale": "Input agentic_rank #5 and large context make it a plausible upper-mid agentic coder, but broad public SWE/terminal results remain sparse.",
-      "ranking_kind": "balanced"
-    },
-    {
-      "rank": 10,
       "id": "poolside/laguna-m.1:free",
       "name": "Poolside: Laguna M.1 (free)",
       "is_free": true,
@@ -314,19 +283,50 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 160478858769,
+        "agentic_token_volume": 163499734583,
         "agentic_rank": 20,
         "sentiment_score": 0.0,
         "recency_score": 0.9565,
-        "comparative_score": 0.28
+        "comparative_score": 0.3
       },
       "scores": {
-        "quality_score": 0.415,
+        "quality_score": 0.423,
         "preliminary_quality_score": 0.499,
-        "value_score": 0.71
+        "value_score": 0.7153
       },
       "notes": "",
-      "comparative_rationale": "Poolside targets software engineering, yet input rank #20 and scarce current public scores keep it below better-evidenced frontier options.",
+      "comparative_rationale": "Poolside is coding-focused, but this variant\u2019s lower prior agentic rank and sparse public benchmark visibility cap confidence.",
+      "ranking_kind": "balanced"
+    },
+    {
+      "rank": 10,
+      "id": "nvidia/nemotron-3-super-120b-a12b",
+      "name": "NVIDIA: Nemotron 3 Super",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1000000,
+      "release_date": "2026-03-11",
+      "age_days": 97,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.09,
+        "completion_usd_per_mtok": 0.45
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 1053972813682,
+        "agentic_rank": 5,
+        "sentiment_score": 0.0,
+        "recency_score": 0.8548,
+        "comparative_score": 0.61
+      },
+      "scores": {
+        "quality_score": 0.6008,
+        "preliminary_quality_score": 0.5898,
+        "value_score": 0.7063
+      },
+      "notes": "",
+      "comparative_rationale": "Strong prior agentic rank and large context make it plausible for coding agents, but scarce public SWE-Bench or Terminal-Bench results limit confidence.",
       "ranking_kind": "balanced"
     }
   ]
