@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T10:01:43.958183+00:00",
+  "generated_at": "2026-06-17T16:00:49.917959+00:00",
   "kind": "best",
   "list_size": 10,
   "shortlist_size": 15,
@@ -9,12 +9,12 @@
     "hermes-agent": {
       "rank": 1,
       "models_used": 384,
-      "total_tokens": 17522861902815
+      "total_tokens": 17711068123991
     },
     "openclaw": {
       "rank": 3,
-      "models_used": 385,
-      "total_tokens": 3924915154436
+      "models_used": 386,
+      "total_tokens": 3959835131991
     }
   },
   "summary": "",
@@ -35,7 +35,7 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 5536173046057,
+        "agentic_token_volume": 5585188655869,
         "agentic_rank": 1,
         "sentiment_score": 0.0,
         "recency_score": 0.9565,
@@ -66,16 +66,16 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 4750879196422,
+        "agentic_token_volume": 4802834673836,
         "agentic_rank": 2,
         "sentiment_score": 0.0,
         "recency_score": 0.9454,
         "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.6909,
-        "preliminary_quality_score": 0.6909,
-        "value_score": 0.7824
+        "quality_score": 0.6912,
+        "preliminary_quality_score": 0.6912,
+        "value_score": 0.7826
       },
       "notes": "",
       "comparative_rationale": "",
@@ -97,7 +97,7 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1041453283973,
+        "agentic_token_volume": 1050812297312,
         "agentic_rank": 5,
         "sentiment_score": 0.0,
         "recency_score": 0.8548,
@@ -159,16 +159,16 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 343195714175,
-        "agentic_rank": 12,
+        "agentic_token_volume": 348288670225,
+        "agentic_rank": 11,
         "sentiment_score": 0.0,
         "recency_score": 0.9431,
         "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.5872,
-        "preliminary_quality_score": 0.5872,
-        "value_score": 0.7071
+        "quality_score": 0.5873,
+        "preliminary_quality_score": 0.5873,
+        "value_score": 0.7072
       },
       "notes": "",
       "comparative_rationale": "",
@@ -190,7 +190,7 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1041453283973,
+        "agentic_token_volume": 1050812297312,
         "agentic_rank": 5,
         "sentiment_score": 0.0,
         "recency_score": 0.8548,
@@ -221,16 +221,16 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 2245030833458,
+        "agentic_token_volume": 2282442752531,
         "agentic_rank": 3,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
         "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.6376,
-        "preliminary_quality_score": 0.6376,
-        "value_score": 0.6939
+        "quality_score": 0.638,
+        "preliminary_quality_score": 0.638,
+        "value_score": 0.6942
       },
       "notes": "",
       "comparative_rationale": "",
@@ -252,16 +252,16 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1420304696100,
+        "agentic_token_volume": 1436024745566,
         "agentic_rank": 4,
         "sentiment_score": 0.0,
         "recency_score": 0.9454,
         "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.6127,
-        "preliminary_quality_score": 0.6127,
-        "value_score": 0.6924
+        "quality_score": 0.6128,
+        "preliminary_quality_score": 0.6128,
+        "value_score": 0.6925
       },
       "notes": "",
       "comparative_rationale": "",
@@ -283,7 +283,7 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 307137517303,
+        "agentic_token_volume": 311017965082,
         "agentic_rank": 14,
         "sentiment_score": 0.0,
         "recency_score": 0.9431,
@@ -307,23 +307,23 @@
       "supports_reasoning": true,
       "context_length": 1048576,
       "release_date": "2025-12-17",
-      "age_days": 181,
+      "age_days": 182,
       "pricing": {
         "prompt_usd_per_mtok": 0.5,
         "completion_usd_per_mtok": 3.0
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 92216819800,
+        "agentic_token_volume": 92862825455,
         "agentic_rank": 23,
         "sentiment_score": 0.0,
-        "recency_score": 0.7022,
+        "recency_score": 0.7006,
         "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.5572,
-        "preliminary_quality_score": 0.5572,
-        "value_score": 0.5798
+        "quality_score": 0.5571,
+        "preliminary_quality_score": 0.5571,
+        "value_score": 0.5797
       },
       "notes": "",
       "comparative_rationale": "",

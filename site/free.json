@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T10:01:43.958183+00:00",
+  "generated_at": "2026-06-17T16:00:49.917959+00:00",
   "kind": "free",
   "list_size": 10,
   "shortlist_size": 15,
@@ -9,12 +9,12 @@
     "hermes-agent": {
       "rank": 1,
       "models_used": 384,
-      "total_tokens": 17522861902815
+      "total_tokens": 17711068123991
     },
     "openclaw": {
       "rank": 3,
-      "models_used": 385,
-      "total_tokens": 3924915154436
+      "models_used": 386,
+      "total_tokens": 3959835131991
     }
   },
   "summary": "",
@@ -35,7 +35,7 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 5536173046057,
+        "agentic_token_volume": 5585188655869,
         "agentic_rank": 1,
         "sentiment_score": 0.0,
         "recency_score": 0.9565,
@@ -66,7 +66,7 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1041453283973,
+        "agentic_token_volume": 1050812297312,
         "agentic_rank": 5,
         "sentiment_score": 0.0,
         "recency_score": 0.8548,
@@ -183,22 +183,22 @@
       "supports_reasoning": true,
       "context_length": 262144,
       "release_date": "2026-04-28",
-      "age_days": 49,
+      "age_days": 50,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 166072242051,
+        "agentic_token_volume": 169130110653,
         "agentic_rank": 19,
         "sentiment_score": 0.0,
-        "recency_score": 0.9565,
+        "recency_score": 0.9543,
         "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.4991,
-        "preliminary_quality_score": 0.4991,
+        "quality_score": 0.4989,
+        "preliminary_quality_score": 0.4989,
         "value_score": 0.0
       },
       "notes": "",
@@ -214,7 +214,7 @@
       "supports_reasoning": true,
       "context_length": 262144,
       "release_date": "2026-04-28",
-      "age_days": 49,
+      "age_days": 50,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
@@ -224,12 +224,12 @@
         "agentic_token_volume": 0,
         "agentic_rank": 0,
         "sentiment_score": 0.0,
-        "recency_score": 0.9565,
+        "recency_score": 0.9543,
         "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.4952,
-        "preliminary_quality_score": 0.4952,
+        "quality_score": 0.495,
+        "preliminary_quality_score": 0.495,
         "value_score": 0.0
       },
       "notes": "",
@@ -276,7 +276,7 @@
       "supports_reasoning": true,
       "context_length": 262144,
       "release_date": "2026-04-03",
-      "age_days": 74,
+      "age_days": 75,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
@@ -286,12 +286,12 @@
         "agentic_token_volume": 0,
         "agentic_rank": 0,
         "sentiment_score": 0.0,
-        "recency_score": 0.9021,
+        "recency_score": 0.9,
         "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.4898,
-        "preliminary_quality_score": 0.4898,
+        "quality_score": 0.4895,
+        "preliminary_quality_score": 0.4895,
         "value_score": 0.0
       },
       "notes": "",
