@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T04:01:48.455777+00:00",
+  "generated_at": "2026-06-17T10:01:43.958183+00:00",
   "kind": "best",
   "list_size": 10,
   "shortlist_size": 15,
@@ -9,12 +9,12 @@
     "hermes-agent": {
       "rank": 1,
       "models_used": 384,
-      "total_tokens": 17359886369676
+      "total_tokens": 17522861902815
     },
     "openclaw": {
       "rank": 3,
       "models_used": 385,
-      "total_tokens": 3884833431990
+      "total_tokens": 3924915154436
     }
   },
   "summary": "",
@@ -35,7 +35,7 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 5492787520432,
+        "agentic_token_volume": 5536173046057,
         "agentic_rank": 1,
         "sentiment_score": 0.0,
         "recency_score": 0.9565,
@@ -66,7 +66,7 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 4710944093085,
+        "agentic_token_volume": 4750879196422,
         "agentic_rank": 2,
         "sentiment_score": 0.0,
         "recency_score": 0.9454,
@@ -97,7 +97,7 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1032384077013,
+        "agentic_token_volume": 1041453283973,
         "agentic_rank": 5,
         "sentiment_score": 0.0,
         "recency_score": 0.8548,
@@ -114,6 +114,37 @@
     },
     {
       "rank": 4,
+      "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "name": "NVIDIA: Nemotron 3 Ultra (free)",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1000000,
+      "release_date": "2026-06-04",
+      "age_days": 13,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 0,
+        "agentic_rank": 0,
+        "sentiment_score": 0.0,
+        "recency_score": 1.0,
+        "comparative_score": 0.0
+      },
+      "scores": {
+        "quality_score": 0.5796,
+        "preliminary_quality_score": 0.5796,
+        "value_score": 0.7197
+      },
+      "notes": "",
+      "comparative_rationale": "",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 5,
       "id": "xiaomi/mimo-v2.5",
       "name": "Xiaomi: MiMo-V2.5",
       "is_free": false,
@@ -128,7 +159,7 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 339738929967,
+        "agentic_token_volume": 343195714175,
         "agentic_rank": 12,
         "sentiment_score": 0.0,
         "recency_score": 0.9431,
@@ -144,7 +175,7 @@
       "ranking_kind": "best"
     },
     {
-      "rank": 5,
+      "rank": 6,
       "id": "nvidia/nemotron-3-super-120b-a12b",
       "name": "NVIDIA: Nemotron 3 Super",
       "is_free": false,
@@ -159,7 +190,7 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1032384077013,
+        "agentic_token_volume": 1041453283973,
         "agentic_rank": 5,
         "sentiment_score": 0.0,
         "recency_score": 0.8548,
@@ -171,37 +202,6 @@
         "value_score": 0.6988
       },
       "notes": "",
-      "comparative_rationale": "",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 6,
-      "id": "google/gemini-3.1-flash-lite",
-      "name": "Google: Gemini 3.1 Flash Lite",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1048576,
-      "release_date": "2026-05-07",
-      "age_days": 40,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.25,
-        "completion_usd_per_mtok": 1.5
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 0,
-        "agentic_rank": 0,
-        "sentiment_score": 0.93,
-        "recency_score": 0.9769,
-        "comparative_score": 0.0
-      },
-      "scores": {
-        "quality_score": 0.6616,
-        "preliminary_quality_score": 0.6616,
-        "value_score": 0.6975
-      },
-      "notes": "In the May 2026 Hermes benchmark, Gemini 3.1 Flash Lite reportedly swept the field with a 100% pass rate, ~3.6s average latency, and about $0.02 to run the suite, making it the strongest current sentiment leader for practical agent workloads focused on tool use and failure avoidance.",
       "comparative_rationale": "",
       "ranking_kind": "best"
     },
@@ -221,16 +221,16 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 2194814372774,
+        "agentic_token_volume": 2245030833458,
         "agentic_rank": 3,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
         "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.6368,
-        "preliminary_quality_score": 0.6368,
-        "value_score": 0.6934
+        "quality_score": 0.6376,
+        "preliminary_quality_score": 0.6376,
+        "value_score": 0.6939
       },
       "notes": "",
       "comparative_rationale": "",
@@ -252,7 +252,7 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1408056378704,
+        "agentic_token_volume": 1420304696100,
         "agentic_rank": 4,
         "sentiment_score": 0.0,
         "recency_score": 0.9454,
@@ -283,16 +283,16 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 303678016728,
+        "agentic_token_volume": 307137517303,
         "agentic_rank": 14,
         "sentiment_score": 0.0,
         "recency_score": 0.9431,
         "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.5863,
-        "preliminary_quality_score": 0.5863,
-        "value_score": 0.6748
+        "quality_score": 0.5864,
+        "preliminary_quality_score": 0.5864,
+        "value_score": 0.6749
       },
       "notes": "",
       "comparative_rationale": "",
@@ -300,30 +300,30 @@
     },
     {
       "rank": 10,
-      "id": "qwen/qwen3.7-max",
-      "name": "Qwen: Qwen3.7 Max",
+      "id": "google/gemini-3-flash-preview",
+      "name": "Google: Gemini 3 Flash Preview",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
-      "context_length": 1000000,
-      "release_date": "2026-05-21",
-      "age_days": 26,
+      "context_length": 1048576,
+      "release_date": "2025-12-17",
+      "age_days": 181,
       "pricing": {
-        "prompt_usd_per_mtok": 1.25,
-        "completion_usd_per_mtok": 3.75
+        "prompt_usd_per_mtok": 0.5,
+        "completion_usd_per_mtok": 3.0
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 151600580380,
-        "agentic_rank": 21,
+        "agentic_token_volume": 92216819800,
+        "agentic_rank": 23,
         "sentiment_score": 0.0,
-        "recency_score": 1.0,
+        "recency_score": 0.7022,
         "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.5832,
-        "preliminary_quality_score": 0.5832,
-        "value_score": 0.5793
+        "quality_score": 0.5572,
+        "preliminary_quality_score": 0.5572,
+        "value_score": 0.5798
       },
       "notes": "",
       "comparative_rationale": "",

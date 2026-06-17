@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T04:01:48.455777+00:00",
+  "generated_at": "2026-06-17T10:01:43.958183+00:00",
   "kind": "free",
   "list_size": 10,
   "shortlist_size": 15,
@@ -9,12 +9,12 @@
     "hermes-agent": {
       "rank": 1,
       "models_used": 384,
-      "total_tokens": 17359886369676
+      "total_tokens": 17522861902815
     },
     "openclaw": {
       "rank": 3,
       "models_used": 385,
-      "total_tokens": 3884833431990
+      "total_tokens": 3924915154436
     }
   },
   "summary": "",
@@ -35,7 +35,7 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 5492787520432,
+        "agentic_token_volume": 5536173046057,
         "agentic_rank": 1,
         "sentiment_score": 0.0,
         "recency_score": 0.9565,
@@ -66,7 +66,7 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1032384077013,
+        "agentic_token_volume": 1041453283973,
         "agentic_rank": 5,
         "sentiment_score": 0.0,
         "recency_score": 0.8548,
@@ -90,7 +90,7 @@
       "supports_reasoning": true,
       "context_length": 1000000,
       "release_date": "2026-06-04",
-      "age_days": 12,
+      "age_days": 13,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
@@ -190,7 +190,7 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 163810691453,
+        "agentic_token_volume": 166072242051,
         "agentic_rank": 19,
         "sentiment_score": 0.0,
         "recency_score": 0.9565,
