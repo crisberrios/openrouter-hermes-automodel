@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T16:01:55.226381+00:00",
+  "generated_at": "2026-06-19T22:01:44.363840+00:00",
   "kind": "best",
   "list_size": 10,
   "shortlist_size": 15,
@@ -9,12 +9,12 @@
     "hermes-agent": {
       "rank": 1,
       "models_used": 387,
-      "total_tokens": 18421476123296
+      "total_tokens": 18640538604002
     },
     "openclaw": {
       "rank": 3,
       "models_used": 392,
-      "total_tokens": 3964154777737
+      "total_tokens": 3997488743129
     }
   },
   "summary": "",
@@ -35,54 +35,23 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 4870994239079,
+        "agentic_token_volume": 4922848978545,
         "agentic_rank": 2,
         "sentiment_score": 0.0,
         "recency_score": 0.9409,
         "comparative_score": 0.96
       },
       "scores": {
-        "quality_score": 0.8017,
-        "preliminary_quality_score": 0.6877,
+        "quality_score": 0.8016,
+        "preliminary_quality_score": 0.6875,
         "value_score": 0.8562
       },
       "notes": "",
-      "comparative_rationale": "Very high shortlist prior and DeepSeek V4 family shows near-frontier coding strength, with public leaderboard coverage placing V4-class systems strongly on SWE-style coding [awesomeagents.ai](https://awesomeagents.ai/leaderboards/coding-benchmarks-leaderboard/).",
+      "comparative_rationale": "Input shortlist places it #2 agentic; very strong coding-focused positioning, though less public head-to-head evidence than Opus 4.8.",
       "ranking_kind": "best"
     },
     {
       "rank": 2,
-      "id": "openrouter/owl-alpha",
-      "name": "Owl Alpha",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": false,
-      "context_length": 1048756,
-      "release_date": "2026-04-28",
-      "age_days": 51,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 5821134278817,
-        "agentic_rank": 1,
-        "sentiment_score": 0.0,
-        "recency_score": 0.952,
-        "comparative_score": 0.82
-      },
-      "scores": {
-        "quality_score": 0.7446,
-        "preliminary_quality_score": 0.6851,
-        "value_score": 0.8297
-      },
-      "notes": "",
-      "comparative_rationale": "Top internal agentic prior and huge context suggest strong codebase navigation, but limited public benchmark reporting keeps it below better-documented frontier models.",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 3,
       "id": "nvidia/nemotron-3-super-120b-a12b:free",
       "name": "NVIDIA: Nemotron 3 Super (free)",
       "is_free": true,
@@ -90,30 +59,30 @@
       "supports_reasoning": true,
       "context_length": 1000000,
       "release_date": "2026-03-11",
-      "age_days": 99,
+      "age_days": 100,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1056092137243,
+        "agentic_token_volume": 1064024222036,
         "agentic_rank": 5,
         "sentiment_score": 0.0,
-        "recency_score": 0.8508,
-        "comparative_score": 0.84
+        "recency_score": 0.8488,
+        "comparative_score": 0.82
       },
       "scores": {
-        "quality_score": 0.6921,
-        "preliminary_quality_score": 0.5887,
-        "value_score": 0.7947
+        "quality_score": 0.6839,
+        "preliminary_quality_score": 0.5884,
+        "value_score": 0.7893
       },
       "notes": "",
-      "comparative_rationale": "High shortlist prior and large model size indicate strong autonomous coding potential; still lacks broad recent public SWE/Terminal head-to-heads versus top frontier models.",
+      "comparative_rationale": "Shortlist ranks it #5 and its larger Nemotron family is positioned for long-context autonomous workflows, but public SWE-bench-style proof is limited.",
       "ranking_kind": "best"
     },
     {
-      "rank": 4,
+      "rank": 3,
       "id": "minimax/minimax-m3",
       "name": "MiniMax: MiniMax M3",
       "is_free": false,
@@ -121,14 +90,14 @@
       "supports_reasoning": true,
       "context_length": 1048576,
       "release_date": "2026-05-31",
-      "age_days": 18,
+      "age_days": 19,
       "pricing": {
         "prompt_usd_per_mtok": 0.3,
         "completion_usd_per_mtok": 1.2
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 2504513809453,
+        "agentic_token_volume": 2532982040222,
         "agentic_rank": 3,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
@@ -136,15 +105,15 @@
       },
       "scores": {
         "quality_score": 0.7613,
-        "preliminary_quality_score": 0.6408,
+        "preliminary_quality_score": 0.6407,
         "value_score": 0.7764
       },
       "notes": "",
-      "comparative_rationale": "Strong agentic prior and recent frontier-class release suggest excellent tool-using coding, though public benchmark breadth is thinner than Opus or GPT-5.5.",
+      "comparative_rationale": "Input shortlist ranks it #3 for agentic capability, implying frontier-grade planning and tool orchestration despite limited public benchmark detail.",
       "ranking_kind": "best"
     },
     {
-      "rank": 5,
+      "rank": 4,
       "id": "deepseek/deepseek-v4-pro",
       "name": "DeepSeek: DeepSeek V4 Pro",
       "is_free": false,
@@ -159,19 +128,50 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1484230422867,
+        "agentic_token_volume": 1499355727215,
         "agentic_rank": 4,
         "sentiment_score": 0.0,
         "recency_score": 0.9409,
         "comparative_score": 0.9
       },
       "scores": {
-        "quality_score": 0.7312,
-        "preliminary_quality_score": 0.6121,
-        "value_score": 0.7714
+        "quality_score": 0.7311,
+        "preliminary_quality_score": 0.612,
+        "value_score": 0.7713
       },
       "notes": "",
-      "comparative_rationale": "Placed just behind top frontier agents here: strong coding family reputation, likely better sustained planning than Flash, but less directly benchmarked publicly.",
+      "comparative_rationale": "Shortlist places it #4 agentic; likely stronger deliberation than Flash, but published cross-benchmark evidence remains sparse versus Anthropic and OpenAI.",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 5,
+      "id": "openrouter/owl-alpha",
+      "name": "Owl Alpha",
+      "is_free": true,
+      "supports_tools": true,
+      "supports_reasoning": false,
+      "context_length": 1048756,
+      "release_date": "2026-04-28",
+      "age_days": 52,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 5895798449724,
+        "agentic_rank": 1,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9498,
+        "comparative_score": 0.57
+      },
+      "scores": {
+        "quality_score": 0.6444,
+        "preliminary_quality_score": 0.6849,
+        "value_score": 0.7629
+      },
+      "notes": "",
+      "comparative_rationale": "Input marks Owl Alpha agentic_rank #1, but public benchmark corroboration is thin, so placed below well-documented frontier models pending stronger evidence.",
       "ranking_kind": "best"
     },
     {
@@ -183,26 +183,26 @@
       "supports_reasoning": true,
       "context_length": 1000000,
       "release_date": "2026-03-11",
-      "age_days": 99,
+      "age_days": 100,
       "pricing": {
         "prompt_usd_per_mtok": 0.09,
         "completion_usd_per_mtok": 0.45
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1056092137243,
+        "agentic_token_volume": 1064024222036,
         "agentic_rank": 5,
         "sentiment_score": 0.0,
-        "recency_score": 0.8508,
-        "comparative_score": 0.84
+        "recency_score": 0.8488,
+        "comparative_score": 0.82
       },
       "scores": {
-        "quality_score": 0.6921,
-        "preliminary_quality_score": 0.5887,
-        "value_score": 0.7672
+        "quality_score": 0.6839,
+        "preliminary_quality_score": 0.5884,
+        "value_score": 0.7617
       },
       "notes": "",
-      "comparative_rationale": "High shortlist prior and large model size indicate strong autonomous coding potential; still lacks broad recent public SWE/Terminal head-to-heads versus top frontier models.",
+      "comparative_rationale": "Shortlist ranks it #5 and its larger Nemotron family is positioned for long-context autonomous workflows, but public SWE-bench-style proof is limited.",
       "ranking_kind": "best"
     },
     {
@@ -214,30 +214,61 @@
       "supports_reasoning": true,
       "context_length": 1048576,
       "release_date": "2026-04-22",
-      "age_days": 57,
+      "age_days": 58,
       "pricing": {
         "prompt_usd_per_mtok": 0.14,
         "completion_usd_per_mtok": 0.28
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 378103988182,
+        "agentic_token_volume": 384243579102,
         "agentic_rank": 11,
         "sentiment_score": 0.0,
-        "recency_score": 0.9387,
+        "recency_score": 0.9365,
         "comparative_score": 0.64
       },
       "scores": {
-        "quality_score": 0.6118,
-        "preliminary_quality_score": 0.5872,
+        "quality_score": 0.6117,
+        "preliminary_quality_score": 0.587,
         "value_score": 0.7235
       },
       "notes": "",
-      "comparative_rationale": "Respectable shortlist position and large context help coding-agent workflows, but public tool-use and coding benchmark data remain limited.",
+      "comparative_rationale": "Solid upper-mid pack from shortlist rank #11, but weaker than MiMo-V2.5-Pro by explicit newer-version rule and ranking hint.",
       "ranking_kind": "best"
     },
     {
       "rank": 8,
+      "id": "xiaomi/mimo-v2.5-pro",
+      "name": "Xiaomi: MiMo-V2.5-Pro",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1048576,
+      "release_date": "2026-04-22",
+      "age_days": 58,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.435,
+        "completion_usd_per_mtok": 0.87
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 401705422539,
+        "agentic_rank": 10,
+        "sentiment_score": 0.0,
+        "recency_score": 0.9365,
+        "comparative_score": 0.68
+      },
+      "scores": {
+        "quality_score": 0.6279,
+        "preliminary_quality_score": 0.5874,
+        "value_score": 0.7025
+      },
+      "notes": "",
+      "comparative_rationale": "Newer Pro variant must outrank MiMo-V2.5; shortlist already places it slightly higher at #10 vs #11 for agentic tasks.",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 9,
       "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
       "name": "NVIDIA: Nemotron 3 Ultra (free)",
       "is_free": true,
@@ -252,50 +283,19 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 156391446688,
+        "agentic_token_volume": 159003866185,
         "agentic_rank": 22,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.53
+        "comparative_score": 0.29
       },
       "scores": {
-        "quality_score": 0.5662,
+        "quality_score": 0.4702,
         "preliminary_quality_score": 0.5836,
-        "value_score": 0.7108
+        "value_score": 0.6468
       },
       "notes": "",
-      "comparative_rationale": "Newer and larger than Nemotron Super, so size helps, but its much weaker supplied agentic prior implies poorer realized harness performance.",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 9,
-      "id": "xiaomi/mimo-v2.5-pro",
-      "name": "Xiaomi: MiMo-V2.5-Pro",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1048576,
-      "release_date": "2026-04-22",
-      "age_days": 57,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.435,
-        "completion_usd_per_mtok": 0.87
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 396616050695,
-        "agentic_rank": 10,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9387,
-        "comparative_score": 0.69
-      },
-      "scores": {
-        "quality_score": 0.6321,
-        "preliminary_quality_score": 0.5876,
-        "value_score": 0.7053
-      },
-      "notes": "",
-      "comparative_rationale": "Newer Pro snapshot must outrank MiMo-V2.5 absent regression evidence; solid agentic prior but far less public SWE/Terminal verification than Claude or GPT.",
+      "comparative_rationale": "Despite size, shortlist puts it #22, indicating weaker current agentic outcomes than Super; public coding-agent benchmarks are scarce.",
       "ranking_kind": "best"
     },
     {
@@ -307,7 +307,7 @@
       "supports_reasoning": true,
       "context_length": 1000000,
       "release_date": "2026-05-27",
-      "age_days": 22,
+      "age_days": 23,
       "pricing": {
         "prompt_usd_per_mtok": 5.0,
         "completion_usd_per_mtok": 25.0
@@ -316,17 +316,17 @@
         "intelligence_score": 0.0,
         "agentic_token_volume": 0,
         "agentic_rank": 0,
-        "sentiment_score": 0.9,
+        "sentiment_score": 0.92,
         "recency_score": 1.0,
         "comparative_score": 1.0
       },
       "scores": {
-        "quality_score": 0.7971,
-        "preliminary_quality_score": 0.6566,
-        "value_score": 0.587
+        "quality_score": 0.7981,
+        "preliminary_quality_score": 0.6583,
+        "value_score": 0.5876
       },
-      "notes": "Recent benchmark writeups place Opus 4.8 at 88.6% SWE-bench Verified and 69.2% SWE-bench Pro, with especially strong long-context behavior; reviewer sentiment is that it is the default pick for context-heavy agentic coding, though GPT-5.5 remains slicker in terminal-bound loops.",
-      "comparative_rationale": "Leads this pool on public agentic coding evidence, including 69.2% SWE-bench Pro and strong OSWorld/MCP-style multi-step tool use [awesomeagents.ai](https://awesomeagents.ai/tools/claude-opus-4-8-vs-gpt-5-5/).",
+      "notes": "Recent benchmark commentary consistently places Opus 4.8 at the top for software-engineering and long-context agent workloads, including 69.2% SWE-bench Pro, 88.6% SWE-bench Verified, 74.6% Terminal-Bench 2.1, 83.4% OSWorld-Verified, and 82.2% MCP-Atlas. Practitioner writeups describe it as the strongest choice when agents must read large codebases and make careful interconnected changes, even if GPT-5.5 is slicker in tight terminal loops.",
+      "comparative_rationale": "Leads real-world agentic coding with 69.2% SWE-bench Pro and 82.2% MCP-Atlas tool-use, beating GPT-5.5 decisively [awesomeagents.ai](https://awesomeagents.ai/tools/claude-opus-4-8-vs-gpt-5-5/).",
       "ranking_kind": "best"
     }
   ]
