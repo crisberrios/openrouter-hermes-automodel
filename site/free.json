@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-20T10:00:20.366510+00:00",
+  "generated_at": "2026-06-20T16:00:15.395390+00:00",
   "kind": "free",
   "list_size": 10,
   "shortlist_size": 15,
@@ -9,12 +9,12 @@
     "hermes-agent": {
       "rank": 1,
       "models_used": 386,
-      "total_tokens": 18646173625262
+      "total_tokens": 18826312252405
     },
     "openclaw": {
       "rank": 3,
       "models_used": 390,
-      "total_tokens": 3926887371604
+      "total_tokens": 3957429660596
     }
   },
   "summary": "",
@@ -35,7 +35,7 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 5912777336901,
+        "agentic_token_volume": 5980036053174,
         "agentic_rank": 1,
         "sentiment_score": 0.0,
         "recency_score": 0.9498,
@@ -66,15 +66,15 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1047840965792,
+        "agentic_token_volume": 1055638338162,
         "agentic_rank": 6,
         "sentiment_score": 0.0,
         "recency_score": 0.8488,
         "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.588,
-        "preliminary_quality_score": 0.588,
+        "quality_score": 0.5879,
+        "preliminary_quality_score": 0.5879,
         "value_score": 0.0
       },
       "notes": "",
@@ -97,7 +97,7 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 163723391015,
+        "agentic_token_volume": 165257166978,
         "agentic_rank": 21,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
@@ -128,7 +128,7 @@
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 183463240217,
+        "agentic_token_volume": 185989377685,
         "agentic_rank": 19,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
@@ -214,22 +214,22 @@
       "supports_reasoning": true,
       "context_length": 262144,
       "release_date": "2026-04-28",
-      "age_days": 52,
+      "age_days": 53,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 193260250780,
+        "agentic_token_volume": 195602036898,
         "agentic_rank": 18,
         "sentiment_score": 0.0,
-        "recency_score": 0.9498,
+        "recency_score": 0.9476,
         "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.5068,
-        "preliminary_quality_score": 0.5068,
+        "quality_score": 0.5066,
+        "preliminary_quality_score": 0.5066,
         "value_score": 0.0
       },
       "notes": "",
@@ -245,7 +245,7 @@
       "supports_reasoning": true,
       "context_length": 262144,
       "release_date": "2026-04-28",
-      "age_days": 52,
+      "age_days": 53,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
@@ -255,12 +255,12 @@
         "agentic_token_volume": 0,
         "agentic_rank": 0,
         "sentiment_score": 0.0,
-        "recency_score": 0.9498,
+        "recency_score": 0.9476,
         "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.5025,
-        "preliminary_quality_score": 0.5025,
+        "quality_score": 0.5023,
+        "preliminary_quality_score": 0.5023,
         "value_score": 0.0
       },
       "notes": "",
@@ -307,7 +307,7 @@
       "supports_reasoning": true,
       "context_length": 262144,
       "release_date": "2026-04-03",
-      "age_days": 77,
+      "age_days": 78,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
@@ -317,12 +317,12 @@
         "agentic_token_volume": 0,
         "agentic_rank": 0,
         "sentiment_score": 0.0,
-        "recency_score": 0.8958,
+        "recency_score": 0.8937,
         "comparative_score": 0.0
       },
       "scores": {
-        "quality_score": 0.4971,
-        "preliminary_quality_score": 0.4971,
+        "quality_score": 0.4969,
+        "preliminary_quality_score": 0.4969,
         "value_score": 0.0
       },
       "notes": "",
