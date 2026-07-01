@@ -1,57 +1,26 @@
 {
-  "generated_at": "2026-06-21T10:00:57.334252+00:00",
+  "generated_at": "2026-07-01T04:01:23.297508+00:00",
   "kind": "best",
   "list_size": 10,
   "shortlist_size": 15,
-  "comparative_rerank_applied": false,
-  "comparative_scored_count": 0,
+  "comparative_rerank_applied": true,
+  "comparative_scored_count": 42,
   "tracked_apps": {
     "hermes-agent": {
       "rank": 1,
-      "models_used": 385,
-      "total_tokens": 19092406124014
+      "models_used": 372,
+      "total_tokens": 24011695876575
     },
     "openclaw": {
-      "rank": 3,
-      "models_used": 389,
-      "total_tokens": 3927220565949
+      "rank": 4,
+      "models_used": 373,
+      "total_tokens": 4168270073286
     }
   },
   "summary": "",
   "models": [
     {
       "rank": 1,
-      "id": "openrouter/owl-alpha",
-      "name": "Owl Alpha",
-      "is_free": true,
-      "supports_tools": true,
-      "supports_reasoning": false,
-      "context_length": 1048756,
-      "release_date": "2026-04-28",
-      "age_days": 53,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.0,
-        "completion_usd_per_mtok": 0.0
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 6151208635198,
-        "agentic_rank": 1,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9476,
-        "comparative_score": 0.0
-      },
-      "scores": {
-        "quality_score": 0.6846,
-        "preliminary_quality_score": 0.6846,
-        "value_score": 0.7897
-      },
-      "notes": "",
-      "comparative_rationale": "",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 2,
       "id": "deepseek/deepseek-v4-flash",
       "name": "DeepSeek: DeepSeek V4 Flash",
       "is_free": false,
@@ -59,26 +28,57 @@
       "supports_reasoning": true,
       "context_length": 1048576,
       "release_date": "2026-04-24",
-      "age_days": 58,
+      "age_days": 68,
       "pricing": {
-        "prompt_usd_per_mtok": 0.09,
-        "completion_usd_per_mtok": 0.18
+        "prompt_usd_per_mtok": 0.098,
+        "completion_usd_per_mtok": 0.196
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 4852137793364,
+        "agentic_token_volume": 5202114341395,
         "agentic_rank": 2,
         "sentiment_score": 0.0,
-        "recency_score": 0.9365,
-        "comparative_score": 0.0
+        "recency_score": 0.9149,
+        "comparative_score": 1.0
       },
       "scores": {
-        "quality_score": 0.6811,
-        "preliminary_quality_score": 0.6811,
-        "value_score": 0.7758
+        "quality_score": 0.829,
+        "preliminary_quality_score": 0.7064,
+        "value_score": 0.8734
       },
       "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "Highest in this pool by supplied agentic rank; strong autonomous coding and tool-use performance across current leaderboard reports.",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 2,
+      "id": "minimax/minimax-m3",
+      "name": "MiniMax: MiniMax M3",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1048576,
+      "release_date": "2026-05-31",
+      "age_days": 30,
+      "pricing": {
+        "prompt_usd_per_mtok": 0.3,
+        "completion_usd_per_mtok": 1.2
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 4070714665172,
+        "agentic_rank": 3,
+        "sentiment_score": 0.0,
+        "recency_score": 1.0,
+        "comparative_score": 0.97
+      },
+      "scores": {
+        "quality_score": 0.8055,
+        "preliminary_quality_score": 0.6866,
+        "value_score": 0.8058
+      },
+      "notes": "",
+      "comparative_rationale": "Placed just behind DeepSeek V4 Flash by supplied agentic rank, indicating top-tier multi-step coding-agent capability.",
       "ranking_kind": "best"
     },
     {
@@ -90,57 +90,57 @@
       "supports_reasoning": true,
       "context_length": 1000000,
       "release_date": "2026-03-11",
-      "age_days": 101,
+      "age_days": 111,
       "pricing": {
         "prompt_usd_per_mtok": 0.0,
         "completion_usd_per_mtok": 0.0
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1044261163940,
+        "agentic_token_volume": 1080910672002,
         "agentic_rank": 6,
         "sentiment_score": 0.0,
-        "recency_score": 0.8468,
-        "comparative_score": 0.0
+        "recency_score": 0.8272,
+        "comparative_score": 0.85
       },
       "scores": {
-        "quality_score": 0.5868,
-        "preliminary_quality_score": 0.5868,
-        "value_score": 0.7245
+        "quality_score": 0.6966,
+        "preliminary_quality_score": 0.5898,
+        "value_score": 0.7977
       },
       "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "Supplied agentic rank #6 makes it the strongest Nemotron here, suggesting solid planning and coding-agent throughput.",
       "ranking_kind": "best"
     },
     {
       "rank": 4,
-      "id": "xiaomi/mimo-v2.5",
-      "name": "Xiaomi: MiMo-V2.5",
+      "id": "deepseek/deepseek-v4-pro",
+      "name": "DeepSeek: DeepSeek V4 Pro",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
       "context_length": 1048576,
-      "release_date": "2026-04-22",
-      "age_days": 59,
+      "release_date": "2026-04-24",
+      "age_days": 68,
       "pricing": {
-        "prompt_usd_per_mtok": 0.14,
-        "completion_usd_per_mtok": 0.28
+        "prompt_usd_per_mtok": 0.435,
+        "completion_usd_per_mtok": 0.87
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 406407050110,
-        "agentic_rank": 11,
+        "agentic_token_volume": 1657308228235,
+        "agentic_rank": 5,
         "sentiment_score": 0.0,
-        "recency_score": 0.9344,
-        "comparative_score": 0.0
+        "recency_score": 0.9149,
+        "comparative_score": 0.91
       },
       "scores": {
-        "quality_score": 0.5869,
-        "preliminary_quality_score": 0.5869,
-        "value_score": 0.7069
+        "quality_score": 0.7384,
+        "preliminary_quality_score": 0.6178,
+        "value_score": 0.7762
       },
       "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "Supplied agentic rank places it near the top; DeepSeek Pro class is generally strong on coding and iterative tool use.",
       "ranking_kind": "best"
     },
     {
@@ -152,181 +152,181 @@
       "supports_reasoning": true,
       "context_length": 1000000,
       "release_date": "2026-03-11",
-      "age_days": 101,
+      "age_days": 111,
       "pricing": {
-        "prompt_usd_per_mtok": 0.09,
-        "completion_usd_per_mtok": 0.45
+        "prompt_usd_per_mtok": 0.085,
+        "completion_usd_per_mtok": 0.4
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 1044261163940,
+        "agentic_token_volume": 1080910672002,
         "agentic_rank": 6,
         "sentiment_score": 0.0,
-        "recency_score": 0.8468,
-        "comparative_score": 0.0
+        "recency_score": 0.8272,
+        "comparative_score": 0.85
       },
       "scores": {
-        "quality_score": 0.5868,
-        "preliminary_quality_score": 0.5868,
-        "value_score": 0.697
+        "quality_score": 0.6966,
+        "preliminary_quality_score": 0.5898,
+        "value_score": 0.773
       },
       "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "Supplied agentic rank #6 makes it the strongest Nemotron here, suggesting solid planning and coding-agent throughput.",
       "ranking_kind": "best"
     },
     {
       "rank": 6,
-      "id": "minimax/minimax-m3",
-      "name": "MiniMax: MiniMax M3",
-      "is_free": false,
+      "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "name": "NVIDIA: Nemotron 3 Ultra (free)",
+      "is_free": true,
       "supports_tools": true,
       "supports_reasoning": true,
-      "context_length": 1048576,
-      "release_date": "2026-05-31",
-      "age_days": 20,
+      "context_length": 1000000,
+      "release_date": "2026-06-04",
+      "age_days": 26,
       "pricing": {
-        "prompt_usd_per_mtok": 0.3,
-        "completion_usd_per_mtok": 1.2
+        "prompt_usd_per_mtok": 0.0,
+        "completion_usd_per_mtok": 0.0
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 2706617334773,
-        "agentic_rank": 3,
+        "agentic_token_volume": 407734716950,
+        "agentic_rank": 12,
         "sentiment_score": 0.0,
         "recency_score": 1.0,
-        "comparative_score": 0.0
+        "comparative_score": 0.72
       },
       "scores": {
-        "quality_score": 0.6421,
-        "preliminary_quality_score": 0.6421,
-        "value_score": 0.6969
+        "quality_score": 0.6463,
+        "preliminary_quality_score": 0.5903,
+        "value_score": 0.7642
       },
       "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "Supplied agentic rank #12 suggests capable large-model agency, but public coding-benchmark visibility remains thinner than leaders.",
       "ranking_kind": "best"
     },
     {
       "rank": 7,
-      "id": "deepseek/deepseek-v4-pro",
-      "name": "DeepSeek: DeepSeek V4 Pro",
-      "is_free": false,
-      "supports_tools": true,
-      "supports_reasoning": true,
-      "context_length": 1048576,
-      "release_date": "2026-04-24",
-      "age_days": 58,
-      "pricing": {
-        "prompt_usd_per_mtok": 0.435,
-        "completion_usd_per_mtok": 0.87
-      },
-      "signals": {
-        "intelligence_score": 0.0,
-        "agentic_token_volume": 1500270017180,
-        "agentic_rank": 4,
-        "sentiment_score": 0.0,
-        "recency_score": 0.9365,
-        "comparative_score": 0.0
-      },
-      "scores": {
-        "quality_score": 0.6102,
-        "preliminary_quality_score": 0.6102,
-        "value_score": 0.6907
-      },
-      "notes": "",
-      "comparative_rationale": "",
-      "ranking_kind": "best"
-    },
-    {
-      "rank": 8,
-      "id": "xiaomi/mimo-v2.5-pro",
-      "name": "Xiaomi: MiMo-V2.5-Pro",
+      "id": "xiaomi/mimo-v2.5",
+      "name": "Xiaomi: MiMo-V2.5",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
       "context_length": 1048576,
       "release_date": "2026-04-22",
-      "age_days": 59,
+      "age_days": 69,
       "pricing": {
-        "prompt_usd_per_mtok": 0.435,
-        "completion_usd_per_mtok": 0.87
+        "prompt_usd_per_mtok": 0.105,
+        "completion_usd_per_mtok": 0.28
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 413344261555,
-        "agentic_rank": 9,
+        "agentic_token_volume": 554597122054,
+        "agentic_rank": 10,
         "sentiment_score": 0.0,
-        "recency_score": 0.9344,
-        "comparative_score": 0.0
+        "recency_score": 0.9127,
+        "comparative_score": 0.76
       },
       "scores": {
-        "quality_score": 0.587,
-        "preliminary_quality_score": 0.587,
-        "value_score": 0.6753
+        "quality_score": 0.6613,
+        "preliminary_quality_score": 0.59,
+        "value_score": 0.7565
       },
       "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "Supplied agentic rank #10 indicates competitive planning and coding, but it trails the top cluster on public evidence.",
       "ranking_kind": "best"
     },
     {
-      "rank": 9,
-      "id": "google/gemini-3.5-flash",
-      "name": "Google: Gemini 3.5 Flash",
+      "rank": 8,
+      "id": "z-ai/glm-5.2",
+      "name": "Z.ai: GLM 5.2",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
       "context_length": 1048576,
-      "release_date": "2026-05-19",
-      "age_days": 32,
+      "release_date": "2026-06-16",
+      "age_days": 14,
       "pricing": {
-        "prompt_usd_per_mtok": 1.5,
-        "completion_usd_per_mtok": 9.0
+        "prompt_usd_per_mtok": 0.93,
+        "completion_usd_per_mtok": 3.0
       },
       "signals": {
         "intelligence_score": 0.0,
-        "agentic_token_volume": 243352652337,
-        "agentic_rank": 16,
+        "agentic_token_volume": 745174020418,
+        "agentic_rank": 9,
         "sentiment_score": 0.0,
-        "recency_score": 0.9953,
-        "comparative_score": 0.0
+        "recency_score": 1.0,
+        "comparative_score": 0.81
       },
       "scores": {
-        "quality_score": 0.5895,
-        "preliminary_quality_score": 0.5895,
-        "value_score": 0.512
+        "quality_score": 0.6904,
+        "preliminary_quality_score": 0.6035,
+        "value_score": 0.6686
       },
       "notes": "",
-      "comparative_rationale": "",
+      "comparative_rationale": "GLM family leads public tool-use rankings, with GLM-5.1 topping BenchLM BFCL-style function-calling comparisons [benchlm.ai](https://benchlm.ai/best/tool-use).",
       "ranking_kind": "best"
     },
     {
-      "rank": 10,
-      "id": "anthropic/claude-sonnet-4.6",
-      "name": "Anthropic: Claude Sonnet 4.6",
+      "rank": 9,
+      "id": "nvidia/nemotron-3-ultra-550b-a55b",
+      "name": "NVIDIA: Nemotron 3 Ultra",
       "is_free": false,
       "supports_tools": true,
       "supports_reasoning": true,
       "context_length": 1000000,
-      "release_date": "2026-02-17",
-      "age_days": 123,
+      "release_date": "2026-06-04",
+      "age_days": 26,
       "pricing": {
-        "prompt_usd_per_mtok": 3.0,
-        "completion_usd_per_mtok": 15.0
+        "prompt_usd_per_mtok": 0.5,
+        "completion_usd_per_mtok": 2.2
+      },
+      "signals": {
+        "intelligence_score": 0.0,
+        "agentic_token_volume": 407734716950,
+        "agentic_rank": 12,
+        "sentiment_score": 0.0,
+        "recency_score": 1.0,
+        "comparative_score": 0.72
+      },
+      "scores": {
+        "quality_score": 0.6463,
+        "preliminary_quality_score": 0.5903,
+        "value_score": 0.6623
+      },
+      "notes": "",
+      "comparative_rationale": "Supplied agentic rank #12 suggests capable large-model agency, but public coding-benchmark visibility remains thinner than leaders.",
+      "ranking_kind": "best"
+    },
+    {
+      "rank": 10,
+      "id": "anthropic/claude-opus-4.8",
+      "name": "Anthropic: Claude Opus 4.8",
+      "is_free": false,
+      "supports_tools": true,
+      "supports_reasoning": true,
+      "context_length": 1000000,
+      "release_date": "2026-05-27",
+      "age_days": 34,
+      "pricing": {
+        "prompt_usd_per_mtok": 5.0,
+        "completion_usd_per_mtok": 25.0
       },
       "signals": {
         "intelligence_score": 0.0,
         "agentic_token_volume": 0,
         "agentic_rank": 0,
-        "sentiment_score": 0.74,
-        "recency_score": 0.8043,
-        "comparative_score": 0.0
+        "sentiment_score": 0.92,
+        "recency_score": 0.9907,
+        "comparative_score": 0.94
       },
       "scores": {
-        "quality_score": 0.6234,
-        "preliminary_quality_score": 0.6234,
-        "value_score": 0.4989
+        "quality_score": 0.7734,
+        "preliminary_quality_score": 0.6574,
+        "value_score": 0.5712
       },
-      "notes": "Recent hands-on agent testing recommends Sonnet 4.6 as the primary day-job model inside Hermes for most tasks, with the comparison specifically controlling for the same underlying model across agents. Sentiment appears strongly positive because users see it as the practical sweet spot rather than the benchmark crown-holder.",
-      "comparative_rationale": "",
+      "notes": "Recent benchmark commentary places Opus 4.8 at 69.2% on SWE-bench Pro and first on LMArena coding, with strong sentiment around correctness for professional engineering workflows. Broader agentic comparisons also describe Claude Code as a default choice for disciplined coding-agent loops, though some users still prefer cheaper or more open stacks.",
+      "comparative_rationale": "SWE-bench Pro reporting shows Opus 4.8 leading active models, and user reports consistently praise Claude Code reliability [morphllm.com](https://www.morphllm.com/ai-coding-benchmarks-2026).",
       "ranking_kind": "best"
     }
   ]
